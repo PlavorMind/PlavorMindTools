@@ -1,0 +1,39 @@
+{"manifest_version":2,
+"name":"PlavorMindTools",
+"author":"[http://exit.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
+
+"descriptionmsg":"plavormindtools-description",
+"license-name":"AGPL-3.0-or-later",
+"type":"other",
+"url":"http://exit.plavormind.tk:81/",
+"version":"1.0",
+
+"AutoloadClasses":
+  {"PlavorMindToolsHooks":"hooks.php"},
+"config":
+  {"PMTReplaceMsgForPlavorMind":false},
+"Hooks":
+  {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
+  "BeforePageDisplayMobile":"PlavorMindToolsHooks::onBeforePageDisplayMobile",
+  "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get"},
+"MessagesDirs":
+  {"PlavorMindToolsHooks":
+    ["messages/main",
+    "messages/permissions"]
+  },
+"ResourceFileModulePaths":
+  {"localBasePath":"",
+  "remoteExtPath":"PlavorMindTools"},
+"ResourceModules":
+  {"bulma_notification":
+    {"styles":
+      {"resources/bulma_notification.css":
+        {"media":"screen"},
+      "resources/bulma_notification_fix.css":
+        {"media":"screen"}
+      }
+    }
+  },
+"requires":
+  {"MediaWiki":">=1.34"}
+}

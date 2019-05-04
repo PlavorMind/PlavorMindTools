@@ -1,0 +1,9 @@
+{"plavormindtools-description":"Description of PlavorMindTools extension",
+
+"restriction-delete":"Name of option for protecting a page from deleting",
+"restriction-protect":"Name of option for protecting a page from changing protection settings",
+
+"pmt-template-cclicense":"Message to use on templates that indicates a CC license on file pages",
+"pmt-template-unsigned":"Message to use on templates to notice about unsigned messages on talk pages",
+"pmt-template-usage":"Messages to use on \"Usage\" paragraph on template documentations",
+"pmt-template-usergroup":"Message to use on templates that indicates user groups on user pages"}
