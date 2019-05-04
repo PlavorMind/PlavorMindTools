@@ -1,5 +1,5 @@
 # PlavorMindTools
-MediaWiki extension for providing tools for PlavorMind wikis.
+MediaWiki extension for providing tools for PlavorMind wikis
 ## Installation
 Add this to `LocalSettings.php` file:
 ```php
