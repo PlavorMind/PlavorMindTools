@@ -6,7 +6,7 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"http://exit.plavormind.tk:81/",
-"version":"1.0",
+"version":"1.1",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
@@ -17,7 +17,7 @@
   "BeforePageDisplayMobile":"PlavorMindToolsHooks::onBeforePageDisplayMobile",
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get"},
 "MessagesDirs":
-  {"PlavorMindToolsHooks":
+  {"PlavorMindTools":
     ["messages/main",
     "messages/permissions"]
   },
