@@ -1,4 +1,4 @@
-{"plavormindtools-description":"PlavorMind 위키를 위한 도구를 제공합니다.",
+{"plavormindtools-description":"PlavorMind 위키를 위한 도구를 제공합니다",
 
 "pmtmsg-aboutpage":"",
 "pmtmsg-allmessages":"인터페이스 메시지 목록",
@@ -82,7 +82,9 @@
 "pmt-license-cc-4.0":"4.0 국제",
 "pmt-license-cc-by":"저작자표시",
 "pmt-license-cc-by-sa":"저작자표시-동일조건변경허락",
-"pmt-template-cclicense":"이 파일은 [$2deed.ko 크리에이티브 커먼즈 $1] 라이선스로 배포됩니다.<br>해당 라이선스의 [$2deed.ko 요약문]과 [$2legalcode 전문]을 참조하세요.",
+"pmt-license-cc0":"CC0 1.0 보편적",
+"pmt-template-cc0":"이 파일은 [https://creativecommons.org/publicdomain/zero/1.0/deed.ko 크리에이티브 커먼즈 CC0 1.0 보편적] 라이선스로 배포됩니다.<br>해당 라이선스의 [https://creativecommons.org/publicdomain/zero/1.0/deed.ko 요약문]과 [https://creativecommons.org/publicdomain/zero/1.0/legalcode 전문]을 참조하세요.",
+"pmt-template-cclicense":"이 파일은 [$3deed.ko 크리에이티브 커먼즈 {{int:pmt-license-cc-{{lc:$1}}}} {{int:pmt-license-cc-$2}}] 라이선스로 배포됩니다.<br>해당 라이선스의 [$3deed.ko 요약문]과 [$3legalcode 전문]을 참조하세요.",
 "pmt-template-unsigned":"[[User:$1|$1]]님이 서명을 하지 않아 다른 사용자가 추가하였습니다.",
 "pmt-template-usage":"사용 방법",
 "pmt-template-usergroup":"이 사용자는 [[{{int:grouppage-$1}}|{{int:group-$1-member}}]]입니다.<br>[[Special:UserRights/{{ROOTPAGENAME}}|사용자 권한]] 문서에서 확인할 수 있습니다."}
