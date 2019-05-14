@@ -8,7 +8,7 @@ class PlavorMindToolsHooks
 public static function onBeforePageDisplayMobile(OutputPage $out,Skin $sk)
   {$out->addModuleStyles(["bulma_notification"]);}
 public static function onMessageCache_get(&$lckey)
-  {global $wgLanguageCode;
+  {global $wgLanguageCode,$wgPMTReplaceMsgForPlavorMind;
   //main
   $msgtoreplace=
   ["aboutpage",
@@ -87,13 +87,14 @@ public static function onMessageCache_get(&$lckey)
   "userpage-userdoesnotexist-view",
   "viewsource"];
   //permissions
-  $msgtoreplace=array_merge($msgtoreplace,
-  ["group-bot",
-  "group-bot-member",
-  "group-interface-admin",
-  "group-interface-admin-member",
-  "group-sysop",
-  "group-sysop-member"]);
+  if ($wgPMTReplaceMsgForPlavorMind)
+    {$msgtoreplace=array_merge($msgtoreplace,
+    ["group-bot",
+    "group-bot-member",
+    "group-interface-admin",
+    "group-interface-admin-member",
+    "group-sysop",
+    "group-sysop-member"]);}
   if (in_array($lckey,$msgtoreplace))
     {$cache=MessageCache::singleton();
     if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
