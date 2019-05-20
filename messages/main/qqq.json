@@ -83,6 +83,7 @@
 "pmt-license-cc-by":"Translation of \"Attribution\"",
 "pmt-license-cc-by-sa":"Translation of \"Attribution-ShareAlike\"",
 "pmt-license-cc0":"Translation of \"CC0 1.0 Universal\"",
+"pmt-template-approval-protect":"Message to use on templates that indicates the page is approval protected",
 "pmt-template-cc0":"Message to use on templates that indicates a CC0 license on file pages",
 "pmt-template-cclicense":"Message to use on templates that indicates a CC license on file pages",
 "pmt-template-unsigned":"Message to use on templates to notice about unsigned messages on talk pages",
