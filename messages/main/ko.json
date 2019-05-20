@@ -83,6 +83,7 @@
 "pmt-license-cc-by":"저작자표시",
 "pmt-license-cc-by-sa":"저작자표시-동일조건변경허락",
 "pmt-license-cc0":"CC0 1.0 보편적",
+"pmt-template-approval-protect":"이 문서는 승인 보호되어 있습니다.",
 "pmt-template-cc0":"이 파일은 [https://creativecommons.org/publicdomain/zero/1.0/deed.ko 크리에이티브 커먼즈 CC0 1.0 보편적] 라이선스로 배포됩니다.<br>해당 라이선스의 [https://creativecommons.org/publicdomain/zero/1.0/deed.ko 요약문]과 [https://creativecommons.org/publicdomain/zero/1.0/legalcode 전문]을 참조하세요.",
 "pmt-template-cclicense":"이 파일은 [$3deed.ko 크리에이티브 커먼즈 {{int:pmt-license-cc-{{lc:$1}}}} {{int:pmt-license-cc-$2}}] 라이선스로 배포됩니다.<br>해당 라이선스의 [$3deed.ko 요약문]과 [$3legalcode 전문]을 참조하세요.",
 "pmt-template-unsigned":"[[User:$1|$1]]님이 서명을 하지 않아 다른 사용자가 추가하였습니다.",
