@@ -11,7 +11,9 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "config":
-  {"PMTReplaceMsgForPlavorMind":false},
+  {"PMTReplaceMsgForPlavorMind":
+    {"value":false}
+  },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
   "BeforePageDisplayMobile":"PlavorMindToolsHooks::onBeforePageDisplayMobile",
