@@ -3,7 +3,7 @@ MediaWiki extension for providing tools for PlavorMind wikis
 ## Installation
 Add this to `LocalSettings.php` file:
 ```php
-wfLoadExtension("PlavorMindTweaks");
+wfLoadExtension("PlavorMindTools");
 ```
 ## Configuration
 - `$wgPMTReplaceMsgForPlavorMind`: Replace some messages (e.g. messages for some user groups) with PlavorMind-specific messages.
