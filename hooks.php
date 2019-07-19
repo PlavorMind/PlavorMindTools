@@ -1,6 +1,6 @@
 <?php
 if (!defined("MEDIAWIKI"))
-{die("You don't have permission to do that.");}
+{exit("You don't have permission to access to this page.");}
 
 class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out, Skin $skin)
@@ -25,6 +25,9 @@ public static function onMessageCache_get(&$lckey)
   "cascadeprotectedwarning",
   "contribslink",
   "contributions-userdoesnotexist",
+  "customcssprotected",
+  "customjsprotected",
+  "customjsonprotected",
   "disclaimerpage",
   "editinginterface",
   "excontent",
