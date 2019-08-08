@@ -108,6 +108,12 @@
 "restriction-level-user-access":"Require log in",
 "restriction-delete":"Delete",
 "restriction-protect":"Change protection",
+"right-admin-access":"Permission for administrator access",
+"right-autoconfirmed-access":"Permission for autoconfirmed access",
+"right-bureaucrat-access":"Permission for bureaucrat access",
+"right-staff-access":"Permission for staff access",
+"right-steward-access":"Permission for steward access",
+"right-user-access":"Permission for user access",
 
 "pmt-license-cc":"Creative Commons",
 "pmt-license-cc-4.0":"4.0 International",
