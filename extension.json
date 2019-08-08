@@ -17,10 +17,6 @@
   "staff-access",
   "steward-access",
   "user-access"],
-"config":
-  {"PMTReplaceMsgForPlavorMind":
-    {"value":false}
-  },
 "GroupPermissions":
   {"admin":
     {"admin-access":true},
@@ -41,8 +37,7 @@
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get"},
 "MessagesDirs":
   {"PlavorMindTools":
-    ["messages/main",
-    "messages/permissions"]
+    ["messages/main"]
   },
 "ResourceFileModulePaths":
   {"localBasePath":"resources",
