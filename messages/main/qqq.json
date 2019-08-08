@@ -108,6 +108,12 @@
 "restriction-level-user-access":"Protection level that requires \"user-access\" permission",
 "restriction-delete":"Option for protecting a page from deleting",
 "restriction-protect":"Option for protecting a page from changing protection settings",
+"right-admin-access":"Description of \"admin-access\" permission",
+"right-autoconfirmed-access":"Description of \"autoconfirmed-access\" permission",
+"right-bureaucrat-access":"Description of \"bureaucrat-access\" permission",
+"right-staff-access":"Description of \"staff-access\" permission",
+"right-steward-access":"Description of \"steward-access\" permission",
+"right-user-access":"Description of \"user-access\" permission",
 
 "pmt-license-cc":"Translation of \"Creative Commons\"",
 "pmt-license-cc-4.0":"Name of CC license 4.0 version",
