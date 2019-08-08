@@ -108,6 +108,12 @@
 "restriction-level-user-access":"로그인 필요",
 "restriction-delete":"삭제",
 "restriction-protect":"보호 설정 변경",
+"right-admin-access":"관리자 권한",
+"right-autoconfirmed-access":"자동 인증 권한",
+"right-bureaucrat-access":"사무관 권한",
+"right-staff-access":"스태프 권한",
+"right-steward-access":"사무장 권한",
+"right-user-access":"사용자 권한",
 
 "pmt-license-cc":"크리에이티브 커먼즈",
 "pmt-license-cc-4.0":"4.0 국제",
