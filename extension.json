@@ -24,18 +24,18 @@
     "messages/permissions"]
   },
 "ResourceFileModulePaths":
-  {"localBasePath":"",
-  "remoteExtPath":"PlavorMindTools"},
+  {"localBasePath":"resources",
+  "remoteExtPath":"PlavorMindTools/resources"},
 "ResourceModules":
   {"bulma_notification":
     {"styles":
-      {"resources/bulma_notification.css":
+      {"bulma_notification.css":
         {"media":"screen"},
-      "resources/bulma_notification_fix.css":
+      "bulma_notification_fix.css":
         {"media":"screen"}
       }
     }
   },
 "requires":
-  {"MediaWiki":">=1.33"}
+  {"MediaWiki":">=1.34"}
 }
