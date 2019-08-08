@@ -20,7 +20,8 @@
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get"},
 "MessagesDirs":
   {"PlavorMindTools":
-    ["messages/main"]
+    ["messages/main",
+    "messages/permissions"]
   },
 "ResourceFileModulePaths":
   {"localBasePath":"resources",
