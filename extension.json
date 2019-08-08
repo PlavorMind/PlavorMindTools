@@ -10,9 +10,30 @@
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
+"AvailableRights":
+  ["admin-accees",
+  "autoconfirmed-access",
+  "bureaucrat-access",
+  "staff-access",
+  "steward-access",
+  "user-access"],
 "config":
   {"PMTReplaceMsgForPlavorMind":
     {"value":false}
+  },
+"GroupPermissions":
+  {"admin":
+    {"admin-access":true},
+  "autoconfirmed":
+    {"autoconfirmed-access":true},
+  "bureaucrat":
+    {"bureaucrat-access":true},
+  "staff":
+    {"staff-access":true},
+  "steward":
+    {"steward-access":true},
+  "user":
+    {"user-access":true}
   },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
