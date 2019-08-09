@@ -117,9 +117,6 @@
 "restriction-level-steward-access":"Protection level that requires \"steward-access\" permission",
 "restriction-delete":"Option for protecting a page from deleting",
 "restriction-protect":"Option for protecting a page from changing protection settings",
-"right-admin-access":"Description of \"admin-access\" permission",
-"right-autoconfirmed-access":"Description of \"autoconfirmed-access\" permission",
-"right-bureaucrat-access":"Description of \"bureaucrat-access\" permission",
 
 "right-editprotected-bureaucrat":"Description of \"editprotected-bureaucrat\" permission",
 "right-editprotected-staff":"Description of \"editprotected-staff\" permission",
