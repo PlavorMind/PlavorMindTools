@@ -96,6 +96,7 @@
 "group-steward.css":"/*사무장에게 적용되는 CSS*/",
 "group-steward.js":"/*사무장에게 적용되는 자바스크립트*/",
 "grouppage-admin":"Special:ListUsers/admin",
+"grouppage-protectedpageeditor":"Special:ListUsers/protectedpageeditor",
 "grouppage-staff":"Special:ListUsers/staff",
 "grouppage-steward":"Special:ListUsers/steward",
 "protect-level-admin-access":"관리자만 허용",
