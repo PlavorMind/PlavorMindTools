@@ -96,6 +96,7 @@
 "group-steward.css":"/*CSS applied to stewards*/",
 "group-steward.js":"/*JavaScript applied to stewards*/",
 "grouppage-admin":"Special:ListUsers/admin",
+"grouppage-protectedpageeditor":"Special:ListUsers/protectedpageeditor",
 "grouppage-staff":"Special:ListUsers/staff",
 "grouppage-steward":"Special:ListUsers/steward",
 "protect-level-admin-access":"Allow only administrators",
