@@ -96,6 +96,7 @@
 "group-steward.css":"Help for CSS for \"steward\" user group",
 "group-steward.js":"Help for JavaScript for \"steward\" user group",
 "grouppage-admin":"Description page for \"admin\" user group",
+"grouppage-protectedpageeditor":"Description page for \"protectedpageeditor\" user group",
 "grouppage-staff":"Description page for \"staff\" user group",
 "grouppage-steward":"Description page for \"steward\" user group",
 "protect-level-admin-access":"Protection option for requiring \"admin-access\" permission",
