@@ -11,25 +11,15 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
-  ["admin-accees",
-  "autoconfirmed-access",
-  "bureaucrat-access",
-  "staff-access",
-  "steward-access",
-  "user-access"],
+  ["editprotected-bureaucrat",
+  "editprotected-staff",
+  "editprotected-steward",
+  "editprotected-user"],
 "GroupPermissions":
-  {"admin":
-    {"admin-access":true},
-  "autoconfirmed":
-    {"autoconfirmed-access":true},
-  "bureaucrat":
-    {"bureaucrat-access":true},
-  "staff":
-    {"staff-access":true},
-  "steward":
-    {"steward-access":true},
-  "user":
-    {"user-access":true}
+  {"protectedpageeditor":
+    {"editprotected-staff":true,
+    "editprotected-user":true,
+    "editsemiprotected":true}
   },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
