@@ -83,6 +83,10 @@
 "group-admin-member":"Name of member of \"admin\" user group",
 "group-admin.css":"Help for CSS for \"admin\" user group",
 "group-admin.js":"Help for JavaScript for \"admin\" user group",
+"group-protectedpageeditor":"Name of \"protectedpageeditor\" user group",
+"group-protectedpageeditor-member":"Name of member of \"protectedpageeditor\" user group",
+"group-protectedpageeditor.css":"Help for CSS for \"protectedpageeditor\" user group",
+"group-protectedpageeditor.js":"Help for JavaScript for \"protectedpageeditor\" user group",
 "group-staff":"Name of \"staff\" user group",
 "group-staff-member":"Name of member of \"staff\" user group",
 "group-staff.css":"Help for CSS for \"staff\" user group",
@@ -97,12 +101,24 @@
 "protect-level-admin-access":"Protection option for requiring \"admin-access\" permission",
 "protect-level-autoconfirmed-access":"Protection option for requiring \"autoconfirmed-access\" permission",
 "protect-level-bureaucrat-access":"Protection option for requiring \"bureaucrat-access\" permission",
+
+"protect-level-editprotected-bureaucrat":"Protection option for requiring \"editprotected-bureaucrat\" permission",
+"protect-level-editprotected-staff":"Protection option for requiring \"editprotected-staff\" permission",
+"protect-level-editprotected-steward":"Protection option for requiring \"editprotected-steward\" permission",
+"protect-level-editprotected-user":"Protection option for requiring \"editprotected-user\" permission",
+
 "protect-level-staff-access":"Protection option for requiring \"staff-access\" permission",
 "protect-level-steward-access":"Protection option for requiring \"steward-access\" permission",
 "protect-level-user-access":"Protection option for requiring \"user-access\" permission",
 "restriction-level-admin-access":"Protection level that requires \"admin-access\" permission",
 "restriction-level-autoconfirmed-access":"Protection level that requires \"autoconfirmed-access\" permission",
 "restriction-level-bureaucrat-access":"Protection level that requires \"bureaucrat-access\" permission",
+
+"restriction-level-editprotected-bureaucrat":"Protection level that requires \"editprotected-bureaucrat\" permission",
+"restriction-level-editprotected-staff":"Protection level that requires \"editprotected-staff\" permission",
+"restriction-level-editprotected-steward":"Protection level that requires \"editprotected-steward\" permission",
+"restriction-level-editprotected-user":"Protection level that requires \"editprotected-user\" permission",
+
 "restriction-level-staff-access":"Protection level that requires \"staff-access\" permission",
 "restriction-level-steward-access":"Protection level that requires \"steward-access\" permission",
 "restriction-level-user-access":"Protection level that requires \"user-access\" permission",
@@ -111,6 +127,12 @@
 "right-admin-access":"Description of \"admin-access\" permission",
 "right-autoconfirmed-access":"Description of \"autoconfirmed-access\" permission",
 "right-bureaucrat-access":"Description of \"bureaucrat-access\" permission",
+
+"right-editprotected-bureaucrat":"Description of \"editprotected-bureaucrat\" permission",
+"right-editprotected-staff":"Description of \"editprotected-staff\" permission",
+"right-editprotected-steward":"Description of \"editprotected-steward\" permission",
+"right-editprotected-user":"Description of \"editprotected-user\" permission",
+
 "right-staff-access":"Description of \"staff-access\" permission",
 "right-steward-access":"Description of \"steward-access\" permission",
 "right-user-access":"Description of \"user-access\" permission",
