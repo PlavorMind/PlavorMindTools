@@ -83,6 +83,10 @@
 "group-admin-member":"administrator",
 "group-admin.css":"/*CSS applied to administrators*/",
 "group-admin.js":"/*JavaScript applied to administrators*/",
+"group-protectedpageeditor":"Protected page editors",
+"group-protectedpageeditor-member":"protected page editor",
+"group-protectedpageeditor.css":"/*CSS applied to protected page editors*/",
+"group-protectedpageeditor.js":"/*JavaScript applied to protected page editors*/",
 "group-staff":"Staffs",
 "group-staff-member":"staff",
 "group-staff.css":"/*CSS applied to staffs*/",
@@ -97,12 +101,24 @@
 "protect-level-admin-access":"Allow only administrators",
 "protect-level-autoconfirmed-access":"Allow only autoconfirmed users",
 "protect-level-bureaucrat-access":"Allow only bureaucrats",
+
+"protect-level-editprotected-bureaucrat":"Allow only bureaucrats",
+"protect-level-editprotected-staff":"Allow only staffs",
+"protect-level-editprotected-steward":"Allow only stewards",
+"protect-level-editprotected-user":"Allow only logged in users",
+
 "protect-level-staff-access":"Allow only staffs",
 "protect-level-steward-access":"Allow only stewards",
 "protect-level-user-access":"Allow only logged in users",
 "restriction-level-admin-access":"Require administrator access",
 "restriction-level-autoconfirmed-access":"Require autoconfirmed access",
 "restriction-level-bureaucrat-access":"Require bureaucrat access",
+
+"restriction-level-editprotected-bureaucrat":"Require bureaucrat access",
+"restriction-level-editprotected-staff":"Require staff access",
+"restriction-level-editprotected-steward":"Require steward access",
+"restriction-level-editprotected-user":"Require log in",
+
 "restriction-level-staff-access":"Require staff access",
 "restriction-level-steward-access":"Require steward access",
 "restriction-level-user-access":"Require log in",
@@ -111,6 +127,12 @@
 "right-admin-access":"Permission for administrator access",
 "right-autoconfirmed-access":"Permission for autoconfirmed access",
 "right-bureaucrat-access":"Permission for bureaucrat access",
+
+"right-editprotected-bureaucrat":"Edit pages protected as \"Allow only bureaucrats\"",
+"right-editprotected-staff":"Edit pages protected as \"Allow only staffs\"",
+"right-editprotected-steward":"Edit pages protected as \"Allow only stewards\"",
+"right-editprotected-user":"Edit pages protected as \"Allow only logged in users\"",
+
 "right-staff-access":"Permission for staff access",
 "right-steward-access":"Permission for steward access",
 "right-user-access":"Permission for user access",
