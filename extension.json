@@ -11,16 +11,14 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
-  ["editprotected-admin",
-  "editprotected-autoconfirmed",
-  "editprotected-bureaucrat",
+  ["editprotected-bureaucrat",
   "editprotected-staff",
   "editprotected-steward",
   "editprotected-user"],
 "GroupPermissions":
   {"protectedpageeditor":
-    {"editprotected-autoconfirmed":true,
-    "editprotected-staff":true}
+    {"editprotected-staff":true,
+    "editsemiprotected":true}
   },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
