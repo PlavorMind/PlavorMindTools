@@ -99,25 +99,22 @@
 "grouppage-protectedpageeditor":"Special:ListUsers/protectedpageeditor",
 "grouppage-staff":"Special:ListUsers/staff",
 "grouppage-steward":"Special:ListUsers/steward",
-"protect-level-autoconfirmed-access":"자동 인증된 사용자만 허용",
-
+"protect-level-editprotected-admin":"관리자만 허용",
+"protect-level-editprotected-autoconfirmed":"자동 인증된 사용자만 허용",
 "protect-level-editprotected-bureaucrat":"사무관만 허용",
 "protect-level-editprotected-staff":"스태프만 허용",
 "protect-level-editprotected-steward":"사무장만 허용",
 "protect-level-editprotected-user":"로그인한 사용자만 허용",
-
-"protect-level-steward-access":"사무장만 허용",
-"restriction-level-autoconfirmed-access":"자동 인증 필요",
-
+"restriction-level-editprotected-admin":"관리자 권한 필요",
+"restriction-level-editprotected-autoconfirmed":"자동 인증 필요",
 "restriction-level-editprotected-bureaucrat":"사무관 권한 필요",
 "restriction-level-editprotected-staff":"스태프 권한 필요",
 "restriction-level-editprotected-steward":"사무장 권한 필요",
 "restriction-level-editprotected-user":"로그인 필요",
-
-"restriction-level-steward-access":"사무장 권한 필요",
 "restriction-delete":"삭제",
 "restriction-protect":"보호 설정 변경",
-
+"right-editprotected-admin":"\"관리자만 허용\"으로 보호된 문서 편집",
+"right-editprotected-autoconfirmed":"\"자동 인증된 사용자만 허용\"으로 보호된 문서 편집",
 "right-editprotected-bureaucrat":"\"사무관만 허용\"으로 보호된 문서 편집",
 "right-editprotected-staff":"\"스태프만 허용\"으로 보호된 문서 편집",
 "right-editprotected-steward":"\"사무장만 허용\"으로 보호된 문서 편집",
