@@ -78,6 +78,8 @@ public static function onMessageCache_get(&$lckey)
   "recentchanges",
   "recreate-moveddeleted-warn",
   "right-editinterface",
+  "semiprotectedpagemovewarning",
+  "semiprotectedpagewarning",
   "sp-contributions-blocked-notice",
   "sp-contributions-blocked-notice-anon",
   "talk",
