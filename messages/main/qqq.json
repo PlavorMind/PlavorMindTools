@@ -67,6 +67,8 @@
 "pmtmsg-recentchanges":"Message to replace recentchanges message",
 "pmtmsg-recreate-moveddeleted-warn":"Message to replace recreate-moveddeleted-warn message",
 "pmtmsg-right-editinterface":"Message to replace right-editinterface message",
+"pmtmsg-semiprotectedpagemovewarning":"Message to replace semiprotectedpagemovewarning message",
+"pmtmsg-semiprotectedpagewarning":"Message to replace semiprotectedpagewarning message",
 "pmtmsg-sp-contributions-blocked-notice":"Message to replace sp-contributions-blocked-notice message",
 "pmtmsg-sp-contributions-blocked-notice-anon":"Message to replace sp-contributions-blocked-notice-anon message",
 "pmtmsg-talk":"Message to replace talk message",
