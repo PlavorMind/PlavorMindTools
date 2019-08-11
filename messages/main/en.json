@@ -67,6 +67,8 @@
 "pmtmsg-recentchanges":"Recent changes",
 "pmtmsg-recreate-moveddeleted-warn":"<div class='notification is-warning'>You are recreating a page that was previously moved or deleted.</div>",
 "pmtmsg-right-editinterface":"Edit pages in [[Special:AllPages/MediaWiki:|{{ns:Mediawiki}}]] namespace",
+"pmtmsg-semiprotectedpagemovewarning":"<div class='notification is-warning'>You are moving a semi-protected page.</div>",
+"pmtmsg-semiprotectedpagewarning":"<div class='notification is-warning'>You are editing a semi-protected page.</div>",
 "pmtmsg-sp-contributions-blocked-notice":"<div class='notification is-danger'>This user is blocked.</div>",
 "pmtmsg-sp-contributions-blocked-notice-anon":"<div class='notification is-danger'>This IP address is blocked.</div>",
 "pmtmsg-talk":"Talk",
