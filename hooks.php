@@ -6,12 +6,12 @@ class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out, Skin $skin)
   {global $wgPMTMBoxCSSExemptSkins;
   if (!in_array($skin->getSkinName(),$wgPMTMBoxCSSExemptSkins))
-    {$out->addModuleStyles(["bulma_notification"]);}
+    {$out->addModuleStyles(["messagebox"]);}
   }
 public static function onBeforePageDisplayMobile(OutputPage $out,Skin $sk)
   {global $wgPMTMBoxCSSExemptSkins;
   if (!in_array($sk->getSkinName(),$wgPMTMBoxCSSExemptSkins))
-    {$out->addModuleStyles(["bulma_notification"]);}
+    {$out->addModuleStyles(["messagebox"]);}
   }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
