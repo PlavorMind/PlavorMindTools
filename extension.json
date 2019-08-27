@@ -40,11 +40,11 @@
   {"localBasePath":"resources",
   "remoteExtPath":"PlavorMindTools/resources"},
 "ResourceModules":
-  {"bulma_notification":
+  {"messagebox":
     {"styles":
-      {"bulma_notification.css":
+      {"messagebox.css":
         {"media":"screen"},
-      "bulma_notification_fix.css":
+      "messagebox_bulma_fix.css":
         {"media":"screen"}
       }
     }
