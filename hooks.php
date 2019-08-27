@@ -1,12 +1,18 @@
 <?php
 if (!defined("MEDIAWIKI"))
-{exit("You don't have permission to access to this page.");}
+{exit("This is not a valid entry point.");}
 
 class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out, Skin $skin)
-  {$out->addModuleStyles(["bulma_notification"]);}
+  {global $wgPMTMBoxCSSExemptSkins;
+  if (!in_array($skin->getSkinName(),$wgPMTMBoxCSSExemptSkins))
+    {$out->addModuleStyles(["bulma_notification"]);}
+  }
 public static function onBeforePageDisplayMobile(OutputPage $out,Skin $sk)
-  {$out->addModuleStyles(["bulma_notification"]);}
+  {global $wgPMTMBoxCSSExemptSkins;
+  if (!in_array($sk->getSkinName(),$wgPMTMBoxCSSExemptSkins))
+    {$out->addModuleStyles(["bulma_notification"]);}
+  }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
   $msgtoreplace=
