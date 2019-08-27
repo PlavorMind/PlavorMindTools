@@ -6,7 +6,7 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"1.5",
+"version":"1.6",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
@@ -15,6 +15,12 @@
   "editprotected-staff",
   "editprotected-steward",
   "editprotected-user"],
+"config":
+  {"PMTMBoxCSSExemptSkins":
+    {"value":
+      ["plavorbuma"]
+    }
+  },
 "GroupPermissions":
   {"protectedpageeditor":
     {"editprotected-staff":true,
@@ -28,6 +34,8 @@
   {"PlavorMindTools":
     ["messages/main"]
   },
+"requires":
+  {"MediaWiki":">=1.34"},
 "ResourceFileModulePaths":
   {"localBasePath":"resources",
   "remoteExtPath":"PlavorMindTools/resources"},
@@ -40,7 +48,5 @@
         {"media":"screen"}
       }
     }
-  },
-"requires":
-  {"MediaWiki":">=1.34"}
+  }
 }
