@@ -17,7 +17,8 @@
   "editprotected-user"],
 "config":
   {"PMTMBoxCSSExemptSkins":
-    {"value":
+    {"description":"Array of skins to not apply message box CSS",
+    "value":
       ["plavorbuma"]
     }
   },
