@@ -5,13 +5,17 @@ if (!defined("MEDIAWIKI"))
 class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out, Skin $skin)
   {global $wgPMTMBoxCSSExemptSkins;
+  if ($skin->getSkinName()=="liberty")
+    {$out->addModuleStyles("plavormindtools_liberty");}
   if (!in_array($skin->getSkinName(),$wgPMTMBoxCSSExemptSkins))
-    {$out->addModuleStyles(["messagebox"]);}
+    {$out->addModuleStyles(["plavormindtools_messagebox"]);}
   }
 public static function onBeforePageDisplayMobile(OutputPage $out,Skin $sk)
   {global $wgPMTMBoxCSSExemptSkins;
+  if ($sk->getSkinName()=="liberty")
+    {$out->addModuleStyles("plavormindtools_liberty");}
   if (!in_array($sk->getSkinName(),$wgPMTMBoxCSSExemptSkins))
-    {$out->addModuleStyles(["messagebox"]);}
+    {$out->addModuleStyles(["plavormindtools_messagebox"]);}
   }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
