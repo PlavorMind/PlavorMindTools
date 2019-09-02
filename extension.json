@@ -41,9 +41,9 @@
   {"localBasePath":"resources",
   "remoteExtPath":"PlavorMindTools/resources"},
 "ResourceModules":
-  {"plavormindtools_liberty":
+  {"plavormindtools_liberty_fix":
     {"styles":
-      {"liberty.css":
+      {"liberty_fix.css":
         {"media":"screen"}
       }
     },
