@@ -11,12 +11,7 @@ class PlavorMindToolsHooks
     {$out->addModuleStyles(["plavormindtools_messagebox"]);}
   }
 public static function onBeforePageDisplayMobile(OutputPage $out,Skin $sk)
-  {global $wgPMTMBoxCSSExemptSkins;
-  if ($sk->getSkinName()=="liberty")
-    {$out->addModuleStyles("plavormindtools_liberty_fix");}
-  if (!in_array($sk->getSkinName(),$wgPMTMBoxCSSExemptSkins))
-    {$out->addModuleStyles(["plavormindtools_messagebox"]);}
-  }
+  {$out->addModuleStyles(["plavormindtools_messagebox"]);}
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
   $msgtoreplace=
