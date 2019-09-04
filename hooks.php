@@ -82,6 +82,7 @@ public static function onMessageCache_get(&$lckey)
   "protectedpagewarning",
   "recentchanges",
   "recreate-moveddeleted-warn",
+  "revertpage",
   "right-editinterface",
   "semiprotectedpagemovewarning",
   "semiprotectedpagewarning",
