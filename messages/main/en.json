@@ -66,6 +66,7 @@
 "pmtmsg-protectedpagewarning":"<div class='notification is-warning'>You are editing a protected page.</div>",
 "pmtmsg-recentchanges":"Recent changes",
 "pmtmsg-recreate-moveddeleted-warn":"<div class='notification is-warning'>You are recreating a page that was previously moved or deleted.</div>",
+"pmtmsg-revertpage":"Rolled back edits by [[User:$2|$2]] to last revision by [[User:$1|$1]]",
 "pmtmsg-right-editinterface":"Edit pages in [[Special:AllPages/MediaWiki:|{{ns:Mediawiki}}]] namespace",
 "pmtmsg-semiprotectedpagemovewarning":"<div class='notification is-warning'>You are moving a semi-protected page.</div>",
 "pmtmsg-semiprotectedpagewarning":"<div class='notification is-warning'>You are editing a semi-protected page.</div>",
