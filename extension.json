@@ -11,7 +11,8 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
-  ["editprotected-bureaucrat",
+  ["editprotected-admin",
+  "editprotected-bureaucrat",
   "editprotected-moderator",
   "editprotected-steward",
   "editprotected-user"],
