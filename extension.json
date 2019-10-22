@@ -6,30 +6,43 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"1.9",
+"version":"2.0",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
   ["editprotected-admin",
+  "editprotected-autoconfirmed",
   "editprotected-bureaucrat",
   "editprotected-moderator",
   "editprotected-steward",
   "editprotected-user"],
 "config":
-  {"PMTMBoxCSSExemptSkins":
+  {"PMTEnabledTools":
+    {"description":"Array of enabled tools",
+    "value":[]},
+  "PMTEnglishSystemUsers":
+    {"description":"Whether to always use English usernames for system users",
+    "value":false},
+  "PMTMBoxCSSExemptSkins":
     {"description":"Array of skins to not apply message box CSS",
     "value":
       ["plavorbuma"]
-    }
+    },
+  "PMTPlavorMindMessages":
+    {"description":"Whether to replace some messages with PlavorMind-specific messages",
+    "value":false}
   },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
-  "BeforePageDisplayMobile":"PlavorMindToolsHooks::onBeforePageDisplayMobile",
-  "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get"},
+  "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
+  "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown"},
 "MessagesDirs":
   {"PlavorMindTools":
-    ["messages/main"]
+    ["i18n/main",
+    "i18n/pmtmsg/abusefilter-systemusers",
+    "i18n/pmtmsg/core",
+    "i18n/pmtmsg/core-systemusers"]
   },
 "requires":
   {"MediaWiki":">=1.35"},
@@ -46,8 +59,6 @@
   "plavormindtools_messagebox":
     {"styles":
       {"messagebox.css":
-        {"media":"screen"},
-      "messagebox_bulma_fix.css":
         {"media":"screen"}
       }
     }
