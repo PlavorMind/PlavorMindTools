@@ -15,7 +15,12 @@ public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode,$wgPMTEnabledTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
   if (in_array("pmtmsg",$wgPMTEnabledTools))
     {$pmtmsg=
-    [//core
+    [//babel
+    "babel-footer",
+    "babel-footer-url",
+    "babel-url",
+
+    //core
     "aboutpage",
     "allmessages",
     "badaccess-group0",
