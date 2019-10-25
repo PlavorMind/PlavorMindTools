@@ -107,6 +107,9 @@ public static function onMessageCache_get(&$lckey)
     [//abusefilter-systemusers
     "abusefilter-blocker",
 
+    //babel-systemusers
+    "babel-autocreate-user",
+
     //core-systemusers
     "autochange-username",
     "double-redirect-fixer",
