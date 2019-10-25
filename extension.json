@@ -41,6 +41,7 @@
   {"PlavorMindTools":
     ["i18n/main",
     "i18n/pmtmsg/abusefilter-systemusers",
+    "i18n/pmtmsg/babel-systemusers",
     "i18n/pmtmsg/core",
     "i18n/pmtmsg/core-systemusers"]
   },
