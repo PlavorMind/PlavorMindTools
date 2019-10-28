@@ -6,7 +6,7 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"2.0",
+"version":"2.1",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
@@ -44,7 +44,8 @@
     "i18n/pmtmsg/babel",
     "i18n/pmtmsg/babel-systemusers",
     "i18n/pmtmsg/core",
-    "i18n/pmtmsg/core-systemusers"]
+    "i18n/pmtmsg/core-systemusers",
+    "i18n/pmtmsg/plavormindtools"]
   },
 "requires":
   {"MediaWiki":">=1.35"},
