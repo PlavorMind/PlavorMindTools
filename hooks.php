@@ -108,6 +108,19 @@ public static function onMessageCache_get(&$lckey)
         {$lckey="pmtmsg-".$lckey;}
       }
 
+    $plavormindmsg=
+    [//plavormindtools
+    "grouppage-steward"];
+    if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg))
+      {$cache=MessageCache::singleton();
+      if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
+        {$lckey="plavormind-".$lckey;}
+      }
+
+    $plavormindmsg_force=[];
+    if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg_force))
+      {$lckey="plavormind-".$lckey;}
+
     $systemusers=
     [//abusefilter-systemusers
     "abusefilter-blocker",
@@ -123,11 +136,6 @@ public static function onMessageCache_get(&$lckey)
     "usermessage-editor"];
     if ($wgPMTEnglishSystemUsers&&in_array($lckey,$systemusers))
       {$lckey="pmtmsg-".$lckey;}
-
-    $plavormindmsg=
-    [];
-    if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg))
-      {$lckey="plavormind-".$lckey;}
     }
   }
 public static function onTitleIsAlwaysKnown($title,&$result)
