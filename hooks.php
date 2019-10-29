@@ -6,6 +6,7 @@ if (!defined("MEDIAWIKI"))
 class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out,Skin $skin)
   {global $wgPMTMBoxCSSExemptSkins;
+  $out->addModuleStyles(["plavormindtools_main"]);
   if ($skin->getSkinName()=="liberty")
     {$out->addModuleStyles("plavormindtools_liberty_fix");}
   if (!in_array($skin->getSkinName(),$wgPMTMBoxCSSExemptSkins))
