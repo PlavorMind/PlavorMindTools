@@ -24,11 +24,6 @@
   "PMTEnglishSystemUsers":
     {"description":"Whether to always use English usernames for system users",
     "value":false},
-  "PMTMBoxCSSExemptSkins":
-    {"description":"Array of skins to not apply message box CSS",
-    "value":
-      ["plavorbuma"]
-    },
   "PMTPlavorMindMessages":
     {"description":"Whether to replace some messages with PlavorMind-specific messages",
     "value":false}
@@ -62,12 +57,6 @@
   "plavormindtools_main":
     {"styles":
       {"messagebox.css":
-        {"media":"screen"}
-      }
-    },
-  "plavormindtools_messagebox":
-    {"styles":
-      {"messagebox_bulma.css":
         {"media":"screen"}
       }
     }
