@@ -59,9 +59,15 @@
         {"media":"screen"}
       }
     },
-  "plavormindtools_messagebox":
+  "plavormindtools_main":
     {"styles":
       {"messagebox.css":
+        {"media":"screen"}
+      }
+    },
+  "plavormindtools_messagebox":
+    {"styles":
+      {"messagebox_bulma.css":
         {"media":"screen"}
       }
     }
