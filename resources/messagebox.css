@@ -1,0 +1,20 @@
+.messagebox
+{background-color: #e4d8ff;
+border: 1px solid #9933ff; /*PlavorMind color*/
+margin: 10px 0;
+padding: 1em;}
+.messagebox.blue
+{background-color: #d8e8ff;
+border-color: #3366cc;} /*OOUI progressive*/
+.messagebox.green
+{background-color: #ccfff4; /*Arbitrary color*/
+border-color: #00af89;} /*OOUI constructive*/
+.messagebox.orange
+{background-color: #ffe7ce;
+border-color: #ff5d00;} /*OOUI warning*/
+.messagebox.red
+{background-color: #ffdbdb;
+border-color: #dd3333;} /*OOUI destructive*/
+.messagebox.yellow
+{background-color: #fff9db;
+border-color: #f4c430;}
