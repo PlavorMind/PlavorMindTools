@@ -6,7 +6,7 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"2.1",
+"version":"2.2",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
@@ -51,12 +51,6 @@
   {"plavormindtools_liberty_fix":
     {"styles":
       {"liberty_fix.css":
-        {"media":"screen"}
-      }
-    },
-  "plavormindtools_main":
-    {"styles":
-      {"messagebox.css":
         {"media":"screen"}
       }
     }
