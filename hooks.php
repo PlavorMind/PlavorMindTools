@@ -98,7 +98,10 @@ public static function onMessageCache_get(&$lckey)
     "unprotectedarticle-comment",
     "userpage-userdoesnotexist",
     "userpage-userdoesnotexist-view",
-    "viewsource"];
+    "viewsource",
+    
+    //titleblacklist
+    "titleblacklist-warning"];
     if (in_array($lckey,$pmtmsg))
       {$cache=MessageCache::singleton();
       if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
