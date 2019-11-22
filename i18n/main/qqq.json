@@ -1,5 +1,9 @@
 {"plavormindtools-description":"Description of PlavorMindTools extension",
 
+"plavormindtools-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
+
+"right-editotheruserpages":"Description of editotheruserpages permission",
+
 "pmt-license-cc":"Translation of \"Creative Commons\"",
 "pmt-license-cc-4.0":"Name of CC license 4.0 version",
 "pmt-license-cc-by":"Translation of \"Attribution\"",
