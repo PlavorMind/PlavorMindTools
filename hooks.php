@@ -8,6 +8,16 @@ class PlavorMindToolsHooks
   {if ($skin->getSkinName()=="liberty")
     {$out->addModuleStyles("plavormindtools-liberty-fix");}
   }
+public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
+  {global $wgPMTEnabledTools;
+  if (in_array("protectuserpages",$wgPMTEnabledTools))
+    {if ($title->getNamespace()==NS_USER&&$action=="edit")
+      {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
+        {$result=["plavormindtools-cannotedituserpage"];
+        return false;}
+      }
+    }
+  }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode,$wgPMTEnabledTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
   if (in_array("pmtmsg",$wgPMTEnabledTools))
