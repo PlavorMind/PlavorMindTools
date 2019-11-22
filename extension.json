@@ -6,12 +6,13 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"2.3",
+"version":"2.4",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
-  ["editprotected-admin",
+  ["editotheruserpages",
+  "editprotected-admin",
   "editprotected-autoconfirmed",
   "editprotected-bureaucrat",
   "editprotected-moderator",
@@ -30,6 +31,7 @@
   },
 "Hooks":
   {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
+  "getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
   "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown"},
 "MessagesDirs":
