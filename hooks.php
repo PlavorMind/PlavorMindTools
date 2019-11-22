@@ -6,7 +6,7 @@ if (!defined("MEDIAWIKI"))
 class PlavorMindToolsHooks
 {public static function onBeforePageDisplay(OutputPage $out,Skin $skin)
   {if ($skin->getSkinName()=="liberty")
-    {$out->addModuleStyles("plavormindtools_liberty_fix");}
+    {$out->addModuleStyles("plavormindtools-liberty-fix");}
   }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode,$wgPMTEnabledTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
