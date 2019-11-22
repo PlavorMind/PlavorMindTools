@@ -1,5 +1,9 @@
 {"plavormindtools-description":"Provides tools for PlavorMind wikis",
 
+"plavormindtools-cannotedituserpage":"<div class='errorbox'>You cannot edit other users' user pages.</div>",
+
+"right-editotheruserpages":"Edit other users' user pages",
+
 "pmt-license-cc":"Creative Commons",
 "pmt-license-cc-4.0":"4.0 International",
 "pmt-license-cc-by":"Attribution",
