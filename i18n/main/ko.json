@@ -1,5 +1,9 @@
 {"plavormindtools-description":"PlavorMind 위키를 위한 도구를 제공합니다",
 
+"plavormindtools-cannotedituserpage":"<div class='errorbox'>다른 사용자의 사용자 문서를 편집할 수 없습니다.</div>",
+
+"right-editotheruserpages":"다른 사용자의 사용자 문서 편집",
+
 "pmt-license-cc":"크리에이티브 커먼즈",
 "pmt-license-cc-4.0":"4.0 국제",
 "pmt-license-cc-by":"저작자표시",
