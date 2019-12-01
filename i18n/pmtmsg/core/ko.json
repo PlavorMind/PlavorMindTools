@@ -17,7 +17,7 @@
 "pmtmsg-customjsonprotected":"<div class='errorbox'>다른 사용자의 개인 JSON 문서를 편집할 수 없습니다.</div>",
 "pmtmsg-disclaimerpage":"",
 "pmtmsg-editinginterface":"<div class='warningbox'>[[Special:AllPages/MediaWiki:|{{ns:Mediawiki}}]] 이름공간 내의 문서를 편집하고 있습니다.</div>",
-"pmtmsg-editingold":"<div class='warningbox'>이전 판을 기준으로 문서를 편집하고 있습니다.</div>",
+"pmtmsg-editingold":"이전 판을 기준으로 문서를 편집하고 있습니다.",
 "pmtmsg-excontent":"내용: \"$1\"",
 "pmtmsg-excontentauthor":"내용: \"$1\", [[User:$2|$2]]님만 편집한 문서",
 "pmtmsg-grouppage-autoconfirmed":"Special:ListGroupRights#autoconfirmed",
