@@ -47,6 +47,7 @@ public static function onMessageCache_get(&$lckey)
     "customjsonprotected",
     "disclaimerpage",
     "editinginterface",
+    "editingold",
     "excontent",
     "excontentauthor",
     "grouppage-autoconfirmed",
