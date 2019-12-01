@@ -17,7 +17,7 @@
 "pmtmsg-customjsonprotected":"<div class='errorbox'>You cannot edit other users' personal JSON pages.</div>",
 "pmtmsg-disclaimerpage":"",
 "pmtmsg-editinginterface":"<div class='warningbox'>You are editing a page in [[Special:AllPages/MediaWiki:|{{ns:Mediawiki}}]] namespace.</div>",
-"pmtmsg-editingold":"<div class='warningbox'>You are editing a page based on its old revision.</div>",
+"pmtmsg-editingold":"You are editing a page based on its old revision.",
 "pmtmsg-excontent":"Content was \"$1\"",
 "pmtmsg-excontentauthor":"Content was \"$1\", and only edited by [[User:$2|$2]]",
 "pmtmsg-grouppage-autoconfirmed":"Special:ListGroupRights#autoconfirmed",
