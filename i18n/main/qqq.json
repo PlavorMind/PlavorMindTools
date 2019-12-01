@@ -1,8 +1,8 @@
 {"plavormindtools-description":"Description of PlavorMindTools extension",
 
-"plavormindtools-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
-
 "right-editotheruserpages":"Description of editotheruserpages permission",
+
+"plavormindtools-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
 
 "pmt-license-cc":"Translation of \"Creative Commons\"",
 "pmt-license-cc-4.0":"Name of CC license 4.0 version",
@@ -13,7 +13,7 @@
 "pmt-template-cclicense":"Message to use on templates that indicates a CC license on file pages",
 "pmt-template-deleterequest":"Message to use on templates for a delete request",
 "pmt-template-unsigned":"Message to use on templates to notice about unsigned messages on talk pages",
-"pmt-template-usage":"Messages to use on \"Usage\" paragraph on template documentations",
+"pmt-template-usage":"\"Usage\" paragraph on template documentations",
 "pmt-template-usergroup":"Message to use on templates that indicates user groups on user pages",
 
 "group-admin":"Name of admin group",
