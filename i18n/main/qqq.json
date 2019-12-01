@@ -4,18 +4,6 @@
 
 "plavormindtools-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
 
-"pmt-license-cc":"Translation of \"Creative Commons\"",
-"pmt-license-cc-4.0":"Name of CC license 4.0 version",
-"pmt-license-cc-by":"Translation of \"Attribution\"",
-"pmt-license-cc-by-sa":"Translation of \"Attribution-ShareAlike\"",
-"pmt-license-cc0":"Translation of \"CC0 1.0 Universal\"",
-"pmt-template-cc0":"Message to use on templates that indicates a CC0 license on file pages",
-"pmt-template-cclicense":"Message to use on templates that indicates a CC license on file pages",
-"pmt-template-deleterequest":"Message to use on templates for a delete request",
-"pmt-template-unsigned":"Message to use on templates to notice about unsigned messages on talk pages",
-"pmt-template-usage":"\"Usage\" paragraph on template documentations",
-"pmt-template-usergroup":"Message to use on templates that indicates user groups on user pages",
-
 "group-admin":"Name of admin group",
 "group-admin-member":"Name of member of admin group",
 "group-admin.css":"CSS for admin group",
@@ -59,4 +47,17 @@
 "right-editprotected-bureaucrat":"Description of editprotected-bureaucrat permission",
 "right-editprotected-moderator":"Description of editprotected-moderator permission",
 "right-editprotected-steward":"Description of editprotected-steward permission",
-"right-editprotected-user":"Description of editprotected-user permission"}
+"right-editprotected-user":"Description of editprotected-user permission",
+
+"pmt-license-cc":"Translation of \"Creative Commons\"",
+"pmt-license-cc-4.0":"Name of CC license 4.0 version",
+"pmt-license-cc-by":"Translation of \"Attribution\"",
+"pmt-license-cc-by-sa":"Translation of \"Attribution-ShareAlike\"",
+"pmt-license-cc0":"Translation of \"CC0 1.0 Universal\"",
+"pmt-template-cc0":"Message to use on templates that indicates a CC0 license on file pages",
+"pmt-template-cclicense":"Message to use on templates that indicates a CC license on file pages",
+"pmt-template-deletionrequest":"Text of the template for deletion requests",
+"pmt-template-languages":"Message for templates that indicates the page is available in multiple languages",
+"pmt-template-unsigned":"Message for templates to notice about unsigned messages on talk pages",
+"pmt-template-usage":"\"Usage\" paragraph on template documentations",
+"pmt-template-usergroup":"Message to use on templates that indicates user groups on user pages"}
