@@ -11,13 +11,7 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"hooks.php"},
 "AvailableRights":
-  ["editotheruserpages",
-  "editprotected-admin",
-  "editprotected-autoconfirmed",
-  "editprotected-bureaucrat",
-  "editprotected-moderator",
-  "editprotected-steward",
-  "editprotected-user"],
+  ["editotheruserpages"],
 "config":
   {"PMTEnabledTools":
     {"description":"Array of enabled tools",
