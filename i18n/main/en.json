@@ -60,4 +60,4 @@
 "pmt-template-languages":"Languages",
 "pmt-template-unsigned":"Another user added signature to [[User:$1|$1]]'s unsigned message.",
 "pmt-template-usage":"Usage",
-"pmt-template-usergroup":"This user is a(n) [[{{int:grouppage-$1}}|{{int:group-$1-member}}]].<br>You can verify it on [[Special:UserRights/{{ROOTPAGENAME}}|User rights]] page."}
+"pmt-template-usergroup":"This user is in [[{{int:grouppage-$1}}|{{int:group-$1}}]] group.<br>You can verify it on [[Special:UserRights/{{ROOTPAGENAME}}|User rights]] page."}
