@@ -60,4 +60,4 @@
 "pmt-template-languages":"언어",
 "pmt-template-unsigned":"[[User:$1|$1]]님이 서명을 하지 않아 다른 사용자가 추가하였습니다.",
 "pmt-template-usage":"사용 방법",
-"pmt-template-usergroup":"이 사용자는 [[{{int:grouppage-$1}}|{{int:group-$1-member}}]]입니다.<br>[[Special:UserRights/{{ROOTPAGENAME}}|사용자 권한]] 문서에서 확인할 수 있습니다."}
+"pmt-template-usergroup":"이 사용자는 [[{{int:grouppage-$1}}|{{int:group-$1}}]] 그룹에 속합니다.<br>[[Special:UserRights/{{ROOTPAGENAME}}|사용자 권한]] 문서에서 확인할 수 있습니다."}
