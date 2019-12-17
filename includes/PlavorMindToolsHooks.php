@@ -9,8 +9,8 @@ class PlavorMindToolsHooks
     {$out->addModuleStyles("plavormindtools-liberty-fix");}
   }
 public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
-  {global $wgPMTEnabledTools;
-  if (in_array("protectuserpages",$wgPMTEnabledTools))
+  {global $wgPMTEnableTools;
+  if ($wgPMTEnableTools["protectuserpages"])
     {if ($title->getNamespace()==NS_USER&&$action=="edit")
       {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
         {$result=["plavormindtools-cannotedituserpage"];
@@ -19,8 +19,8 @@ public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
     }
   }
 public static function onMessageCache_get(&$lckey)
-  {global $wgLanguageCode,$wgPMTEnabledTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
-  if (in_array("pmtmsg",$wgPMTEnabledTools))
+  {global $wgLanguageCode,$wgPMTEnableTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
+  if ($wgPMTEnableTools["pmtmsg"])
     {$pmtmsg=
     [//babel
     "babel-footer",
@@ -150,8 +150,8 @@ public static function onMessageCache_get(&$lckey)
     }
   }
 public static function onTitleIsAlwaysKnown($title,&$result)
-  {global $wgPMTEnabledTools;
-  if (in_array("bluecategorylinks",$wgPMTEnabledTools))
+  {global $wgPMTEnableTools;
+  if ($wgPMTEnableTools["bluecategorylinks"])
     {if ($title->getNamespace()==NS_CATEGORY)
       {$result=true;}
     }
