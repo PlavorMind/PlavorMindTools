@@ -23,7 +23,7 @@
 "grouppage-admin":"Special:ListUsers/admin",
 "grouppage-moderator":"Special:ListUsers/moderator",
 "grouppage-protectedpageeditor":"Special:ListUsers/protectedpageeditor",
-"grouppage-steward":"Special:ListUsers/steward",
+"grouppage-steward":"Special:GlobalUsers/steward",
 "protect-level-editprotected":"{{int:protect-level-editprotected-admin}}",
 "protect-level-editprotected-admin":"관리자만 허용",
 "protect-level-editprotected-autoconfirmed":"자동 인증된 사용자만 허용",
