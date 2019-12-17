@@ -1,5 +1,5 @@
 # PlavorMindTools
-**PlavorMindTools** is an extension for MediaWiki to provide tools for PlavorMind wikis.
+**PlavorMindTools** is extension for MediaWiki to provide tools for PlavorMind wikis.
 ## Installation
 1. Download this extension.
 1. Add this to `LocalSettings.php` file:
