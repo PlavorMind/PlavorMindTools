@@ -6,16 +6,20 @@
 "license-name":"AGPL-3.0-or-later",
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"2.4",
+"version":"2.5",
 
 "AutoloadClasses":
-  {"PlavorMindToolsHooks":"hooks.php"},
+  {"PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php"},
 "AvailableRights":
   ["editotheruserpages"],
 "config":
-  {"PMTEnabledTools":
+  {"PMTEnableTools":
     {"description":"Array of enabled tools",
-    "value":[]},
+    "value":
+      {"bluecategorylinks":false,
+      "pmtmsg":false,
+      "protectuserpages":false}
+    },
   "PMTEnglishSystemUsers":
     {"description":"Whether to always use English usernames for system users",
     "value":false},
@@ -30,7 +34,7 @@
   "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown"},
 "MessagesDirs":
   {"PlavorMindTools":
-    ["i18n/main",
+    ["i18n",
     "i18n/pmtmsg/abusefilter-systemusers",
     "i18n/pmtmsg/babel",
     "i18n/pmtmsg/babel-systemusers",
