@@ -110,7 +110,7 @@ public static function onMessageCache_get(&$lckey)
     "userpage-userdoesnotexist",
     "userpage-userdoesnotexist-view",
     "viewsource",
-    
+
     //titleblacklist
     "titleblacklist-warning"];
     if (in_array($lckey,$pmtmsg))
@@ -119,9 +119,7 @@ public static function onMessageCache_get(&$lckey)
         {$lckey="pmtmsg-".$lckey;}
       }
 
-    $plavormindmsg=
-    [//plavormindtools
-    "grouppage-steward"];
+    $plavormindmsg=[];
     if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg))
       {$cache=MessageCache::singleton();
       if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
