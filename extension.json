@@ -14,17 +14,17 @@
   ["editotheruserpages"],
 "config":
   {"PMTEnableTools":
-    {"description":"Array of enabled tools",
+    {"description":"Which tools should be enabled",
     "value":
       {"bluecategorylinks":false,
       "pmtmsg":false,
       "protectuserpages":false}
     },
   "PMTEnglishSystemUsers":
-    {"description":"Whether to always use English usernames for system users",
+    {"description":"Whether to always use English usernames for system users (requires pmtmsg tool)",
     "value":false},
   "PMTPlavorMindMessages":
-    {"description":"Whether to replace some messages with PlavorMind-specific messages",
+    {"description":"Whether to replace some messages with PlavorMind-specific messages (requires pmtmsg tool)",
     "value":false}
   },
 "Hooks":
