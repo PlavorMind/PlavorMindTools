@@ -15,6 +15,7 @@ wfLoadExtension("PlavorMindTools");
 * Default value of `$wgPMTEnableTools`:
 ```php
 ["bluecategorylinks"=>false,
+"noactionsonnoneditable"=>false,
 "pmtmsg"=>false,
 "protectuserpages"=>false]
 ```
