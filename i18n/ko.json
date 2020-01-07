@@ -2,7 +2,9 @@
 
 "right-editotheruserpages":"다른 사용자의 사용자 문서 편집",
 
+"plavormindtools-cannotdeletecannotedit":"<div class='errorbox'>편집할 수 없는 문서를 삭제할 수 없습니다.</div>",
 "plavormindtools-cannotedituserpage":"<div class='errorbox'>다른 사용자의 사용자 문서를 편집할 수 없습니다.</div>",
+"plavormindtools-cannotmovecannotedit":"<div class='errorbox'>편집할 수 없는 문서를 이동할 수 없습니다.</div>",
 
 "group-admin":"관리자",
 "group-admin-member":"관리자",
@@ -52,7 +54,7 @@
 "pmt-license-cc":"크리에이티브 커먼즈 $1",
 "pmt-license-cc-4.0":"4.0 국제",
 "pmt-license-cc-by":"저작자표시",
-"pmt-license-cc-by-sa":"저작자표시-동일조건변경허락",
+"pmt-license-cc-sa":"동일조건변경허락",
 "pmt-license-cc0":"CC0 1.0 보편적",
 "pmt-template-cclicense-name":"크리에이티브 커먼즈 $1 라이선스",
 "pmt-template-deletionrequest":"이 문서의 삭제가 요청되었습니다.<br>이유: $1",
