@@ -2,7 +2,9 @@
 
 "right-editotheruserpages":"Description of editotheruserpages permission",
 
+"plavormindtools-cannotdeletecannotedit":"Error message to display when the user tries to delete pages that they cannot edit",
 "plavormindtools-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
+"plavormindtools-cannotmovecannotedit":"Error message to display when the user tries to move pages that they cannot edit",
 
 "group-admin":"Name of admin group",
 "group-admin-member":"Name of member of admin group",
@@ -52,7 +54,7 @@
 "pmt-license-cc":"Name of Creative Commons license",
 "pmt-license-cc-4.0":"Name of Creative Commons license 4.0 version",
 "pmt-license-cc-by":"Name of Attribution clause of Creative Commons license",
-"pmt-license-cc-by-sa":"Translation of \"Attribution-ShareAlike\"",
+"pmt-license-cc-sa":"Name of ShareAlike clause of Creative Commons license",
 "pmt-license-cc0":"Translation of \"CC0 1.0 Universal\"",
 "pmt-template-cclicense-name":"Message for displaying name of the Creative Commons license on templates",
 "pmt-template-deletionrequest":"Text of the template for deletion requests",
