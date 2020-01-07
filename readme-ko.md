@@ -15,6 +15,7 @@ wfLoadExtension("PlavorMindTools");
 * `$wgPMTEnableTools`의 기본값:
 ```php
 ["bluecategorylinks"=>false,
+"noactionsonnoneditable"=>false,
 "pmtmsg"=>false,
 "protectuserpages"=>false]
 ```
