@@ -10,8 +10,17 @@ class PlavorMindToolsHooks
   }
 public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
   {global $wgPMTEnableTools;
+  if ($wgPMTEnableTools["noactionsonnoneditable"])
+    {//$action should be checked first to avoid "Allowed memory size of N bytes exhausted" error
+    if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
+      {$result=["plavormindtools-cannotdeletecannotedit"];
+      return false;}
+    if ($action=="move"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
+      {$result=["plavormindtools-cannotmovecannotedit"];
+      return false;}
+    }
   if ($wgPMTEnableTools["protectuserpages"])
-    {if ($title->getNamespace()==NS_USER&&$action=="edit")
+    {if ($action=="edit"&&$title->getNamespace()==NS_USER)
       {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
         {$result=["plavormindtools-cannotedituserpage"];
         return false;}
