@@ -17,6 +17,7 @@
     {"description":"Which tools should be enabled",
     "value":
       {"bluecategorylinks":false,
+      "noactionsonnoneditable":false,
       "pmtmsg":false,
       "protectuserpages":false}
     },
