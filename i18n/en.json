@@ -62,6 +62,7 @@
 "pmt-template-fileinfo-source":"Source",
 "pmt-template-languages":"Languages",
 "pmt-template-license-notice":"This file is licensed under the $1.",
+"pmt-template-license-seesummaryandfull":"See its [$1 summary] and [$2 full text] for details.",
 "pmt-template-unsigned":"Another user added signature to [[User:$1|$1]]'s unsigned message.",
 "pmt-template-usage":"Usage",
 "pmt-template-usergroup":"This user is in [[{{int:grouppage-$1}}|{{int:group-$1}}]] group.<br>You can verify it on [[Special:UserRights/{{ROOTPAGENAME}}|User rights]] page."}
