@@ -1,59 +1,44 @@
-{"manifest_version":2,
-"name":"PlavorMindTools",
-"author":"[http://exit.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
+{"name":"PlavorMindTools",
+"author":"[http://central.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
 
+"config":
+  {"PMTFeatureConfig":
+    {"description":"Configurations for features",
+    "value":
+      {"BlueCategoryLinks":
+        {"enable":false},
+      "NoActionsOnNonEditable":
+        {"enable":false,
+        "HideMoveTab":false},
+      "ReplaceInterfaceMessages":
+        {"enable":false,
+        "EnglishSystemUsers":false}
+      }
+    }
+  },
 "descriptionmsg":"plavormindtools-description",
 "license-name":"AGPL-3.0-or-later",
+"manifest_version":2,
+"requires":
+  {"MediaWiki":">=1.35"},
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"2.6",
+"version":"3.0",
 
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php"},
-"AvailableRights":
-  ["editotheruserpages"],
-"config":
-  {"PMTEnableTools":
-    {"description":"Which tools should be enabled",
-    "value":
-      {"bluecategorylinks":false,
-      "noactionsonnoneditable":false,
-      "pmtmsg":false,
-      "protectuserpages":false}
-    },
-  "PMTEnglishSystemUsers":
-    {"description":"Whether to always use English usernames for system users (requires pmtmsg tool)",
-    "value":false},
-  "PMTPlavorMindMessages":
-    {"description":"Whether to replace some messages with PlavorMind-specific messages (requires pmtmsg tool)",
-    "value":false}
-  },
 "Hooks":
-  {"BeforePageDisplay":"PlavorMindToolsHooks::onBeforePageDisplay",
-  "getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
+  {"getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
   "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown"},
 "MessagesDirs":
   {"PlavorMindTools":
     ["i18n",
-    "i18n/pmtmsg/abusefilter-systemusers",
-    "i18n/pmtmsg/babel",
-    "i18n/pmtmsg/babel-systemusers",
-    "i18n/pmtmsg/core",
-    "i18n/pmtmsg/core-systemusers",
-    "i18n/pmtmsg/titleblacklist"]
-  },
-"requires":
-  {"MediaWiki":">=1.35"},
-"ResourceFileModulePaths":
-  {"localBasePath":"resources",
-  "remoteExtPath":"PlavorMindTools/resources"},
-"ResourceModules":
-  {"plavormindtools-liberty-fix":
-    {"styles":
-      {"liberty-fix.css":
-        {"media":"screen"}
-      }
-    }
+    "i18n/additional",
+    "i18n/replaceinterfacemessages/abusefilter-englishonly",
+    "i18n/replaceinterfacemessages/babel-englishonly",
+    "i18n/replaceinterfacemessages/core",
+    "i18n/replaceinterfacemessages/core-englishonly",
+    "i18n/replaceinterfacemessages/titleblacklist"]
   }
 }

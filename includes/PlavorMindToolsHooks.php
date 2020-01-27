@@ -4,40 +4,27 @@ if (!defined("MEDIAWIKI"))
 {exit("This is not a valid entry point.");}
 
 class PlavorMindToolsHooks
-{public static function onBeforePageDisplay(OutputPage $out,Skin $skin)
-  {if ($skin->getSkinName()=="liberty")
-    {$out->addModuleStyles("plavormindtools-liberty-fix");}
-  }
-public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
-  {global $wgPMTEnableTools;
-  if ($wgPMTEnableTools["noactionsonnoneditable"])
-    {//$action should be checked first to avoid "Allowed memory size of N bytes exhausted" error
-    if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
+{public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
+  {global $wgPMTFeatureConfig;
+  if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["enable"])
+    {if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
       {$result=["plavormindtools-cannotdeletecannotedit"];
       return false;}
-    if ($action=="move"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
+    if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["HideMoveTab"]&&$action=="move"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
       {$result=["plavormindtools-cannotmovecannotedit"];
       return false;}
     }
-  if ($wgPMTEnableTools["protectuserpages"])
-    {if ($action=="edit"&&$title->getNamespace()==NS_USER)
-      {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
-        {$result=["plavormindtools-cannotedituserpage"];
-        return false;}
-      }
-    }
   }
 public static function onMessageCache_get(&$lckey)
-  {global $wgLanguageCode,$wgPMTEnableTools,$wgPMTEnglishSystemUsers,$wgPMTPlavorMindMessages;
-  if ($wgPMTEnableTools["pmtmsg"])
-    {$pmtmsg=
-    [//babel
+  {global $wgLanguageCode,$wgPMTFeatureConfig;
+  if ($wgPMTFeatureConfig["ReplaceInterfaceMessages"]["enable"])
+    {$messages=
+    [//babel-englishonly
     "babel-footer",
     "babel-footer-url",
     "babel-url",
 
     //core
-    "aboutpage",
     "allmessages",
     "badaccess-group0",
     "badaccess-groups",
@@ -54,17 +41,10 @@ public static function onMessageCache_get(&$lckey)
     "customcssprotected",
     "customjsprotected",
     "customjsonprotected",
-    "disclaimerpage",
     "editinginterface",
     "editingold",
     "excontent",
     "excontentauthor",
-    "grouppage-autoconfirmed",
-    "grouppage-bot",
-    "grouppage-bureaucrat",
-    "grouppage-interface-admin",
-    "grouppage-sysop",
-    "grouppage-user",
     "infiniteblock",
     "listfiles-userdoesnotexist",
     "listgrouprights",
@@ -90,7 +70,6 @@ public static function onMessageCache_get(&$lckey)
     "nstab-project",
     "permissionserrorstext",
     "permissionserrorstext-withaction",
-    "privacypage",
     "protect-default",
     "protect-fallback",
     "protect-legend",
@@ -112,7 +91,6 @@ public static function onMessageCache_get(&$lckey)
     "sp-contributions-blocked-notice-anon",
     "talk",
     "titleprotectedwarning",
-    "translateinterface",
     "undo-summary",
     "unprotect",
     "unprotectedarticle-comment",
@@ -120,45 +98,43 @@ public static function onMessageCache_get(&$lckey)
     "userpage-userdoesnotexist-view",
     "viewsource",
 
+    //core-englishonly
+    "aboutpage",
+    "disclaimerpage",
+    "grouppage-autoconfirmed",
+    "grouppage-bot",
+    "grouppage-bureaucrat",
+    "grouppage-interface-admin",
+    "grouppage-sysop",
+    "grouppage-user",
+    "privacypage",
+    "translateinterface",
+
     //titleblacklist
     "titleblacklist-warning"];
-    if (in_array($lckey,$pmtmsg))
-      {$cache=MessageCache::singleton();
-      if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
-        {$lckey="pmtmsg-".$lckey;}
-      }
-
-    $plavormindmsg=[];
-    if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg))
-      {$cache=MessageCache::singleton();
-      if (!($cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode)))
-        {$lckey="plavormind-".$lckey;}
-      }
-
-    $plavormindmsg_force=[];
-    if ($wgPMTPlavorMindMessages&&in_array($lckey,$plavormindmsg_force))
-      {$lckey="plavormind-".$lckey;}
-
     $systemusers=
-    [//abusefilter-systemusers
+    [//abusefilter-englishonly
     "abusefilter-blocker",
 
-    //babel-systemusers
+    //babel-englishonly
     "babel-autocreate-user",
 
-    //core-systemusers
+    //core-englishonly
     "autochange-username",
     "double-redirect-fixer",
     "proxyblocker",
     "spambot_username",
     "usermessage-editor"];
-    if ($wgPMTEnglishSystemUsers&&in_array($lckey,$systemusers))
-      {$lckey="pmtmsg-".$lckey;}
+    $cache=MessageCache::singleton();
+    if ($wgPMTFeatureConfig["ReplaceInterfaceMessages"]["EnglishSystemUsers"]&&in_array($lckey,$systemusers))
+      {$lckey="rim-systemuser-".$lckey;}
+    elseif (in_array($lckey,$messages)&&!$cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode))
+      {$lckey="rim-".$lckey;}
     }
   }
 public static function onTitleIsAlwaysKnown($title,&$result)
-  {global $wgPMTEnableTools;
-  if ($wgPMTEnableTools["bluecategorylinks"])
+  {global $wgPMTFeatureConfig;
+  if ($wgPMTFeatureConfig["BlueCategoryLinks"]["enable"])
     {if ($title->getNamespace()==NS_CATEGORY)
       {$result=true;}
     }

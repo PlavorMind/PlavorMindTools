@@ -1,0 +1,16 @@
+{"rim-aboutpage":"Message to replace aboutpage message",
+"rim-disclaimerpage":"Message to replace disclaimerpage message",
+"rim-grouppage-autoconfirmed":"Message to replace grouppage-autoconfirmed message",
+"rim-grouppage-bot":"Message to replace grouppage-bot message",
+"rim-grouppage-bureaucrat":"Message to replace grouppage-bureaucrat message",
+"rim-grouppage-interface-admin":"Message to replace grouppage-interface-admin message",
+"rim-grouppage-sysop":"Message to replace grouppage-sysop message",
+"rim-grouppage-user":"Message to replace grouppage-user message",
+"rim-privacypage":"Message to replace privacypage message",
+"rim-translateinterface":"Message to replace translateinterface message",
+
+"rim-systemuser-autochange-username":"System user",
+"rim-systemuser-double-redirect-fixer":"System user",
+"rim-systemuser-proxyblocker":"System user",
+"rim-systemuser-spambot_username":"System user",
+"rim-systemuser-usermessage-editor":"System user"}

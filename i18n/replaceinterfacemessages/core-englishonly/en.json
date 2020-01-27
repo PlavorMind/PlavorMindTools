@@ -1,0 +1,16 @@
+{"rim-aboutpage":"",
+"rim-disclaimerpage":"",
+"rim-grouppage-autoconfirmed":"Special:ListGroupRights#autoconfirmed",
+"rim-grouppage-bot":"Special:ListUsers/bot",
+"rim-grouppage-bureaucrat":"Special:ListUsers/bureaucrat",
+"rim-grouppage-interface-admin":"Special:ListUsers/interface-admin",
+"rim-grouppage-sysop":"Special:ListUsers/sysop",
+"rim-grouppage-user":"Special:ListUsers",
+"rim-privacypage":"",
+"rim-translateinterface":"",
+
+"rim-systemuser-autochange-username":"MediaWiki automatic change",
+"rim-systemuser-double-redirect-fixer":"Redirect fixer",
+"rim-systemuser-proxyblocker":"Proxy blocker",
+"rim-systemuser-spambot_username":"MediaWiki spam cleanup",
+"rim-systemuser-usermessage-editor":"System messenger"}
