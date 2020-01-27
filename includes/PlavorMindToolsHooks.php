@@ -8,10 +8,10 @@ class PlavorMindToolsHooks
   {global $wgPMTFeatureConfig;
   if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["enable"])
     {if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
-      {$result=["plavormindtools-cannotdeletecannotedit"];
+      {$result=["noactionsonnoneditable-cannotdeletecannotedit"];
       return false;}
     if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["HideMoveTab"]&&$action=="move"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
-      {$result=["plavormindtools-cannotmovecannotedit"];
+      {$result=["noactionsonnoneditable-cannotmovecannotedit"];
       return false;}
     }
   }
