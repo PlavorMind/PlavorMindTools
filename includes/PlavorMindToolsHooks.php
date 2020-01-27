@@ -75,13 +75,11 @@ public static function onMessageCache_get(&$lckey)
     "nocreatetext",
     "nstab-help",
     "nstab-mediawiki",
-    "nstab-project",
     "permissionserrorstext",
     "permissionserrorstext-withaction",
     "protect-default",
     "protect-fallback",
     "protect-summary-cascade",
-    "protect-summary-desc",
     "protect-unchain-permissions",
     "protectedarticle-comment",
     "protectedinterface",
@@ -114,7 +112,9 @@ public static function onMessageCache_get(&$lckey)
     "grouppage-interface-admin",
     "grouppage-sysop",
     "grouppage-user",
+    "nstab-project",
     "privacypage",
+    "protect-summary-desc",
     "translateinterface",
 
     //titleblacklist
