@@ -3,7 +3,6 @@
 
 "plavormindtools-description":"PlavorMind 위키를 위한 유용한 기능을 제공합니다",
 
-"manageownuserpages-cannotedituserpage":"<div class='errorbox'>다른 사용자의 사용자 문서를 편집할 수 없습니다.</div>",
-
 "noactionsonnoneditable-cannotdeletecannotedit":"<div class='errorbox'>편집할 수 없는 문서를 삭제할 수 없습니다.</div>",
-"noactionsonnoneditable-cannotmovecannotedit":"<div class='errorbox'>편집할 수 없는 문서를 이동할 수 없습니다.</div>"}
+"noactionsonnoneditable-cannotmovecannotedit":"<div class='errorbox'>편집할 수 없는 문서를 이동할 수 없습니다.</div>",
+"userpageaccess-cannotedituserpage":"<div class='errorbox'>다른 사용자의 사용자 문서를 편집할 수 없습니다.</div>"}
