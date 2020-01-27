@@ -1,4 +1,6 @@
-{"right-editotheruserpages":"Edit other users' user pages",
+{"right-deleteownuserpages":"Delete own user pages",
+"right-editotheruserpages":"Edit other users' user pages",
+"right-moveownuserpages":"Move own user pages",
 
 "plavormindtools-description":"Provides useful features for PlavorMind wikis",
 
