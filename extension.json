@@ -31,8 +31,7 @@
   {"PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php"},
 "AvailableRights":
   ["deleteownuserpages",
-  "editotheruserpages",
-  "moveownuserpages"],
+  "editotheruserpages"],
 "Hooks":
   {"getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
