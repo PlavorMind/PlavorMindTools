@@ -30,11 +30,14 @@
 "AutoloadClasses":
   {"PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php"},
 "AvailableRights":
-  ["editotheruserpages"],
+  ["deleteownuserpages",
+  "editotheruserpages",
+  "moveownuserpages"],
 "Hooks":
   {"getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
   "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
-  "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown"},
+  "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown",
+  "TitleQuickPermissions":"PlavorMindToolsHooks::onTitleQuickPermissions"},
 "MessagesDirs":
   {"PlavorMindTools":
     ["i18n",
