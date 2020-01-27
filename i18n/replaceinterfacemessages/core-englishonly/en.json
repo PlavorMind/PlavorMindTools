@@ -6,7 +6,9 @@
 "rim-grouppage-interface-admin":"Special:ListUsers/interface-admin",
 "rim-grouppage-sysop":"Special:ListUsers/sysop",
 "rim-grouppage-user":"Special:ListUsers",
+"rim-nstab-project":"{{SITENAME}}",
 "rim-privacypage":"",
+"rim-protect-summary-desc":"$1: $2 ($3)",
 "rim-translateinterface":"",
 
 "rim-systemuser-autochange-username":"MediaWiki automatic change",
