@@ -1,4 +1,8 @@
-{"plavormindtools-description":"Provides useful features for PlavorMind wikis",
+{"right-editotheruserpages":"Edit other users' user pages",
+
+"plavormindtools-description":"Provides useful features for PlavorMind wikis",
+
+"manageownuserpages-cannotedituserpage":"<div class='errorbox'>You cannot edit other users' user pages.</div>",
 
 "noactionsonnoneditable-cannotdeletecannotedit":"<div class='errorbox'>You cannot delete pages you cannot edit.</div>",
 "noactionsonnoneditable-cannotmovecannotedit":"<div class='errorbox'>You cannot move pages you cannot edit.</div>"}
