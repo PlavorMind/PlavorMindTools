@@ -34,4 +34,4 @@ This feature also supports forcing some system users to always use English usern
 ]
 ```
 ---
-Languages: **English** 한국어
+Languages: **English** [한국어](https://github.com/PlavorMind/PlavorMindTools/blob/master/readme-ko.md)
