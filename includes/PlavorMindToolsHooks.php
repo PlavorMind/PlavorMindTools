@@ -7,7 +7,8 @@ class PlavorMindToolsHooks
 {public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
   {global $wgPMTFeatureConfig;
   if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["enable"])
-    {if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
+    {//$action should be checked first to avoid "Allowed memory size of N bytes exhausted" error
+    if ($action=="delete"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
       {$result=["noactionsonnoneditable-cannotdeletecannotedit"];
       return false;}
     if ($wgPMTFeatureConfig["NoActionsOnNonEditable"]["HideMoveTab"]&&$action=="move"&&!MediaWikiServices::getInstance()->getPermissionManager()->userCan("edit",$user,$title,"quick"))
@@ -15,8 +16,8 @@ class PlavorMindToolsHooks
       return false;}
     }
   if ($wgPMTFeatureConfig["ManageOwnUserPages"]["enable"])
-    {if ($title->getNamespace()==NS_USER)
-      {if ($action=="edit"&&!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
+    {if ($action=="edit"&&$title->getNamespace()==NS_USER)
+      {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
         {$result=["manageownuserpages-cannotedituserpage"];
         return false;}
       }
@@ -144,6 +145,18 @@ public static function onTitleIsAlwaysKnown($title,&$result)
   if ($wgPMTFeatureConfig["BlueCategoryLinks"]["enable"])
     {if ($title->getNamespace()==NS_CATEGORY)
       {$result=true;}
+    }
+  }
+public static function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
+  {global $wgPMTFeatureConfig;
+  if ($wgPMTFeatureConfig["ManageOwnUserPages"]["enable"])
+    {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
+    if ($title->getNamespace()==NS_USER&&$title->getRootText()==$user->getName())
+      {if ($action=="delete"&&!$PermissionManager->userHasRight($user,"delete")&&$PermissionManager->userHasRight($user,"deleteownuserpages")&&$PermissionManager->userCan("edit",$user,$title,"quick"))
+        {return false;}
+      if ($action=="move"&&!$PermissionManager->userHasRight($user,"move")&&$PermissionManager->userHasRight($user,"moveownuserpages")&&$PermissionManager->userCan("edit",$user,$title,"quick"))
+        {return false;}
+      }
     }
   }
 }
