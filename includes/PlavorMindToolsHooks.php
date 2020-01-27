@@ -14,6 +14,13 @@ class PlavorMindToolsHooks
       {$result=["noactionsonnoneditable-cannotmovecannotedit"];
       return false;}
     }
+  if ($wgPMTFeatureConfig["ManageOwnUserPages"]["enable"])
+    {if ($title->getNamespace()==NS_USER)
+      {if ($action=="edit"&&!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
+        {$result=["manageownuserpages-cannotedituserpage"];
+        return false;}
+      }
+    }
   }
 public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode,$wgPMTFeatureConfig;
