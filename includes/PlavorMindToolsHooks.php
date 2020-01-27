@@ -15,10 +15,10 @@ class PlavorMindToolsHooks
       {$result=["noactionsonnoneditable-cannotmovecannotedit"];
       return false;}
     }
-  if ($wgPMTFeatureConfig["ManageOwnUserPages"]["enable"])
+  if ($wgPMTFeatureConfig["UserPageAccess"]["enable"])
     {if ($action=="edit"&&$title->getNamespace()==NS_USER)
       {if (!($title->getRootText()==$user->getName()||MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
-        {$result=["manageownuserpages-cannotedituserpage"];
+        {$result=["userpageaccess-cannotedituserpage"];
         return false;}
       }
     }
@@ -149,7 +149,7 @@ public static function onTitleIsAlwaysKnown($title,&$result)
   }
 public static function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
   {global $wgPMTFeatureConfig;
-  if ($wgPMTFeatureConfig["ManageOwnUserPages"]["enable"])
+  if ($wgPMTFeatureConfig["UserPageAccess"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
     if ($title->getNamespace()==NS_USER&&$title->getRootText()==$user->getName())
       {//Moving own user pages cannot be allowed in this way
