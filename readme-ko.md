@@ -34,4 +34,4 @@
 ]
 ```
 ---
-언어: English **한국어**
+언어: [English](https://github.com/PlavorMind/PlavorMindTools/blob/master/readme.md) **한국어**
