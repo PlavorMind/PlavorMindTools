@@ -6,6 +6,7 @@
 "rim-grouppage-interface-admin":"Special:ListUsers/interface-admin",
 "rim-grouppage-sysop":"Special:ListUsers/sysop",
 "rim-grouppage-user":"Special:ListUsers",
+"rim-newsectionheaderdefaultlevel":"==$1==",
 "rim-nstab-project":"{{SITENAME}}",
 "rim-privacypage":"",
 "rim-protect-summary-desc":"$1: $2 ($3)",
