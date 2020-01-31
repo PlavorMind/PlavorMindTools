@@ -23,6 +23,12 @@ Adjust permissions for user pages
 This feature prevents users without `editotheruserpages` permission from editing other users' user pages.
 
 Also this feature allows users with `deleteownuserpages` permission to delete their own user pages.
+## Installation
+1. Download, rename the directory to `PlavorMindTools` and put it in `extensions` directory.
+1. Add the following to `LocalSettings.php` file:
+```php
+wfLoadExtension("PlavorMindTools");
+```
 ## Settings
 |Variable|Description|Default|
 |-|-|-|
@@ -41,5 +47,14 @@ Also this feature allows users with `deleteownuserpages` permission to delete th
   ["enable"=>false]
 ]
 ```
+## License
+Copyright (C) 2020 PlavorMind
+
+This software is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+
+You should have received [a copy of the GNU Affero General Public License](https://github.com/PlavorMind/PlavorMindTools/blob/master/LICENSE.txt) along with this software. If not, see <https://www.gnu.org/licenses/>.
+
 ---
 Languages: **English** [한국어](https://github.com/PlavorMind/PlavorMindTools/blob/master/readme-ko.md)
