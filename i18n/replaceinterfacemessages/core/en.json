@@ -7,7 +7,7 @@
 "rim-blocked-notice-logextract":"This user is blocked.",
 "rim-blockedtext":"<div class='errorbox'>$7 is blocked by $1 at $8. (#$5)<br>Reason: $2<br>Expiration: $6<br>IP address: $3</div>",
 "rim-cascadeprotected":"<div class='errorbox'>This page is protected.<br>This page is transcluded in the following cascade-protected {{PLURAL:$1|page|pages}}:<br>\n$2</div>",
-"rim-cascadeprotectedwarning":"<div class='warningbox'>You are editing a protected page.<br>This page is transcluded in the following cascade-protected {{PLURAL:$1|page|pages}}:</div>",
+"rim-cascadeprotectedwarning":"You are editing a protected page.<br>This page is transcluded in the following cascade-protected {{PLURAL:$1|page|pages}}:",
 "rim-contribslink":"contributions",
 "rim-contributions-userdoesnotexist":"User $1 does not exist.",
 "rim-customcssprotected":"<div class='errorbox'>You cannot edit other users' personal CSS pages.</div>",
