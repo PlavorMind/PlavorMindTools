@@ -7,7 +7,7 @@
 "rim-blocked-notice-logextract":"이 사용자는 차단되었습니다.",
 "rim-blockedtext":"<div class='errorbox'>$7님은 $8에 $1님에게 차단되었습니다. (#$5)<br>이유: $2<br>차단 만료: $6<br>IP 주소: $3</div>",
 "rim-cascadeprotected":"<div class='errorbox'>이 문서는 보호되어 있습니다.<br>이 문서는 연쇄 보호된 다음 문서에 끼워넣어져 있습니다:<br>\n$2</div>",
-"rim-cascadeprotectedwarning":"<div class='warningbox'>보호된 문서를 편집하고 있습니다.<br>이 문서는 연쇄 보호된 다음 문서에 끼워넣어져 있습니다:</div>",
+"rim-cascadeprotectedwarning":"보호된 문서를 편집하고 있습니다.<br>이 문서는 연쇄 보호된 다음 문서에 끼워넣어져 있습니다:",
 "rim-contribslink":"기여",
 "rim-contributions-userdoesnotexist":"$1 사용자는 존재하지 않습니다.",
 "rim-customcssprotected":"<div class='errorbox'>다른 사용자의 개인 CSS 문서를 편집할 수 없습니다.</div>",
