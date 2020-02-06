@@ -25,18 +25,24 @@
   {"MediaWiki":">=1.35"},
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"3.0",
+"version":"3.1",
 
 "AutoloadClasses":
-  {"PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php"},
+  {"BlueCategoryLinksHooks":"includes/BlueCategoryLinksHooks.php",
+  "NoActionsOnNonEditableHooks":"includes/NoActionsOnNonEditableHooks.php",
+  "PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php",
+  "ReplaceInterfaceMessagesHooks":"includes/ReplaceInterfaceMessagesHooks.php",
+  "UserPageAccessHooks":"includes/UserPageAccessHooks.php"},
 "AvailableRights":
   ["deleteownuserpages",
   "editotheruserpages"],
 "Hooks":
-  {"getUserPermissionsErrors":"PlavorMindToolsHooks::ongetUserPermissionsErrors",
-  "MessageCache::get":"PlavorMindToolsHooks::onMessageCache_get",
-  "TitleIsAlwaysKnown":"PlavorMindToolsHooks::onTitleIsAlwaysKnown",
-  "TitleQuickPermissions":"PlavorMindToolsHooks::onTitleQuickPermissions"},
+  {"getUserPermissionsErrors":
+    ["NoActionsOnNonEditableHooks::ongetUserPermissionsErrors",
+    "UserPageAccessHooks::ongetUserPermissionsErrors"],
+  "MessageCache::get":"ReplaceInterfaceMessagesHooks::onMessageCache_get",
+  "TitleIsAlwaysKnown":"BlueCategoryLinksHooks::onTitleIsAlwaysKnown",
+  "TitleQuickPermissions":"UserPageAccessHooks::onTitleQuickPermissions"},
 "MessagesDirs":
   {"PlavorMindTools":
     ["i18n",
