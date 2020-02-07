@@ -42,6 +42,7 @@
     ["NoActionsOnNonEditableHooks::ongetUserPermissionsErrors",
     "UserPageAccessHooks::ongetUserPermissionsErrors"],
   "MessageCache::get":"ReplaceInterfaceMessagesHooks::onMessageCache_get",
+  "MovePageCheckPermissions":"UserPageAccessHooks::onMovePageCheckPermissions",
   "TitleIsAlwaysKnown":"BlueCategoryLinksHooks::onTitleIsAlwaysKnown",
   "TitleQuickPermissions":"UserPageAccessHooks::onTitleQuickPermissions"},
 "MessagesDirs":
