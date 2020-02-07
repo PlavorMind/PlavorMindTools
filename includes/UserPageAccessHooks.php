@@ -14,6 +14,14 @@ class UserPageAccessHooks
       }
     }
   }
+public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitle,User $user,$reason,Status $status)
+  {global $wgPMTFeatureConfig;
+  if ($wgPMTFeatureConfig["UserPageAccess"]["enable"])
+    {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
+    if ($oldTitle->getNamespace()==NS_USER&&$oldTitle->getRootText()==$user->getName()&&!$PermissionManager->userHasRight($user,"move")&&$PermissionManager->userHasRight($user,"moveownuserpages")&&$status->hasMessage("movenotallowed")&&count($status->getErrorsArray())==1)
+      {$status->setOK(true);}
+    }
+  }
 public static function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
   {global $wgPMTFeatureConfig;
   if ($wgPMTFeatureConfig["UserPageAccess"]["enable"])
