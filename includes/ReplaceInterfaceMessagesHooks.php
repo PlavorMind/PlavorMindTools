@@ -76,6 +76,7 @@ class ReplaceInterfaceMessagesHooks
     "sp-contributions-blocked-notice",
     "sp-contributions-blocked-notice-anon",
     "talk",
+    "templatesused",
     "titleprotectedwarning",
     "undo-summary",
     "unprotect",
