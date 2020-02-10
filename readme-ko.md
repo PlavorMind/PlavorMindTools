@@ -22,7 +22,7 @@
 
 이 기능은 `editotheruserpages` 권한이 없는 사용자가 다른 사용자의 사용자 문서를 편집하는 것을 방지합니다.
 
-또한 이 기능은 `deleteownuserpages` 권한이 있는 사용자가 자신의 사용자 문서를 삭제하는 것을 허용합니다.
+또한 이 기능은 `deleteownuserpages` 권한이 있는 사용자가 자신의 사용자 문서를 삭제하는 것과 `moveownuserpages` 권한이 있는 사용자가 자신의 사용자 문서를 이동하는 것을 허용합니다.
 ## 설치
 1. 다운로드하고 디렉토리 이름을 `PlavorMindTools`로 변경한 후 `extensions` 디렉토리 안에 넣으세요.
 1. `LocalSettings.php` 파일에 다음을 추가하세요:
