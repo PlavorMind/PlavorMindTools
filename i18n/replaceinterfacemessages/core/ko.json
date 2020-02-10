@@ -61,6 +61,7 @@
 "rim-sp-contributions-blocked-notice":"이 사용자는 차단되었습니다.",
 "rim-sp-contributions-blocked-notice-anon":"이 IP 주소는 차단되었습니다.",
 "rim-talk":"토론",
+"rim-templatesused":"이 문서에 끼워넣어진 문서:",
 "rim-titleprotectedwarning":"보호된 문서를 만드려고 합니다.",
 "rim-undo-summary":"[[User:$2|$2]]님의 [[Special:Diff/$1|$1]]판 편집을 취소했습니다",
 "rim-unprotect":"보호 설정 변경",
