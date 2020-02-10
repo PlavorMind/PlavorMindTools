@@ -22,7 +22,7 @@ Adjust permissions for user pages
 
 This feature prevents users without `editotheruserpages` permission from editing other users' user pages.
 
-Also this feature allows users with `deleteownuserpages` permission to delete their own user pages.
+Also this feature allows users with `deleteownuserpages` permission to delete their own user pages and `moveownuserpages` permission to move their own user pages.
 ## Installation
 1. Download, rename the directory to `PlavorMindTools` and put it in `extensions` directory.
 1. Add the following to `LocalSettings.php` file:
