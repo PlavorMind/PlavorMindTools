@@ -54,7 +54,7 @@ Copyright (C) 2020 PlavorMind
 
 이 소프트웨어가 유용할 것이라는 희망에서 배포되었지만 어떠한 보증도 하지 않습니다; 상품성 또는 특정 목적에 대한 적합성에 대한 묵시적인 보증조차 하지 않습니다. 자세한 내용은 GNU Affero 공중 사용 허가서를 참조하세요.
 
-이 소프트웨어와 함께 [GNU 일반 공중 사용 허가서의 사본](https://github.com/PlavorMind/PlavorMindTools/blob/master/LICENSE.txt)을 받았을 것입니다. 그렇지 않다면 <https://www.gnu.org/licenses/>를 참조하세요.
+이 소프트웨어와 함께 [GNU Affero 일반 공중 사용 허가서의 사본](https://github.com/PlavorMind/PlavorMindTools/blob/master/LICENSE.txt)을 받았을 것입니다. 그렇지 않다면 <https://www.gnu.org/licenses/>를 참조하세요.
 
 ---
 언어: [English](https://github.com/PlavorMind/PlavorMindTools/blob/master/readme.md) **한국어**
