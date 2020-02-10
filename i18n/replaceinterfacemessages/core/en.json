@@ -61,6 +61,7 @@
 "rim-sp-contributions-blocked-notice":"This user is blocked.",
 "rim-sp-contributions-blocked-notice-anon":"This IP address is blocked.",
 "rim-talk":"Talk",
+"rim-templatesused":"Pages transcluded in this page:",
 "rim-titleprotectedwarning":"You are about to create a protected page.",
 "rim-undo-summary":"Undid revision [[Special:Diff/$1|$1]] by [[User:$2|$2]]",
 "rim-unprotect":"Change protection",
