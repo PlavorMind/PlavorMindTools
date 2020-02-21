@@ -30,7 +30,8 @@ public static function onTitleQuickPermissions($title,$user,$action,&$errors,$do
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
     if ($title->getNamespace()==NS_USER && $title->getRootText()==$user->getName())
-      {if ($action=="delete" && !$PermissionManager->userHasRight($user,"delete") && $PermissionManager->userHasRight($user,"deleteownuserpages") && $PermissionManager->userCan("edit",$user,$title,"quick"))
+      {//$action should be checked before $PermissionManager->userCan to avoid "Allowed memory size of N bytes exhausted" error
+      if ($action=="delete" && !$PermissionManager->userHasRight($user,"delete") && $PermissionManager->userHasRight($user,"deleteownuserpages") && $PermissionManager->userCan("edit",$user,$title,"quick"))
         {return false;}
       if ($action=="move" && !$PermissionManager->userHasRight($user,"move") && $PermissionManager->userHasRight($user,"moveownuserpages") && $PermissionManager->userCan("edit",$user,$title,"quick"))
         {return false;}
