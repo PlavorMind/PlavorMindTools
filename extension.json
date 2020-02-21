@@ -7,14 +7,14 @@
     "value":
       {"BlueCategoryLinks":
         {"enable":false},
-      "ManageOwnUserPages":
-        {"enable":false},
       "NoActionsOnNonEditable":
         {"enable":false,
         "HideMoveTab":false},
       "ReplaceInterfaceMessages":
         {"enable":false,
-        "EnglishSystemUsers":false}
+        "EnglishSystemUsers":false},
+      "UserPageAccess":
+        {"enable":false}
       }
     }
   },
@@ -25,7 +25,7 @@
   {"MediaWiki":">=1.35"},
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"3.1",
+"version":"3.2",
 
 "AutoloadClasses":
   {"BlueCategoryLinksHooks":"includes/BlueCategoryLinksHooks.php",
