@@ -1,11 +1,11 @@
 <?php
-if (!defined("MEDIAWIKI"))
-{exit("This is not a valid entry point.");}
+use MediaWiki\MediaWikiServices;
 
 class ReplaceInterfaceMessagesHooks
 {public static function onMessageCache_get(&$lckey)
-  {global $wgLanguageCode,$wgPMTFeatureConfig;
-  if ($wgPMTFeatureConfig["ReplaceInterfaceMessages"]["enable"])
+  {global $wgLanguageCode;
+  $config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["enable"])
     {$messages=
     [//babel-englishonly
     "babel-footer",
@@ -116,9 +116,9 @@ class ReplaceInterfaceMessagesHooks
     "spambot_username",
     "usermessage-editor"];
     $cache=MessageCache::singleton();
-    if ($wgPMTFeatureConfig["ReplaceInterfaceMessages"]["EnglishSystemUsers"]&&in_array($lckey,$systemusers))
+    if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["EnglishSystemUsers"] && in_array($lckey,$systemusers))
       {$lckey="rim-systemuser-".$lckey;}
-    elseif (in_array($lckey,$messages)&&!$cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode))
+    elseif (in_array($lckey,$messages) && !$cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode))
       {$lckey="rim-".$lckey;}
     }
   }
