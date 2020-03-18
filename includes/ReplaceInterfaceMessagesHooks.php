@@ -115,7 +115,7 @@ class ReplaceInterfaceMessagesHooks
     "proxyblocker",
     "spambot_username",
     "usermessage-editor"];
-    $cache=MessageCache::singleton();
+    $cache=MediaWikiServices::getInstance()->getMessageCache();
     if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["EnglishSystemUsers"] && in_array($lckey,$systemusers))
       {$lckey="rim-systemuser-".$lckey;}
     elseif (in_array($lckey,$messages) && !$cache->getMsgFromNamespace(ucfirst($lckey),$wgLanguageCode))
@@ -123,4 +123,3 @@ class ReplaceInterfaceMessagesHooks
     }
   }
 }
-?>
