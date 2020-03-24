@@ -2,7 +2,7 @@
 "author":"[http://central.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
 
 "config":
-  {"PMTFeatureConfig":
+  {"FeatureConfig":
     {"description":"Configurations for features",
     "public":true,
     "value":
@@ -19,6 +19,7 @@
       }
     }
   },
+"config_prefix":"wgPMT",
 "descriptionmsg":"plavormindtools-description",
 "license-name":"AGPL-3.0-or-later",
 "manifest_version":2,
@@ -26,7 +27,7 @@
   {"MediaWiki":">=1.35.0"},
 "type":"other",
 "url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"3.3",
+"version":"3.4",
 
 "AutoloadClasses":
   {"BlueCategoryLinksHooks":"includes/BlueCategoryLinksHooks.php",
@@ -34,10 +35,6 @@
   "PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php",
   "ReplaceInterfaceMessagesHooks":"includes/ReplaceInterfaceMessagesHooks.php",
   "UserPageAccessHooks":"includes/UserPageAccessHooks.php"},
-"AvailableRights":
-  ["deleteownuserpages",
-  "editotheruserpages",
-  "moveownuserpages"],
 "ConfigRegistry":
   {"plavormindtools":"GlobalVarConfig::newInstance"},
 "Hooks":
@@ -47,7 +44,8 @@
   "MessageCache::get":"ReplaceInterfaceMessagesHooks::onMessageCache_get",
   "MovePageCheckPermissions":"UserPageAccessHooks::onMovePageCheckPermissions",
   "TitleIsAlwaysKnown":"BlueCategoryLinksHooks::onTitleIsAlwaysKnown",
-  "TitleQuickPermissions":"UserPageAccessHooks::onTitleQuickPermissions"},
+  "TitleQuickPermissions":"UserPageAccessHooks::onTitleQuickPermissions",
+  "UserGetAllRights":"PlavorMindToolsHooks::onUserGetAllRights"},
 "MessagesDirs":
   {"PlavorMindTools":
     ["i18n",
