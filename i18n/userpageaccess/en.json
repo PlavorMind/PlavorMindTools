@@ -1,0 +1,6 @@
+{"right-deleteownuserpages":"Delete own user pages",
+"right-editotheruserpages":"Edit other users' user pages",
+"right-moveownuserpages":"Move own user pages",
+
+"userpageaccess-cannotedituserpage":"<div class='errorbox'>You cannot edit other users' user pages.</div>",
+"userpageaccess-description":"Adjusts permissions for user pages"}

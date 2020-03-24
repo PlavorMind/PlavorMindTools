@@ -1,0 +1,3 @@
+{"noactionsonnoneditable-cannotdeletecannotedit":"<div class='errorbox'>You cannot delete pages you cannot edit.</div>",
+"noactionsonnoneditable-cannotmovecannotedit":"<div class='errorbox'>You cannot move pages you cannot edit.</div>",
+"noactionsonnoneditable-description":"Prevents users from executing actions on pages they cannot edit"}
