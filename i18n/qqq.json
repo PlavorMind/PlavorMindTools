@@ -1,9 +1,1 @@
-{"right-deleteownuserpages":"Description of deleteownuserpages permission",
-"right-editotheruserpages":"Description of editotheruserpages permission",
-"right-moveownuserpages":"Description of moveownuserpages permission",
-
-"plavormindtools-description":"Description of PlavorMindTools extension",
-
-"noactionsonnoneditable-cannotdeletecannotedit":"Error message to display when the user tries to delete pages they cannot edit",
-"noactionsonnoneditable-cannotmovecannotedit":"Error message to display when the user tries to move pages they cannot edit",
-"userpageaccess-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages"}
+{"plavormindtools-description":"Description of PlavorMindTools extension"}
