@@ -50,10 +50,12 @@
   {"PlavorMindTools":
     ["i18n",
     "i18n/additional",
+    "i18n/noactionsonnoneditable",
     "i18n/replaceinterfacemessages/abusefilter-englishonly",
     "i18n/replaceinterfacemessages/babel-englishonly",
     "i18n/replaceinterfacemessages/core",
     "i18n/replaceinterfacemessages/core-englishonly",
-    "i18n/replaceinterfacemessages/titleblacklist"]
+    "i18n/replaceinterfacemessages/titleblacklist",
+    "i18n/userpageaccess"]
   }
 }
