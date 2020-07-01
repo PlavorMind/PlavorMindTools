@@ -1,7 +1,8 @@
 <?php
+namespace PlavorMind\PlavorMindTools;
 use MediaWiki\MediaWikiServices;
 
-class PlavorMindToolsHooks
+class Hooks
 {public static function onUserGetAllRights(&$rights)
   {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
