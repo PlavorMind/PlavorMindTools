@@ -1,7 +1,8 @@
 <?php
+namespace PlavorMind\PlavorMindTools\ReplaceInterfaceMessages;
 use MediaWiki\MediaWikiServices;
 
-class ReplaceInterfaceMessagesHooks
+class Hooks
 {public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
   $config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
