@@ -1,12 +1,13 @@
 <?php
+namespace PlavorMind\PlavorMindTools\UserPageAccess;
 use MediaWiki\MediaWikiServices;
 
-class UserPageAccessHooks
+class Hooks
 {public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
   {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
-    {if ($action=="edit" && $title->getNamespace()==NS_USER && !($title->getRootText()==$user->getName() || MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
+    {if ($action === "edit" && $title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
       {$result=["userpageaccess-cannotedituserpage"];
       return false;}
     }
@@ -17,12 +18,12 @@ public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitl
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
 
-    if ($oldTitle->getNamespace()==NS_USER
-    && $oldTitle->getRootText()==$user->getName()
+    if ($oldTitle->getNamespace() === NS_USER
+    && $oldTitle->getRootText() === $user->getName()
     && !$PermissionManager->userHasRight($user,"move")
     && $PermissionManager->userHasRight($user,"moveownuserpages")
     && $status->hasMessage("movenotallowed")
-    && count($status->getErrorsArray())==1)
+    && count($status->getErrorsArray()) === 1)
       {$status->setOK(true);}
     }
   }
@@ -34,7 +35,7 @@ public static function onTitleQuickPermissions($title,$user,$action,&$errors,$do
 
     $allowed_actions=["delete","move"];
     //$action should be checked before $PermissionManager->userCan to avoid "Allowed memory size of N bytes exhausted" error
-    if (in_array($action,$allowed_actions) && $title->getNamespace()==NS_USER && $title->getRootText()==$user->getName() && $PermissionManager->userCan("edit",$user,$title,"quick"))
+    if (in_array($action,$allowed_actions) && $title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $PermissionManager->userCan("edit",$user,$title,"quick"))
       {switch ($action)
         {default:
         if (!$PermissionManager->userHasRight($user,$action) && $PermissionManager->userHasRight($user,$action."ownuserpages"))
