@@ -4,7 +4,7 @@ use MediaWiki\MediaWikiServices;
 
 class Hooks
 {public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
-  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("noactionsonnoneditable");
 
   if ($config->get("PMTFeatureConfig")["NoActionsOnNonEditable"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
