@@ -50,16 +50,21 @@
   "TitleIsAlwaysKnown":"PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks::onTitleIsAlwaysKnown",
   "TitleQuickPermissions":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks::onTitleQuickPermissions",
   "UserGetAllRights":"PlavorMind\\PlavorMindTools\\Hooks::onUserGetAllRights"},
+"HookHandlers":
+  {},
 "MessagesDirs":
-  {"PlavorMindTools":
+  {"NoActionsOnNonEditable":
+    ["NoActionsOnNonEditable/i18n"],
+  "PlavorMindTools":
     ["i18n",
-    "i18n/additional",
-    "NoActionsOnNonEditable/i18n",
-    "ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
+    "i18n/additional"],
+  "ReplaceInterfaceMessages":
+    ["ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
     "ReplaceInterfaceMessages/i18n/babel-englishonly",
     "ReplaceInterfaceMessages/i18n/core",
     "ReplaceInterfaceMessages/i18n/core-englishonly",
-    "ReplaceInterfaceMessages/i18n/titleblacklist",
-    "UserPageAccess/i18n"]
+    "ReplaceInterfaceMessages/i18n/titleblacklist"],
+  "UserPageAccess":
+    ["UserPageAccess/i18n"]
   }
 }
