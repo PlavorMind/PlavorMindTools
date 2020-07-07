@@ -4,7 +4,7 @@ use MediaWiki\MediaWikiServices;
 
 class Hooks
 {public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
-  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("userpageaccess");
 
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {if ($action === "edit" && $title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || MediaWikiServices::getInstance()->getPermissionManager()->userHasRight($user,"editotheruserpages")))
@@ -13,7 +13,7 @@ class Hooks
     }
   }
 public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitle,User $user,$reason,Status $status)
-  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("userpageaccess");
 
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
@@ -28,7 +28,7 @@ public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitl
     }
   }
 public static function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
-  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("userpageaccess");
 
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {$PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
