@@ -29,33 +29,37 @@
 "url":"https://github.com/PlavorMind/PlavorMindTools",
 "version":"3.4",
 
-"AutoloadClasses":
-  {"BlueCategoryLinksHooks":"includes/BlueCategoryLinksHooks.php",
-  "NoActionsOnNonEditableHooks":"includes/NoActionsOnNonEditableHooks.php",
-  "PlavorMindToolsHooks":"includes/PlavorMindToolsHooks.php",
-  "ReplaceInterfaceMessagesHooks":"includes/ReplaceInterfaceMessagesHooks.php",
-  "UserPageAccessHooks":"includes/UserPageAccessHooks.php"},
+"AutoloadNamespaces":
+  {"PlavorMind\\PlavorMindTools\\":"includes/",
+  "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\":"BlueCategoryLinks/includes/",
+  "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\":"NoActionsOnNonEditable/includes/",
+  "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\":"ReplaceInterfaceMessages/includes/",
+  "PlavorMind\\PlavorMindTools\\UserPageAccess\\":"UserPageAccess/includes/"},
 "ConfigRegistry":
-  {"plavormindtools":"GlobalVarConfig::newInstance"},
+  {"bluecategorylinks":"GlobalVarConfig::newInstance",
+  "noactionsonnoneditable":"GlobalVarConfig::newInstance",
+  "plavormindtools":"GlobalVarConfig::newInstance",
+  "replaceinterfacemessages":"GlobalVarConfig::newInstance",
+  "userpageaccess":"GlobalVarConfig::newInstance"},
 "Hooks":
   {"getUserPermissionsErrors":
-    ["NoActionsOnNonEditableHooks::ongetUserPermissionsErrors",
-    "UserPageAccessHooks::ongetUserPermissionsErrors"],
-  "MessageCache::get":"ReplaceInterfaceMessagesHooks::onMessageCache_get",
-  "MovePageCheckPermissions":"UserPageAccessHooks::onMovePageCheckPermissions",
-  "TitleIsAlwaysKnown":"BlueCategoryLinksHooks::onTitleIsAlwaysKnown",
-  "TitleQuickPermissions":"UserPageAccessHooks::onTitleQuickPermissions",
-  "UserGetAllRights":"PlavorMindToolsHooks::onUserGetAllRights"},
+    ["PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks::ongetUserPermissionsErrors",
+    "PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks::ongetUserPermissionsErrors"],
+  "MessageCache::get":"PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks::onMessageCache_get",
+  "MovePageCheckPermissions":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks::onMovePageCheckPermissions",
+  "TitleIsAlwaysKnown":"PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks::onTitleIsAlwaysKnown",
+  "TitleQuickPermissions":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks::onTitleQuickPermissions",
+  "UserGetAllRights":"PlavorMind\\PlavorMindTools\\Hooks::onUserGetAllRights"},
 "MessagesDirs":
   {"PlavorMindTools":
     ["i18n",
     "i18n/additional",
-    "i18n/noactionsonnoneditable",
-    "i18n/replaceinterfacemessages/abusefilter-englishonly",
-    "i18n/replaceinterfacemessages/babel-englishonly",
-    "i18n/replaceinterfacemessages/core",
-    "i18n/replaceinterfacemessages/core-englishonly",
-    "i18n/replaceinterfacemessages/titleblacklist",
-    "i18n/userpageaccess"]
+    "NoActionsOnNonEditable/i18n",
+    "ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
+    "ReplaceInterfaceMessages/i18n/babel-englishonly",
+    "ReplaceInterfaceMessages/i18n/core",
+    "ReplaceInterfaceMessages/i18n/core-englishonly",
+    "ReplaceInterfaceMessages/i18n/titleblacklist",
+    "UserPageAccess/i18n"]
   }
 }
