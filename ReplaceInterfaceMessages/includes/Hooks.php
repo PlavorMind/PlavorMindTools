@@ -5,7 +5,7 @@ use MediaWiki\MediaWikiServices;
 class Hooks
 {public static function onMessageCache_get(&$lckey)
   {global $wgLanguageCode;
-  $config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
+  $config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("replaceinterfacemessages");
   if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["enable"])
     {$messages=
     [//babel-englishonly
