@@ -2,8 +2,8 @@
 namespace PlavorMind\PlavorMindTools\UserPageAccess;
 use MediaWiki\MediaWikiServices;
 
-class Hooks
-{public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
+class Hooks implements \MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook,\MediaWiki\Hook\MovePageCheckPermissionsHook,\MediaWiki\Permissions\Hook\TitleQuickPermissionsHook
+{public function onGetUserPermissionsErrors($title,$user,$action,&$result)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
@@ -15,7 +15,7 @@ class Hooks
     {$result=["userpageaccess-cannotedituserpage"];
     return false;}
   }
-public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitle,User $user,$reason,Status $status)
+public function onMovePageCheckPermissions($oldTitle,$newTitle,$user,$reason,$status)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
@@ -31,7 +31,7 @@ public static function onMovePageCheckPermissions(Title $oldTitle,Title $newTitl
   && count($status->getErrorsArray()) === 1)
     {$status->setOK(true);}
   }
-public static function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
+public function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensiveQueries,$short)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
