@@ -2,8 +2,8 @@
 namespace PlavorMind\PlavorMindTools\ReplaceInterfaceMessages;
 use MediaWiki\MediaWikiServices;
 
-class Hooks
-{public static function onMessageCache_get(&$lckey)
+class Hooks implements \MediaWiki\Cache\Hook\MessageCache__getHook
+{public function onMessageCache__get(&$lckey)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["enable"])
