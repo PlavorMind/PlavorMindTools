@@ -2,8 +2,8 @@
 namespace PlavorMind\PlavorMindTools;
 use MediaWiki\MediaWikiServices;
 
-class Hooks
-{public static function onUserGetAllRights(&$rights)
+class Hooks implements \MediaWiki\Permissions\Hook\UserGetAllRightsHook
+{public function onUserGetAllRights(&$rights)
   {$config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if ($config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
