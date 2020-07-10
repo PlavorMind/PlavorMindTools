@@ -2,7 +2,7 @@
 "author":"[http://central.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
 
 "config":
-  {"FeatureConfig":
+  {"PMTFeatureConfig":
     {"description":"Configurations for features",
     "public":true,
     "value":
@@ -19,7 +19,6 @@
       }
     }
   },
-"config_prefix":"wgPMT",
 "descriptionmsg":"plavormindtools-description",
 "license-name":"AGPL-3.0-or-later",
 "manifest_version":2,
