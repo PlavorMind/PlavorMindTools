@@ -2,8 +2,8 @@
 namespace PlavorMind\PlavorMindTools\NoActionsOnNonEditable;
 use MediaWiki\MediaWikiServices;
 
-class Hooks
-{public static function ongetUserPermissionsErrors($title,$user,$action,&$result)
+class Hooks implements \MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook
+{public function onGetUserPermissionsErrors($title,$user,$action,&$result)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["NoActionsOnNonEditable"]["enable"])
