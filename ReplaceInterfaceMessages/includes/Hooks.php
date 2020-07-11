@@ -3,7 +3,7 @@ namespace PlavorMind\PlavorMindTools\ReplaceInterfaceMessages;
 use MediaWiki\MediaWikiServices;
 
 class Hooks implements \MediaWiki\Cache\Hook\MessageCache__getHook
-{public function onMessageCache__get(&$lckey)
+{public function onMessageCache__get(&$key)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["enable"])
@@ -121,9 +121,9 @@ class Hooks implements \MediaWiki\Cache\Hook\MessageCache__getHook
   "spambot_username",
   "usermessage-editor"];
   $cache=MediaWikiServices::getInstance()->getMessageCache();
-  if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["EnglishSystemUsers"] && in_array($lckey,$systemusers))
-    {$lckey="rim-systemuser-".$lckey;}
-  elseif (in_array($lckey,$messages) && !$cache->getMsgFromNamespace(ucfirst($lckey),$config->get("LanguageCode")))
-    {$lckey="rim-".$lckey;}
+  if ($config->get("PMTFeatureConfig")["ReplaceInterfaceMessages"]["EnglishSystemUsers"] && in_array($key,$systemusers))
+    {$key="rim-systemuser-".$key;}
+  elseif (in_array($key,$messages) && !$cache->getMsgFromNamespace(ucfirst($key),$config->get("LanguageCode")))
+    {$key="rim-".$key;}
   }
 }
