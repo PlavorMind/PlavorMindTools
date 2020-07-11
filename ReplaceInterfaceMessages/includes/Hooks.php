@@ -99,7 +99,6 @@ class Hooks implements \MediaWiki\Cache\Hook\MessageCache__getHook
   "grouppage-interface-admin",
   "grouppage-sysop",
   "grouppage-user",
-  "newsectionheaderdefaultlevel",
   "nstab-project",
   "privacypage",
   "protect-summary-desc",
