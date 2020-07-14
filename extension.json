@@ -62,7 +62,9 @@
     {"class":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks"}
   },
 "MessagesDirs":
-  {"NoActionsOnNonEditable":
+  {"BlueCategoryLinks":
+    ["BlueCategoryLinks/i18n"],
+  "NoActionsOnNonEditable":
     ["NoActionsOnNonEditable/i18n"],
   "PlavorMindTools":
     ["i18n",
