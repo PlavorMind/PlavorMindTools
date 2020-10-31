@@ -15,7 +15,7 @@ public function onGetUserPermissionsErrors($title,$user,$action,&$result)
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {return;}
 
-  if ($title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || $this->PermissionManager->userHasRight($user,"editotheruserpages")) && $action === "edit")
+  if ($action === "edit" && $title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || $this->PermissionManager->userHasRight($user,"editotheruserpages")))
     {$result=["userpageaccess-cannotedituserpage"];
     return false;}
   }
@@ -40,7 +40,7 @@ public function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensi
     {return;}
 
   $allowed_actions=["delete","move"];
-  if ($title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $this->PermissionManager->userCan("edit",$user,$title,"quick") && in_array($action,$allowed_actions))
+  if (in_array($action,$allowed_actions) && $title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $this->PermissionManager->userCan("edit",$user,$title,"quick"))
     {switch ($action)
       {default:
       if (!$PermissionManager->userHasRight($user,$action) && $PermissionManager->userHasRight($user,$action."ownuserpages"))
