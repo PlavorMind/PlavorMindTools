@@ -53,13 +53,19 @@
   {"BlueCategoryLinksHooks":
     {"class":"PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks"},
   "NoActionsOnNonEditableHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks"},
+    {"class":"PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks",
+    "services":
+      ["PermissionManager"]
+    },
   "PlavorMindToolsHooks":
     {"class":"PlavorMind\\PlavorMindTools\\Hooks"},
   "ReplaceInterfaceMessagesHooks":
     {"class":"PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks"},
   "UserPageAccessHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks"}
+    {"class":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks",
+    "services":
+      ["PermissionManager"]
+    }
   },
 "MessagesDirs":
   {"BlueCategoryLinks":
