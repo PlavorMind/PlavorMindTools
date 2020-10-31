@@ -1,17 +1,21 @@
 <?php
 namespace PlavorMind\PlavorMindTools\UserPageAccess;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 
 class Hooks implements \MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook,\MediaWiki\Hook\MovePageCheckPermissionsHook,\MediaWiki\Permissions\Hook\TitleQuickPermissionsHook
-{public function onGetUserPermissionsErrors($title,$user,$action,&$result)
+{private $PermissionManager;
+
+public function __construct(PermissionManager $PermissionManager)
+  {$this->PermissionManager=$PermissionManager;}
+
+public function onGetUserPermissionsErrors($title,$user,$action,&$result)
   {$pmt_config=MediaWikiServices::getInstance()->getConfigFactory()->makeConfig("plavormindtools");
 
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {return;}
 
-  $PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
-
-  if ($action === "edit" && $title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || $PermissionManager->userHasRight($user,"editotheruserpages")))
+  if ($title->getNamespace() === NS_USER && !($title->getRootText() === $user->getName() || $this->PermissionManager->userHasRight($user,"editotheruserpages")) && $action === "edit")
     {$result=["userpageaccess-cannotedituserpage"];
     return false;}
   }
@@ -21,12 +25,10 @@ public function onMovePageCheckPermissions($oldTitle,$newTitle,$user,$reason,$st
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {return;}
 
-  $PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
-
   if ($oldTitle->getNamespace() === NS_USER
   && $oldTitle->getRootText() === $user->getName()
-  && !$PermissionManager->userHasRight($user,"move")
-  && $PermissionManager->userHasRight($user,"moveownuserpages")
+  && !$this->PermissionManager->userHasRight($user,"move")
+  && $this->PermissionManager->userHasRight($user,"moveownuserpages")
   && $status->hasMessage("movenotallowed")
   && count($status->getErrorsArray()) === 1)
     {$status->setOK(true);}
@@ -37,11 +39,8 @@ public function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensi
   if (!$pmt_config->get("PMTFeatureConfig")["UserPageAccess"]["enable"])
     {return;}
 
-  $PermissionManager=MediaWikiServices::getInstance()->getPermissionManager();
-
   $allowed_actions=["delete","move"];
-  //$action should be checked before $PermissionManager->userCan to avoid "Allowed memory size of N bytes exhausted" error
-  if (in_array($action,$allowed_actions) && $title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $PermissionManager->userCan("edit",$user,$title,"quick"))
+  if ($title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $this->PermissionManager->userCan("edit",$user,$title,"quick") && in_array($action,$allowed_actions))
     {switch ($action)
       {default:
       if (!$PermissionManager->userHasRight($user,$action) && $PermissionManager->userHasRight($user,$action."ownuserpages"))
