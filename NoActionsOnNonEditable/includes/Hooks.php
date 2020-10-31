@@ -20,7 +20,7 @@ public function onGetUserPermissionsErrors($title,$user,$action,&$result)
   $denied_actions=["delete"];
   if ($config->get("PMTFeatureConfig")["NoActionsOnNonEditable"]["HideMoveTab"])
     {$denied_actions[]="move";}
-  if (!$this->PermissionManager->userCan("edit",$user,$title,"quick") && in_array($action,$denied_actions))
+  if (in_array($action,$denied_actions) && !$this->PermissionManager->userCan("edit",$user,$title,"quick"))
     {switch ($action)
       {default:
       $result=["noactionsonnoneditable-cannot".$action."cannotedit"];}
