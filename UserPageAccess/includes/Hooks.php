@@ -43,7 +43,7 @@ public function onTitleQuickPermissions($title,$user,$action,&$errors,$doExpensi
   if (in_array($action,$allowed_actions) && $title->getNamespace() === NS_USER && $title->getRootText() === $user->getName() && $this->PermissionManager->userCan("edit",$user,$title,"quick"))
     {switch ($action)
       {default:
-      if (!$PermissionManager->userHasRight($user,$action) && $PermissionManager->userHasRight($user,$action."ownuserpages"))
+      if (!$this->PermissionManager->userHasRight($user,$action) && $this->PermissionManager->userHasRight($user,$action."ownuserpages"))
         {return false;}
       }
     }
