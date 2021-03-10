@@ -120,6 +120,7 @@ class Hooks implements \MediaWiki\Cache\Hook\MessageCache__getHook
     'spambot_username',
     'usermessage-editor'];
     $cache=MediaWikiServices::getInstance()->getMessageCache();
+
     if ($config->get('PMTFeatureConfig')['ReplaceInterfaceMessages']['EnglishSystemUsers'] && in_array($key, $systemusers))
       {$key="rim-systemuser-{$key}";}
     elseif (in_array($key, $messages) && !$cache->getMsgFromNamespace(ucfirst($key), $config->get('LanguageCode')))
