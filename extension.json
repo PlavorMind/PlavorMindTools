@@ -1,68 +1,68 @@
-{"name":"PlavorMindTools",
-"author":"[http://central.plavormind.tk:81/page/User:PlavorSeol PlavorSeol]",
+{"name": "PlavorMindTools",
+"author": "PlavorSeol",
 
 "config":
   {"PMTFeatureConfig":
-    {"description":"Configurations for features",
-    "public":true,
+    {"description": "Configurations for features",
+    "public": true,
     "value":
       {"BlueCategoryLinks":
-        {"enable":false},
+        {"enable": false},
       "NoActionsOnNonEditable":
-        {"enable":false,
-        "HideMoveTab":false},
+        {"enable": false,
+        "HideMoveTab": false},
       "ReplaceInterfaceMessages":
-        {"enable":false,
-        "EnglishSystemUsers":false},
+        {"enable": false,
+        "EnglishSystemUsers": false},
       "UserPageAccess":
-        {"enable":false}
+        {"enable": false}
       }
     }
   },
-"descriptionmsg":"plavormindtools-description",
-"license-name":"AGPL-3.0-or-later",
-"manifest_version":2,
+"descriptionmsg": "plavormindtools-description",
+"license-name": "AGPL-3.0-or-later",
+"manifest_version": 2,
 "requires":
-  {"MediaWiki":">=1.35.0"},
-"type":"other",
-"url":"https://github.com/PlavorMind/PlavorMindTools",
-"version":"3.5",
+  {"MediaWiki": ">=1.36.0"},
+"type": "other",
+"url": "https://github.com/PlavorMind/PlavorMindTools",
+"version": "3.5",
 
 "AutoloadNamespaces":
-  {"PlavorMind\\PlavorMindTools\\":"includes/",
-  "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\":"BlueCategoryLinks/includes/",
-  "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\":"NoActionsOnNonEditable/includes/",
-  "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\":"ReplaceInterfaceMessages/includes/",
-  "PlavorMind\\PlavorMindTools\\UserPageAccess\\":"UserPageAccess/includes/"},
+  {"PlavorMind\\PlavorMindTools\\": "includes/",
+  "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\": "BlueCategoryLinks/includes/",
+  "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
+  "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/includes/",
+  "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/"},
 "ConfigRegistry":
-  {"bluecategorylinks":"GlobalVarConfig::newInstance",
-  "noactionsonnoneditable":"GlobalVarConfig::newInstance",
-  "plavormindtools":"GlobalVarConfig::newInstance",
-  "replaceinterfacemessages":"GlobalVarConfig::newInstance",
-  "userpageaccess":"GlobalVarConfig::newInstance"},
+  {"bluecategorylinks": "GlobalVarConfig::newInstance",
+  "noactionsonnoneditable": "GlobalVarConfig::newInstance",
+  "plavormindtools": "GlobalVarConfig::newInstance",
+  "replaceinterfacemessages": "GlobalVarConfig::newInstance",
+  "userpageaccess": "GlobalVarConfig::newInstance"},
 "Hooks":
   {"getUserPermissionsErrors":
     ["NoActionsOnNonEditableHooks",
     "UserPageAccessHooks"],
-  "MessageCache::get":"ReplaceInterfaceMessagesHooks",
-  "MovePageCheckPermissions":"UserPageAccessHooks",
-  "TitleIsAlwaysKnown":"BlueCategoryLinksHooks",
-  "TitleQuickPermissions":"UserPageAccessHooks",
-  "UserGetAllRights":"PlavorMindToolsHooks"},
+  "MessageCache::get": "ReplaceInterfaceMessagesHooks",
+  "MovePageCheckPermissions": "UserPageAccessHooks",
+  "TitleIsAlwaysKnown": "BlueCategoryLinksHooks",
+  "TitleQuickPermissions": "UserPageAccessHooks",
+  "UserGetAllRights": "PlavorMindToolsHooks"},
 "HookHandlers":
   {"BlueCategoryLinksHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks"},
+    {"class": "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks"},
   "NoActionsOnNonEditableHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks",
+    {"class": "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks",
     "services":
       ["PermissionManager"]
     },
   "PlavorMindToolsHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\Hooks"},
+    {"class": "PlavorMind\\PlavorMindTools\\Hooks"},
   "ReplaceInterfaceMessagesHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks"},
+    {"class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks"},
   "UserPageAccessHooks":
-    {"class":"PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks",
+    {"class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks",
     "services":
       ["PermissionManager"]
     }
