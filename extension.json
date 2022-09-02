@@ -4,6 +4,7 @@
 
   "config": {
     "PMTDisabledUserGroups": {
+      "description": "User groups to disable",
       "public": true,
       "value": []
     },
@@ -39,12 +40,11 @@
   "version": "3.5",
 
   "AutoloadNamespaces": {
-    "PlavorMind\\PlavorMindTools\\": "includes/",
+    "PlavorMind\\PlavorMindTools\\": "src/",
     "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\": "BlueCategoryLinks/includes/",
     "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/includes/",
-    "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/",
-    "PlavorMind\\PlavorMindToolsNew\\": "src/"
+    "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/"
   },
   "ConfigRegistry": {
     "bluecategorylinks": "GlobalVarConfig::newInstance",
@@ -63,14 +63,14 @@
     "MovePageCheckPermissions": "UserPageAccessHooks",
     "TitleIsAlwaysKnown": "BlueCategoryLinksHooks",
     "TitleQuickPermissions": "UserPageAccessHooks",
-    "UserGetAllRights": "PlavorMindToolsHooks"
+    "UserGetAllRights": "main"
   },
   "HookHandlers": {
     "BlueCategoryLinksHooks": {
       "class": "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks"
     },
     "main": {
-      "class": "PlavorMind\\PlavorMindToolsNew\\HookHandler"
+      "class": "PlavorMind\\PlavorMindTools\\HookHandler"
     },
     "NoActionsOnNonEditableHooks": {
       "class": "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks",
