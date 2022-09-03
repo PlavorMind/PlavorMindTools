@@ -12,9 +12,6 @@
       "description": "Configurations for features",
       "public": true,
       "value": {
-        "BlueCategoryLinks": {
-          "enable": false
-        },
         "NoActionsOnNonEditable": {
           "enable": false,
           "HideMoveTab": false
@@ -41,14 +38,12 @@
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
-    "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\": "BlueCategoryLinks/includes/",
     "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/includes/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Src\\": "ReplaceInterfaceMessages/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/"
   },
   "ConfigRegistry": {
-    "bluecategorylinks": "GlobalVarConfig::newInstance",
     "noactionsonnoneditable": "GlobalVarConfig::newInstance",
     "plavormindtools": "GlobalVarConfig::newInstance",
     "replaceinterfacemessages": "GlobalVarConfig::newInstance",
@@ -62,7 +57,6 @@
     "MediaWikiServices": "main",
     "MessageCache::get": "ReplaceInterfaceMessagesHooks",
     "MovePageCheckPermissions": "UserPageAccessHooks",
-    "TitleIsAlwaysKnown": "BlueCategoryLinksHooks",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
       "UserPageAccessHooks"
@@ -70,9 +64,6 @@
     "UserGetAllRights": "main"
   },
   "HookHandlers": {
-    "BlueCategoryLinksHooks": {
-      "class": "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\Hooks"
-    },
     "main": {
       "class": "PlavorMind\\PlavorMindTools\\HookHandler"
     },
@@ -99,9 +90,6 @@
     }
   },
   "MessagesDirs": {
-    "BlueCategoryLinks": [
-      "BlueCategoryLinks/i18n"
-    ],
     "NoActionsOnNonEditable": [
       "NoActionsOnNonEditable/i18n"
     ],
