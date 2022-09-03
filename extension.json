@@ -16,14 +16,14 @@
           "enable": false,
           "HideMoveTab": false
         },
-        "ReplaceInterfaceMessages": {
-          "enable": false,
-          "EnglishSystemUsers": false
-        },
         "UserPageAccess": {
           "enable": false
         }
       }
+    },
+    "RIMEnglishSystemUsers": {
+      "public": true,
+      "value": false
     }
   },
   "descriptionmsg": "plavormindtools-description",
@@ -39,14 +39,12 @@
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
     "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
-    "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/includes/",
-    "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Src\\": "ReplaceInterfaceMessages/src/",
+    "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/"
   },
   "ConfigRegistry": {
     "noactionsonnoneditable": "GlobalVarConfig::newInstance",
     "plavormindtools": "GlobalVarConfig::newInstance",
-    "replaceinterfacemessages": "GlobalVarConfig::newInstance",
     "userpageaccess": "GlobalVarConfig::newInstance"
   },
   "Hooks": {
@@ -55,7 +53,7 @@
       "UserPageAccessHooks"
     ],
     "MediaWikiServices": "main",
-    "MessageCache::get": "ReplaceInterfaceMessagesHooks",
+    "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "UserPageAccessHooks",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
@@ -77,10 +75,7 @@
       "class": "PlavorMind\\PlavorMindTools\\Hooks"
     },
     "replaceinterfacemessages": {
-      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Src\\HookHandler"
-    },
-    "ReplaceInterfaceMessagesHooks": {
-      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks"
+      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandler"
     },
     "UserPageAccessHooks": {
       "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\Hooks",
