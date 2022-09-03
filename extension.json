@@ -44,6 +44,7 @@
     "PlavorMind\\PlavorMindTools\\BlueCategoryLinks\\": "BlueCategoryLinks/includes/",
     "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/includes/",
+    "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Src\\": "ReplaceInterfaceMessages/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/includes/"
   },
   "ConfigRegistry": {
@@ -62,7 +63,10 @@
     "MessageCache::get": "ReplaceInterfaceMessagesHooks",
     "MovePageCheckPermissions": "UserPageAccessHooks",
     "TitleIsAlwaysKnown": "BlueCategoryLinksHooks",
-    "TitleQuickPermissions": "UserPageAccessHooks",
+    "TitleQuickPermissions": [
+      "replaceinterfacemessages",
+      "UserPageAccessHooks"
+    ],
     "UserGetAllRights": "main"
   },
   "HookHandlers": {
@@ -80,6 +84,9 @@
     },
     "PlavorMindToolsHooks": {
       "class": "PlavorMind\\PlavorMindTools\\Hooks"
+    },
+    "replaceinterfacemessages": {
+      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Src\\HookHandler"
     },
     "ReplaceInterfaceMessagesHooks": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\Hooks"
@@ -103,6 +110,7 @@
       "i18n/extra"
     ],
     "ReplaceInterfaceMessages": [
+      "ReplaceInterfaceMessages/i18n",
       "ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
       "ReplaceInterfaceMessages/i18n/babel-englishonly",
       "ReplaceInterfaceMessages/i18n/core",
