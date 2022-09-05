@@ -13,7 +13,7 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
         'abusefilter-englishonly',
         'babel-englishonly',
         'core',
-        'core-englishonly',
+        'core-en-only',
         'titleblacklist'
       ];
 
@@ -45,7 +45,12 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
       return;
     }
 
-    $systemUserKeys = [];
+    $systemUserKeys = [
+      'autochange-username',
+      'double-redirect-fixer',
+      'spambot_username',
+      'usermessage-editor'
+    ];
 
     if (in_array($lckey, $systemUserKeys)) {
       if ($settings->get('RIMEnglishSystemUsers')) {
