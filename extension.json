@@ -97,7 +97,7 @@
       "ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
       "ReplaceInterfaceMessages/i18n/babel-englishonly",
       "ReplaceInterfaceMessages/i18n/core",
-      "ReplaceInterfaceMessages/i18n/core-englishonly",
+      "ReplaceInterfaceMessages/i18n/core-en-only",
       "ReplaceInterfaceMessages/i18n/titleblacklist"
     ],
     "UserPageAccess": [
