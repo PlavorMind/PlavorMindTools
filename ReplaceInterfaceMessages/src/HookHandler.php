@@ -10,11 +10,10 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
   public function onMessageCache__get(&$lckey) {
     if (count($this->rimMsgKeys) === 0) {
       $directories = [
-        'abusefilter-englishonly',
-        'babel-englishonly',
         'core',
         'core-en-only',
-        'titleblacklist'
+        'extensions',
+        'extensions-en-only'
       ];
 
       foreach ($directories as $directory) {
@@ -46,10 +45,15 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
     }
 
     $systemUserKeys = [
+      // core-en-only
       'autochange-username',
       'double-redirect-fixer',
       'spambot_username',
-      'usermessage-editor'
+      'usermessage-editor',
+
+      // extensions-en-only
+      'abusefilter-blocker',
+      'babel-autocreate-user'
     ];
 
     if (in_array($lckey, $systemUserKeys)) {

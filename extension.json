@@ -71,9 +71,6 @@
         "PermissionManager"
       ]
     },
-    "PlavorMindToolsHooks": {
-      "class": "PlavorMind\\PlavorMindTools\\Hooks"
-    },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandler"
     },
@@ -94,11 +91,10 @@
     ],
     "ReplaceInterfaceMessages": [
       "ReplaceInterfaceMessages/i18n",
-      "ReplaceInterfaceMessages/i18n/abusefilter-englishonly",
-      "ReplaceInterfaceMessages/i18n/babel-englishonly",
       "ReplaceInterfaceMessages/i18n/core",
       "ReplaceInterfaceMessages/i18n/core-en-only",
-      "ReplaceInterfaceMessages/i18n/titleblacklist"
+      "ReplaceInterfaceMessages/i18n/extensions",
+      "ReplaceInterfaceMessages/i18n/extensions-en-only"
     ],
     "UserPageAccess": [
       "UserPageAccess/i18n"

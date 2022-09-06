@@ -1,0 +1,4 @@
+{
+  "rim-titleblacklist-forbidden-edit": "You cannot edit pages with restricted titles.<br/>Title of this page matches following entry in restricted title list:<br/><code>$1</code>",
+  "rim-titleblacklist-warning": "You are editing a page with restricted title.<br/>Title of this page matches following entry in restricted title list:<br/><code>$1</code>"
+}
