@@ -1,6 +1,5 @@
-{"right-deleteownuserpages":"Description of deleteownuserpages permission",
-"right-editotheruserpages":"Description of editotheruserpages permission",
-"right-moveownuserpages":"Description of moveownuserpages permission",
+{
+  "right-editotheruserpages": "Description of editotheruserpages permission",
 
-"userpageaccess-cannotedituserpage":"Error message to display when the user cannot edit other users' user pages",
-"userpageaccess-description":"Description of UserPageAccess extension"}
+  "userpageaccess-cannot-edit-other-user-pages": "Error message to show if the user cannot edit other users' user pages"
+}

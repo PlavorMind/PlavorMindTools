@@ -1,6 +1,5 @@
-{"right-deleteownuserpages":"자신의 사용자 문서 삭제",
-"right-editotheruserpages":"다른 사용자의 사용자 문서 편집",
-"right-moveownuserpages":"자신의 사용자 문서 이동",
+{
+  "right-editotheruserpages": "다른 사용자의 사용자 문서 편집",
 
-"userpageaccess-cannotedituserpage":"<div class='errorbox'>다른 사용자의 사용자 문서를 편집할 수 없습니다.</div>",
-"userpageaccess-description":"사용자 문서에 대한 권한을 조정합니다"}
+  "userpageaccess-cannot-edit-other-user-pages": "다른 사용자의 사용자 문서를 편집할 수 없습니다."
+}
