@@ -1,14 +1,31 @@
 <?php
 namespace PlavorMind\PlavorMindTools\UserPageAccess;
+use MediaWiki\Hook\MovePageCheckPermissionsHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 use MediaWiki\Permissions\Hook\UserGetAllRightsHook;
 
-class HookHandler implements TitleQuickPermissionsHook, UserGetAllRightsHook {
+class HookHandler implements MovePageCheckPermissionsHook, TitleQuickPermissionsHook, UserGetAllRightsHook {
   private $enabled;
 
   public function __construct() {
     $this->enabled = MediaWikiServices::getInstance()->getMainConfig()->get('UPAEnable');
+  }
+
+  public function onMovePageCheckPermissions($oldTitle, $newTitle, $user, $reason, $status) {
+    if (!$this->enabled) {
+      return;
+    }
+
+    $newNamespace = $newTitle->getNamespace();
+    $oldNamespace = $oldTitle->getNamespace();
+
+    if ($oldNamespace === $newNamespace || !($oldNamespace === NS_USER || $newNamespace === NS_USER) || $user->isAllowed('movetousernamespace')) {
+      return;
+    }
+
+    $status->fatal('userpageaccess-cannot-move-user-namespace');
+    return false;
   }
 
   public function onTitleQuickPermissions($title, $user, $action, &$errors, $doExpensiveQueries, $short) {
@@ -21,8 +38,13 @@ class HookHandler implements TitleQuickPermissionsHook, UserGetAllRightsHook {
   }
 
   public function onUserGetAllRights(&$rights) {
-    if ($this->enabled) {
-      $rights[] = 'editotheruserpages';
+    if (!$this->enabled) {
+      return;
     }
+
+    $rights = array_merge($rights, [
+      'editotheruserpages',
+      'movetousernamespace'
+    ]);
   }
 }

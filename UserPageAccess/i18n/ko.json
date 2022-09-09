@@ -1,5 +1,7 @@
 {
   "right-editotheruserpages": "다른 사용자의 사용자 문서 편집",
+  "right-movetousernamespace": "다른 이름공간 내의 문서를 [[Special:AllPages/User:|{{ns:User}}]] 이름공간으로 또는 그 반대로 이동",
 
-  "userpageaccess-cannot-edit-other-user-pages": "다른 사용자의 사용자 문서를 편집할 수 없습니다."
+  "userpageaccess-cannot-edit-other-user-pages": "다른 사용자의 사용자 문서를 편집할 수 없습니다.",
+  "userpageaccess-cannot-move-user-namespace": "다른 이름공간 내의 문서를 [[Special:AllPages/User:|{{ns:User}}]] 이름공간으로 또는 그 반대로 이동할 수 없습니다."
 }

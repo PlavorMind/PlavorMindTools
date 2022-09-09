@@ -1,5 +1,7 @@
 {
   "right-editotheruserpages": "Description of editotheruserpages permission",
+  "right-movetousernamespace": "Description of movetousernamespace permission",
 
-  "userpageaccess-cannot-edit-other-user-pages": "Error message to show if the user cannot edit other users' user pages"
+  "userpageaccess-cannot-edit-other-user-pages": "Error message to show if the user cannot edit other users' user pages",
+  "userpageaccess-cannot-move-user-namespace": "Error message to show if the user cannot move pages in different namespaces to User namespace or vice versa"
 }

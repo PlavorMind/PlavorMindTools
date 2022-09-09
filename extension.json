@@ -23,6 +23,7 @@
       "value": false
     },
     "UPAEnable": {
+      "description": "Whether to enable UserPageAccess feature",
       "public": true,
       "value": false
     }
@@ -51,6 +52,7 @@
     "getUserPermissionsErrors": "NoActionsOnNonEditableHooks",
     "MediaWikiServices": "main",
     "MessageCache::get": "replaceinterfacemessages",
+    "MovePageCheckPermissions": "userpageaccess",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
       "userpageaccess"
