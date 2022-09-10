@@ -3,7 +3,7 @@
   "author": "PlavorSeol",
 
   "config": {
-    "PMTDisabledUserGroups": {
+    "PMTDisableUserGroups": {
       "description": "User groups to disable",
       "public": true,
       "value": []
