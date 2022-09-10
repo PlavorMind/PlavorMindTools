@@ -8,17 +8,8 @@
       "public": true,
       "value": []
     },
-    "PMTFeatureConfig": {
-      "description": "Configurations for features",
-      "public": true,
-      "value": {
-        "NoActionsOnNonEditable": {
-          "enable": false,
-          "HideMoveTab": false
-        }
-      }
-    },
     "RIMEnglishSystemUsers": {
+      "description": "Whether to always use English usernames for system users",
       "public": true,
       "value": false
     },
@@ -36,20 +27,14 @@
   },
   "type": "other",
   "url": "https://github.com/PlavorMind/PlavorMindTools",
-  "version": "3.5",
+  "version": "4.0",
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
-    "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\": "NoActionsOnNonEditable/includes/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/src/"
   },
-  "ConfigRegistry": {
-    "noactionsonnoneditable": "GlobalVarConfig::newInstance",
-    "plavormindtools": "GlobalVarConfig::newInstance"
-  },
   "Hooks": {
-    "getUserPermissionsErrors": "NoActionsOnNonEditableHooks",
     "MediaWikiServices": "main",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
@@ -63,12 +48,6 @@
     "main": {
       "class": "PlavorMind\\PlavorMindTools\\HookHandler"
     },
-    "NoActionsOnNonEditableHooks": {
-      "class": "PlavorMind\\PlavorMindTools\\NoActionsOnNonEditable\\Hooks",
-      "services": [
-        "PermissionManager"
-      ]
-    },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandler"
     },
@@ -77,9 +56,6 @@
     }
   },
   "MessagesDirs": {
-    "NoActionsOnNonEditable": [
-      "NoActionsOnNonEditable/i18n"
-    ],
     "PlavorMindTools": [
       "i18n",
       "i18n/extra"
