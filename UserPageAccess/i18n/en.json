@@ -1,7 +1,7 @@
 {
   "right-editotheruserpages": "Edit other users' user pages",
-  "right-movetousernamespace": "Move pages in different namespaces to [[Special:AllPages/User:|{{ns:User}}]] namespace or vice versa",
+  "right-movetousernamespace": "Move pages in other namespaces to [[Special:AllPages/User:|{{ns:User}}]] namespace or vice versa",
 
   "userpageaccess-cannot-edit-other-user-pages": "You cannot edit other users' user pages.",
-  "userpageaccess-cannot-move-user-namespace": "You cannot move pages in different namespaces to [[Special:AllPages/User:|{{ns:User}}]] namespace or vice versa."
+  "userpageaccess-cannot-move-user-namespace": "You cannot move pages in other namespaces to [[Special:AllPages/User:|{{ns:User}}]] namespace or vice versa."
 }
