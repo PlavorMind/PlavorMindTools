@@ -1,4 +1,7 @@
 {
+  "rim-logentry-globalauth-setstatus": "Message to replace logentry-globalauth-setstatus message",
+
+  "rim-centralauth-contribs-locked-log": "Message to replace centralauth-contribs-locked-log message",
   "rim-titleblacklist-forbidden-edit": "Message to replace titleblacklist-forbidden-edit message",
   "rim-titleblacklist-warning": "Message to replace titleblacklist-warning message"
 }
