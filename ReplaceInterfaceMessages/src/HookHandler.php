@@ -7,22 +7,22 @@ use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
   private $rimMsgKeys = [];
 
-  public function onMessageCache__get(&$lckey) {
-    if (count($this->rimMsgKeys) === 0) {
-      $directories = [
-        'core',
-        'core-en-only',
-        'extensions',
-        'extensions-en-only'
-      ];
+  public function __construct() {
+    $directories = [
+      'core',
+      'core-en-only',
+      'extensions',
+      'extensions-en-only'
+    ];
 
-      foreach ($directories as $directory) {
-        $msgFileContent = file_get_contents(__DIR__ . "/../i18n/$directory/en.json");
-        $msgArray = json_decode($msgFileContent, true);
-        $this->rimMsgKeys = array_merge($this->rimMsgKeys, array_keys($msgArray));
-      }
+    foreach ($directories as $directory) {
+      $msgFileContent = file_get_contents(__DIR__ . "/../i18n/$directory/en.json");
+      $msgArray = json_decode($msgFileContent, true);
+      $this->rimMsgKeys = array_merge($this->rimMsgKeys, array_keys($msgArray));
     }
+  }
 
+  public function onMessageCache__get(&$lckey) {
     $MediaWikiServices = MediaWikiServices::getInstance();
     $settings = $MediaWikiServices->getMainConfig();
 
