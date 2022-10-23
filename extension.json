@@ -8,6 +8,11 @@
       "public": true,
       "value": []
     },
+    "PMTNewPreferencesLayout": {
+      "description": "Whether to always use new layout for Special:Preferences page (requires MediaWiki 1.40 or newer)",
+      "public": true,
+      "value": false
+    },
     "RIMEnglishSystemUsers": {
       "description": "Whether to always use English usernames for system users",
       "public": true,
@@ -38,6 +43,7 @@
     "MediaWikiServices": "main",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
+    "PreferencesGetLayout": "main",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
       "userpageaccess"
