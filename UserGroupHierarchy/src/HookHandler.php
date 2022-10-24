@@ -1,6 +1,7 @@
 <?php
 namespace PlavorMind\PlavorMindTools\UserGroupHierarchy;
-use MediaWiki\Block\Block;
+use ExtensionRegistry;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BlockIpHook;
 use MediaWiki\MediaWikiServices;
 
@@ -13,10 +14,23 @@ class HookHandler implements BlockIpHook {
     $this->settings = $this->MediaWikiServices->getMainConfig();
   }
 
-  private function getUserHierarchy($userIdentity) {
+  /**
+   * @param User|UserIdentity $user
+   */
+  private function getUserHierarchy($user) {
+    // isAnon() does not exist in UserIdentity objects.
+    if (!$user->isRegistered()) {
+      return 0;
+    }
+
     $groupHierarchies = $this->settings->get('UGHHierarchies');
-    $groups = $this->MediaWikiServices->getUserGroupManager()->getUserEffectiveGroups($userIdentity);
+    $groups = $this->MediaWikiServices->getUserGroupManager()->getUserEffectiveGroups($user);
     $hierarchies = [0];
+
+    if (ExtensionRegistry::getInstance()->isLoaded('CentralAuth')) {
+      $centralAuthGlobalGroups = CentralAuthUser::getInstance($user)->getGlobalGroups();
+      $groups = array_merge($groups, $centralAuthGlobalGroups);
+    }
 
     foreach ($groups as $group) {
       if (isset($groupHierarchies[$group])) {
@@ -28,18 +42,14 @@ class HookHandler implements BlockIpHook {
   }
 
   public function onBlockIp($block, $user, &$reason) {
-    if (!($this->settings->get('UGHEnable') && $block->getType() === Block::TYPE_USER)) {
+    if (!$this->settings->get('UGHEnable')) {
       return;
     }
-    elseif ($user->isAnon()) {
-      $reason = ['usergrouphierarchy-cannot-block-hierarchy'];
-      return false;
-    }
 
-    $enforcerIdentity = $this->MediaWikiServices->getUserIdentityLookup()->getUserIdentityByUserId($user->getId());
-    $targetIdentity = $block->getTargetUserIdentity();
+    $enforcerHierarchy = $this->getUserHierarchy($user);
+    $targetHierarchy = $this->getUserHierarchy($block->getTargetUserIdentity());
 
-    if ($this->getUserHierarchy($enforcerIdentity) > $this->getUserHierarchy($targetIdentity)) {
+    if ($enforcerHierarchy > $targetHierarchy) {
       return;
     }
 
