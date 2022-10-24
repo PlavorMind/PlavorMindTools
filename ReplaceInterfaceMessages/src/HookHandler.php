@@ -77,7 +77,7 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
       return;
     }
 
-    // Messages that start with "rim-" should never be edited on-wiki, so just override any other errors.
+    // Messages which start with "rim-" should never be edited on-wiki, so just override any other errors.
     $errors = [
       ['replaceinterfacemessages-cannot-edit-rim-msgs']
     ];
