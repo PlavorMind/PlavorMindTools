@@ -18,8 +18,18 @@
       "public": true,
       "value": false
     },
+    "UGHEnable": {
+      "description": "Whether to enable UserGroupHierarchy tool",
+      "public": true,
+      "value": false
+    },
+    "UGHHierarchies": {
+      "description": "Hierarchy of user groups",
+      "public": true,
+      "value": {}
+    },
     "UPAEnable": {
-      "description": "Whether to enable UserPageAccess feature",
+      "description": "Whether to enable UserPageAccess tool",
       "public": true,
       "value": false
     }
@@ -37,9 +47,11 @@
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/src/",
+    "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\": "UserGroupHierarchy/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/src/"
   },
   "Hooks": {
+    "BlockIp": "usergrouphierarchy",
     "MediaWikiServices": "main",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
@@ -57,6 +69,9 @@
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandler"
     },
+    "usergrouphierarchy": {
+      "class": "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\HookHandler"
+    },
     "userpageaccess": {
       "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandler"
     }
@@ -72,6 +87,9 @@
       "ReplaceInterfaceMessages/i18n/core-en-only",
       "ReplaceInterfaceMessages/i18n/extensions",
       "ReplaceInterfaceMessages/i18n/extensions-en-only"
+    ],
+    "UserGroupHierarchy": [
+      "UserGroupHierarchy/i18n"
     ],
     "UserPageAccess": [
       "UserPageAccess/i18n"
