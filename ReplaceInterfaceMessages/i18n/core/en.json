@@ -50,7 +50,7 @@
   "rim-protectedpagetext": "This page is protected.<br/>Protection level: {{int:restriction-level-$1}}<br/>[{{fullurl:Special:Log/protect|page={{FULLPAGENAMEE}}}} View protection log]",
   "rim-protectedpagewarning": "You are editing a protected page.",
   "rim-recentchanges": "Recent changes",
-  "rim-recreate-moveddeleted-warn": "You are about to recreate a page that was previously moved or deleted.",
+  "rim-recreate-moveddeleted-warn": "You are about to recreate a page which was previously moved or deleted.",
   "rim-revertpage": "Rolled back edits by [[User:$2|$2]] to last revision by [[User:$1|$1]]",
   "rim-right-editinterface": "Edit pages in [[Special:AllPages/MediaWiki:|{{ns:MediaWiki}}]] namespace",
   "rim-semiprotectedpagemovewarning": "You are about to move a semi-protected page.",
