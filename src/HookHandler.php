@@ -15,7 +15,7 @@ class HookHandler implements MediaWikiServicesHook, PreferencesGetLayoutHook {
   }
 
   // 1.40+
-  public function onPreferencesGetLayout(&$useMobileLayout, $skinName, $skinProperties) {
+  public function onPreferencesGetLayout(&$useMobileLayout, $skinName, $skinProperties = []) {
     if (MediaWikiServices::getInstance()->getMainConfig()->get('PMTNewPreferencesLayout')) {
       $useMobileLayout = true;
     }
