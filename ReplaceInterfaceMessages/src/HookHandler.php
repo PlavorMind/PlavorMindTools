@@ -73,7 +73,7 @@ class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
   }
 
   public function onTitleQuickPermissions($title, $user, $action, &$errors, $doExpensiveQueries, $short) {
-    if (!($action === 'edit' && $title->getNamespace() === NS_MEDIAWIKI && strpos($title->getRootText(), 'Rim-') === 0)) {
+    if (!($action === 'edit' && $title->getNamespace() === NS_MEDIAWIKI && str_starts_with($title->getRootText(), 'Rim-'))) {
       return;
     }
 
