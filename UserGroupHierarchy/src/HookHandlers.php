@@ -5,7 +5,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BlockIpHook;
 use MediaWiki\MediaWikiServices;
 
-class HookHandler implements BlockIpHook {
+class HookHandlers implements BlockIpHook {
   private $MediaWikiServices;
   private $settings;
 
