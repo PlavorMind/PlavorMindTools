@@ -4,7 +4,7 @@ use MediaWiki\Cache\Hook\MessageCache__getHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 
-class HookHandler implements MessageCache__getHook, TitleQuickPermissionsHook {
+class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   private $rimMsgKeys = [];
 
   public function __construct() {
