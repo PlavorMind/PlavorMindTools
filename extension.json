@@ -67,16 +67,16 @@
   },
   "HookHandlers": {
     "main": {
-      "class": "PlavorMind\\PlavorMindTools\\HookHandler"
+      "class": "PlavorMind\\PlavorMindTools\\HookHandlers"
     },
     "replaceinterfacemessages": {
-      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandler"
+      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers"
     },
     "usergrouphierarchy": {
-      "class": "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\HookHandler"
+      "class": "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\HookHandlers"
     },
     "userpageaccess": {
-      "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandler"
+      "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers"
     }
   },
   "MessagesDirs": {
