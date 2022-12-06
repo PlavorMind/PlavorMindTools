@@ -5,9 +5,20 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 
 class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
+  private $enabled;
+  private $MediaWikiServices;
   private $rimMsgKeys = [];
+  private $settings;
 
   public function __construct() {
+    $this->MediaWikiServices = MediaWikiServices::getInstance();
+    $this->settings = $this->MediaWikiServices->getMainConfig();
+    $this->enabled = $this->settings->get('RIMEnable');
+
+    if (!$this->enabled) {
+      return;
+    }
+
     $directories = [
       'core',
       'core-en-only',
@@ -23,11 +34,11 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   }
 
   public function onMessageCache__get(&$lckey) {
-    $MediaWikiServices = MediaWikiServices::getInstance();
-    $settings = $MediaWikiServices->getMainConfig();
-
+    if (!$this->enabled) {
+      return;
+    }
     // $wgRIMPlavorMindSpecificMessages is not defined in extension.json.
-    if (in_array("rim-plavormind-$lckey", $this->rimMsgKeys) && $settings->has('RIMPlavorMindSpecificMessages') && $settings->get('RIMPlavorMindSpecificMessages')) {
+    elseif (in_array("rim-plavormind-$lckey", $this->rimMsgKeys) && $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages')) {
       $rimKey = "rim-plavormind-$lckey";
     }
     elseif (in_array("rim-$lckey", $this->rimMsgKeys)) {
@@ -57,23 +68,23 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     ];
 
     if (in_array($lckey, $systemUserKeys)) {
-      if ($settings->get('RIMEnglishSystemUsers')) {
+      if ($this->settings->get('RIMEnglishSystemUsers')) {
         $lckey = $rimKey;
       }
 
       return;
     }
 
-    $msgCache = $MediaWikiServices->getMessageCache();
+    $msgCache = $this->MediaWikiServices->getMessageCache();
 
     // getMsgFromNamespace() can return a string.
-    if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $settings->get('LanguageCode')) === false) {
+    if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $this->settings->get('LanguageCode')) === false) {
       $lckey = $rimKey;
     }
   }
 
   public function onTitleQuickPermissions($title, $user, $action, &$errors, $doExpensiveQueries, $short) {
-    if (!($action === 'edit' && $title->getNamespace() === NS_MEDIAWIKI && str_starts_with($title->getRootText(), 'Rim-'))) {
+    if (!($this->enabled && $action === 'edit' && $title->getNamespace() === NS_MEDIAWIKI && str_starts_with($title->getRootText(), 'Rim-'))) {
       return;
     }
 

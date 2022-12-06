@@ -13,6 +13,11 @@
       "public": true,
       "value": false
     },
+    "RIMEnable": {
+      "description": "Whether to enable ReplaceInterfaceMessages tool",
+      "public": true,
+      "value": false
+    },
     "RIMEnglishSystemUsers": {
       "description": "Whether to always use English usernames for system users",
       "public": true,
