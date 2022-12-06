@@ -4,7 +4,7 @@ use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\Hook\PreferencesGetLayoutHook;
 use MediaWiki\MediaWikiServices;
 
-class HookHandler implements MediaWikiServicesHook, PreferencesGetLayoutHook {
+class HookHandlers implements MediaWikiServicesHook, PreferencesGetLayoutHook {
   public function onMediaWikiServices($services) {
     global $wgAddGroups, $wgGroupPermissions, $wgGroupsAddToSelf, $wgGroupsRemoveFromSelf, $wgRemoveGroups, $wgRevokePermissions;
     $groups = $services->getMainConfig()->get('PMTDisableUserGroups');
