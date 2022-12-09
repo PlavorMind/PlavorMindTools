@@ -3,10 +3,20 @@
   "author": "PlavorSeol",
 
   "config": {
-    "PMTDisableUserGroups": {
+    "CUGDisableGroups": {
       "description": "User groups to disable",
       "public": true,
       "value": []
+    },
+    "CUGEnable": {
+      "description": "Whether to enable ControlUserGroups tool",
+      "public": true,
+      "value": false
+    },
+    "CUGHierarchies": {
+      "description": "Hierarchy of user groups",
+      "public": true,
+      "value": {}
     },
     "PMTNewPreferencesLayout": {
       "description": "Whether to always use new layout for Special:Preferences page (requires MediaWiki 1.40 or newer)",
@@ -22,16 +32,6 @@
       "description": "Whether to always use English usernames for system users",
       "public": true,
       "value": false
-    },
-    "UGHEnable": {
-      "description": "Whether to enable UserGroupHierarchy tool",
-      "public": true,
-      "value": false
-    },
-    "UGHHierarchies": {
-      "description": "Hierarchy of user groups",
-      "public": true,
-      "value": {}
     },
     "UPAEnable": {
       "description": "Whether to enable UserPageAccess tool",
@@ -54,13 +54,13 @@
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
+    "PlavorMind\\PlavorMindTools\\ControlUserGroups\\": "ControlUserGroups/src/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/src/",
-    "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\": "UserGroupHierarchy/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/src/"
   },
   "Hooks": {
-    "BlockIp": "usergrouphierarchy",
-    "MediaWikiServices": "main",
+    "BlockIp": "controlusergroups",
+    "MediaWikiServices": "controlusergroups",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
     "PreferencesGetLayout": "main",
@@ -71,20 +71,23 @@
     "UserGetAllRights": "userpageaccess"
   },
   "HookHandlers": {
+    "controlusergroups": {
+      "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\HookHandlers"
+    },
     "main": {
       "class": "PlavorMind\\PlavorMindTools\\HookHandlers"
     },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers"
     },
-    "usergrouphierarchy": {
-      "class": "PlavorMind\\PlavorMindTools\\UserGroupHierarchy\\HookHandlers"
-    },
     "userpageaccess": {
       "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers"
     }
   },
   "MessagesDirs": {
+    "ControlUserGroups": [
+      "ControlUserGroups/i18n"
+    ],
     "PlavorMindTools": [
       "i18n",
       "i18n/extra"
@@ -95,9 +98,6 @@
       "ReplaceInterfaceMessages/i18n/core-en-only",
       "ReplaceInterfaceMessages/i18n/extensions",
       "ReplaceInterfaceMessages/i18n/extensions-en-only"
-    ],
-    "UserGroupHierarchy": [
-      "UserGroupHierarchy/i18n"
     ],
     "UserPageAccess": [
       "UserPageAccess/i18n"
