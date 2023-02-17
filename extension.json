@@ -18,6 +18,14 @@
       "public": true,
       "value": {}
     },
+    "PMTImgAuthCSPs": {
+      "description": "Content Security Policy to apply to img_auth.php",
+      "public": true,
+      "value": {
+        "enforced": null,
+        "report-only": null
+      }
+    },
     "PMTNewPreferencesLayout": {
       "description": "Whether to always use new layout for Special:Preferences page (requires MediaWiki 1.40 or newer)",
       "public": true,
@@ -60,6 +68,7 @@
   },
   "Hooks": {
     "BlockIp": "controlusergroups",
+    "ImgAuthModifyHeaders": "main",
     "MediaWikiServices": "controlusergroups",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
