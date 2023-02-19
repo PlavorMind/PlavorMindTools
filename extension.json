@@ -10,6 +10,7 @@
     },
     "CUGDisableGroups": {
       "description": "User groups to disable",
+      "merge_strategy": "provide_default",
       "public": true,
       "value": []
     },
@@ -63,7 +64,7 @@
   },
   "type": "other",
   "url": "https://github.com/PlavorMind/PlavorMindTools",
-  "version": "4.1",
+  "version": "4.2",
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
