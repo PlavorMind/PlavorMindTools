@@ -3,6 +3,11 @@
   "author": "PlavorSeol",
 
   "config": {
+    "CUGCentralAuthHierarchies": {
+      "description": "Hierarchy of global user groups of CentralAuth extension",
+      "public": true,
+      "value": null
+    },
     "CUGDisableGroups": {
       "description": "User groups to disable",
       "public": true,
@@ -16,7 +21,7 @@
     "CUGHierarchies": {
       "description": "Hierarchy of user groups",
       "public": true,
-      "value": {}
+      "value": null
     },
     "PMTImgAuthCSPs": {
       "description": "Content Security Policy to apply to img_auth.php",
