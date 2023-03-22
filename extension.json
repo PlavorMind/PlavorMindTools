@@ -24,14 +24,6 @@
       "public": true,
       "value": null
     },
-    "PMTImgAuthCSPs": {
-      "description": "Content Security Policy to apply to img_auth.php",
-      "public": true,
-      "value": {
-        "enforced": null,
-        "report-only": null
-      }
-    },
     "PMTNewPreferencesLayout": {
       "description": "Whether to always use new layout for Special:Preferences page (requires MediaWiki 1.40 or newer)",
       "public": true,
@@ -46,6 +38,27 @@
       "description": "Whether to always use English usernames for system users",
       "public": true,
       "value": false
+    },
+    "UUHDeletedFileCSPs": {
+      "description": "Content Security Policy to apply when viewing deleted file",
+      "public": true,
+      "value": {
+        "enforced": null,
+        "report-only": null
+      }
+    },
+    "UHHEnable": {
+      "description": "Whether to enable UploadHTTPHeaders tool",
+      "public": true,
+      "value": false
+    },
+    "UHHImgAuthCSPs": {
+      "description": "Content Security Policy to apply to img_auth.php",
+      "public": true,
+      "value": {
+        "enforced": null,
+        "report-only": null
+      }
     },
     "UPAEnable": {
       "description": "Whether to enable UserPageAccess tool",
@@ -64,21 +77,23 @@
   },
   "type": "other",
   "url": "https://github.com/PlavorMind/PlavorMindTools",
-  "version": "4.2",
+  "version": "4.3",
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
     "PlavorMind\\PlavorMindTools\\ControlUserGroups\\": "ControlUserGroups/src/",
     "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\": "ReplaceInterfaceMessages/src/",
+    "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\": "UploadHTTPHeaders/src/",
     "PlavorMind\\PlavorMindTools\\UserPageAccess\\": "UserPageAccess/src/"
   },
   "Hooks": {
     "BlockIp": "controlusergroups",
-    "ImgAuthModifyHeaders": "main",
+    "ImgAuthModifyHeaders": "uploadhttpheaders",
     "MediaWikiServices": "controlusergroups",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
     "PreferencesGetLayout": "main",
+    "SpecialPageBeforeExecute": "uploadhttpheaders",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
       "userpageaccess"
@@ -94,6 +109,9 @@
     },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers"
+    },
+    "uploadhttpheaders": {
+      "class": "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\HookHandlers"
     },
     "userpageaccess": {
       "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers"
