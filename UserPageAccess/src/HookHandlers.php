@@ -30,7 +30,7 @@ class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermission
 
   public function onTitleQuickPermissions($title, $user, $action, &$errors, $doExpensiveQueries, $short) {
     if (
-      !($this->enabled && $action === 'edit' && $title->getNamespace() === NS_USER)
+      !($this->enabled && $action === 'edit' && $title->inNamespace(NS_USER))
       || $title->getRootText() === $user->getName()
       || $title->isUserConfigPage()
       || $user->isAllowed('editotheruserpages')
