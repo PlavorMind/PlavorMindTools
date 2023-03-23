@@ -6,7 +6,19 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
 
 class UserGroupHierarchies {
-  public static function getUserHierarchy(UserIdentity $userIdentity, array $groupHierarchies, array $centralAuthGroupHierarchies): int {
+  private $centralAuthHierarchies;
+  private $centralAuthLoaded;
+  private $hierarchies;
+  private $userGroupManager;
+
+  public function __construct(?array $hierarchies, ?array $centralAuthHierarchies) {
+    $this->centralAuthHierarchies = $centralAuthHierarchies ?? [];
+    $this->centralAuthLoaded = ExtensionRegistry::getInstance()->isLoaded('CentralAuth');
+    $this->hierarchies = $hierarchies ?? [];
+    $this->userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+  }
+
+  public function getUserHierarchy(UserIdentity $userIdentity): int {
     // isAnon() does not exist in UserIdentity objects.
     if (!$userIdentity->isRegistered()) {
       return 0;
@@ -14,26 +26,26 @@ class UserGroupHierarchies {
 
     $hierarchies = [0];
 
-    if (count($groupHierarchies) !== 0) {
-      $groups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserEffectiveGroups($userIdentity);
+    if (count($this->hierarchies) !== 0) {
+      $groups = $this->userGroupManager->getUserEffectiveGroups($userIdentity);
       $groupsToCheck = array_diff($groups, ['*', 'user']);
 
       foreach ($groupsToCheck as $group) {
-        if (isset($groupHierarchies[$group])) {
-          $hierarchies[] = $groupHierarchies[$group];
+        if (isset($this->hierarchies[$group])) {
+          $hierarchies[] = $this->hierarchies[$group];
         }
       }
     }
 
-    if (count($centralAuthGroupHierarchies) === 0 || !ExtensionRegistry::getInstance()->isLoaded('CentralAuth')) {
+    if (!$this->centralAuthLoaded || count($this->centralAuthHierarchies) === 0) {
       return max($hierarchies);
     }
 
     $groups = CentralAuthUser::getInstance($userIdentity)->getGlobalGroups();
 
     foreach ($groups as $group) {
-      if (isset($centralAuthGroupHierarchies[$group])) {
-        $hierarchies[] = $centralAuthGroupHierarchies[$group];
+      if (isset($this->centralAuthHierarchies[$group])) {
+        $hierarchies[] = $this->centralAuthHierarchies[$group];
       }
     }
 

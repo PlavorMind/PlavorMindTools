@@ -12,10 +12,10 @@ class HookHandlers implements BlockIpHook, MediaWikiServicesHook {
       return;
     }
 
-    $centralAuthHierarchiesSetting = $settings->get('CUGCentralAuthHierarchies');
-    $hierarchiesSetting = $settings->get('CUGHierarchies');
+    $centralAuthGroupHierarchies = $settings->get('CUGCentralAuthHierarchies');
+    $groupHierarchies = $settings->get('CUGHierarchies');
 
-    if ($centralAuthHierarchiesSetting === null && $hierarchiesSetting === null) {
+    if ($centralAuthGroupHierarchies === null && $groupHierarchies === null) {
       return;
     }
 
@@ -26,10 +26,9 @@ class HookHandlers implements BlockIpHook, MediaWikiServicesHook {
       return false;
     }
 
-    $centralAuthGroupHierarchies = $centralAuthHierarchiesSetting ?? [];
-    $groupHierarchies = $hierarchiesSetting ?? [];
-    $enforcerHierarchy = UserGroupHierarchies::getUserHierarchy($user, $groupHierarchies, $centralAuthGroupHierarchies);
-    $targetHierarchy = UserGroupHierarchies::getUserHierarchy($targetIdentity, $groupHierarchies, $centralAuthGroupHierarchies);
+    $userGroupHierarchies = new UserGroupHierarchies($groupHierarchies, $centralAuthGroupHierarchies);
+    $enforcerHierarchy = $userGroupHierarchies->getUserHierarchy($user);
+    $targetHierarchy = $userGroupHierarchies->getUserHierarchy($targetIdentity);
 
     if ($enforcerHierarchy > $targetHierarchy) {
       return;
