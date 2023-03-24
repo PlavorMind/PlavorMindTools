@@ -105,13 +105,16 @@
       "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\HookHandlers"
     },
     "replaceinterfacemessages": {
-      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers"
+      "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers",
+      "services": ["MainConfig"]
     },
     "uploadhttpheaders": {
-      "class": "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\HookHandlers"
+      "class": "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\HookHandlers",
+      "services": ["MainConfig"]
     },
     "userpageaccess": {
-      "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers"
+      "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers",
+      "services": ["MainConfig"]
     }
   },
   "MessagesDirs": {

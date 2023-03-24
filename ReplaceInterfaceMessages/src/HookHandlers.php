@@ -6,14 +6,12 @@ use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 
 class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   private $enabled;
-  private $MediaWikiServices;
   private $rimMsgKeys = [];
   private $settings;
 
-  public function __construct() {
-    $this->MediaWikiServices = MediaWikiServices::getInstance();
-    $this->settings = $this->MediaWikiServices->getMainConfig();
-    $this->enabled = $this->settings->get('RIMEnable');
+  public function __construct($settings) {
+    $this->enabled = $settings->get('RIMEnable');
+    $this->settings = $settings;
 
     if (!$this->enabled) {
       return;
@@ -75,7 +73,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
       return;
     }
 
-    $msgCache = $this->MediaWikiServices->getMessageCache();
+    $msgCache = MediaWikiServices::getInstance()->getMessageCache();
 
     // getMsgFromNamespace() can return a string.
     if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $this->settings->get('LanguageCode')) === false) {
@@ -84,7 +82,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   }
 
   public function onTitleQuickPermissions($title, $user, $action, &$errors, $doExpensiveQueries, $short) {
-    if (!($this->enabled && $action === 'edit' && $title->getNamespace() === NS_MEDIAWIKI && str_starts_with($title->getRootText(), 'Rim-'))) {
+    if (!($this->enabled && $action === 'edit' && $title->inNamespace(NS_MEDIAWIKI) && str_starts_with($title->getRootText(), 'Rim-'))) {
       return;
     }
 

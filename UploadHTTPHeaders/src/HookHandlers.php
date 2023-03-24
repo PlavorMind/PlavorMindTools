@@ -1,7 +1,6 @@
 <?php
 namespace PlavorMind\PlavorMindTools\UploadHTTPHeaders;
 use MediaWiki\Hook\ImgAuthModifyHeadersHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\Title\Title;
 
@@ -9,9 +8,9 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
   private $enabled;
   private $settings;
 
-  public function __construct() {
-    $this->settings = MediaWikiServices::getInstance()->getMainConfig();
-    $this->enabled = $this->settings->get('UHHEnable');
+  public function __construct($settings) {
+    $this->enabled = $settings->get('UHHEnable');
+    $this->settings = $settings;
   }
 
   public function onImgAuthModifyHeaders($title, &$headers) {

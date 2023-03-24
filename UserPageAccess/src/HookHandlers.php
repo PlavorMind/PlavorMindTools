@@ -1,15 +1,14 @@
 <?php
 namespace PlavorMind\PlavorMindTools\UserPageAccess;
 use MediaWiki\Hook\MovePageCheckPermissionsHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 use MediaWiki\Permissions\Hook\UserGetAllRightsHook;
 
 class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermissionsHook, UserGetAllRightsHook {
   private $enabled;
 
-  public function __construct() {
-    $this->enabled = MediaWikiServices::getInstance()->getMainConfig()->get('UPAEnable');
+  public function __construct($settings) {
+    $this->enabled = $settings->get('UPAEnable');
   }
 
   public function onMovePageCheckPermissions($oldTitle, $newTitle, $user, $reason, $status) {
