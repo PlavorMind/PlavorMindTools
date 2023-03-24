@@ -92,7 +92,7 @@
     "MediaWikiServices": "controlusergroups",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
-    "PreferencesGetLayout": "main",
+    "PreferencesGetLayout": "PlavorMind\\PlavorMindTools\\HookHandlers::onPreferencesGetLayout",
     "SpecialPageBeforeExecute": "uploadhttpheaders",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
@@ -103,9 +103,6 @@
   "HookHandlers": {
     "controlusergroups": {
       "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\HookHandlers"
-    },
-    "main": {
-      "class": "PlavorMind\\PlavorMindTools\\HookHandlers"
     },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers"
