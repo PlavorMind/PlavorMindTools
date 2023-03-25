@@ -1,7 +1,6 @@
 <?php
 namespace PlavorMind\PlavorMindTools\ControlUserGroups;
 use MediaWiki\Hook\BlockIpHook;
-use MediaWiki\MediaWikiServices;
 
 class HookHandlers implements BlockIpHook {
   private $settings;
