@@ -5,16 +5,14 @@ use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\Title\Title;
 
 class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecuteHook {
-  private $enabled;
   private $settings;
 
   public function __construct($settings) {
-    $this->enabled = $settings->get('UHHEnable');
     $this->settings = $settings;
   }
 
   public function onImgAuthModifyHeaders($title, &$headers) {
-    if (!$this->enabled) {
+    if (!$this->settings->get('UHHEnable')) {
       return;
     }
 
@@ -30,7 +28,9 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
   }
 
   public function onSpecialPageBeforeExecute($special, $subPage) {
-    if (!($this->enabled && $special->getName() === 'Undelete')) {
+    $settings = $special->getConfig();
+
+    if (!($settings->get('UHHEnable') && $special->getName() === 'Undelete')) {
       return;
     }
 
@@ -52,7 +52,7 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
       return;
     }
 
-    $CSPs = $this->settings->get('UUHDeletedFileCSPs');
+    $CSPs = $settings->get('UUHDeletedFileCSPs');
     $response = $request->response();
 
     if ($CSPs['enforced'] !== null) {
