@@ -39,8 +39,8 @@
       "public": true,
       "value": false
     },
-    "UUHDeletedFileCSPs": {
-      "description": "Content Security Policy to apply when viewing deleted file",
+    "UHHCSPs": {
+      "description": "Content Security Policy to apply when viewing uploaded files",
       "public": true,
       "value": {
         "enforced": null,
@@ -51,14 +51,6 @@
       "description": "Whether to enable UploadHTTPHeaders tool",
       "public": true,
       "value": false
-    },
-    "UHHImgAuthCSPs": {
-      "description": "Content Security Policy to apply to img_auth.php",
-      "public": true,
-      "value": {
-        "enforced": null,
-        "report-only": null
-      }
     },
     "UPAEnable": {
       "description": "Whether to enable UserPageAccess tool",

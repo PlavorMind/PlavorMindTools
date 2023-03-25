@@ -16,7 +16,7 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
       return;
     }
 
-    $CSPs = $this->settings->get('UHHImgAuthCSPs');
+    $CSPs = $this->settings->get('UHHCSPs');
 
     if ($CSPs['enforced'] !== null) {
       $headers['Content-Security-Policy'] = $CSPs['enforced'];
@@ -52,7 +52,7 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
       return;
     }
 
-    $CSPs = $settings->get('UUHDeletedFileCSPs');
+    $CSPs = $settings->get('UHHCSPs');
     $response = $request->response();
 
     if ($CSPs['enforced'] !== null) {
