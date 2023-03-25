@@ -83,6 +83,7 @@
     "ImgAuthModifyHeaders": "uploadhttpheaders",
     "MediaWikiServices": "controlusergroups-mediawikiservices",
     "MessageCache::get": "replaceinterfacemessages",
+    "MessageCacheFetchOverrides": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers::onMessageCacheFetchOverrides",
     "MovePageCheckPermissions": "userpageaccess",
     "PreferencesGetLayout": "PlavorMind\\PlavorMindTools\\HookHandlers::onPreferencesGetLayout",
     "SpecialPageBeforeExecute": "uploadhttpheaders",
