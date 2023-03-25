@@ -55,7 +55,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
         continue;
       }
 
-      $keys[$oldKey] = function (string $key, $cache): string {
+      $keys[$oldKey] = function (string $key, $cache) use ($language, $newKey, $oldKey): string {
         $uppercaseFirstKey = ucfirst($oldKey);
         // getMsgFromNamespace() can return a string.
         return ($cache->getMsgFromNamespace($uppercaseFirstKey, $language) === false) ? $newKey : $oldKey;
