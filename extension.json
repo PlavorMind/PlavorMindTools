@@ -89,7 +89,7 @@
   "Hooks": {
     "BlockIp": "controlusergroups",
     "ImgAuthModifyHeaders": "uploadhttpheaders",
-    "MediaWikiServices": "controlusergroups",
+    "MediaWikiServices": "controlusergroups-mediawikiservices",
     "MessageCache::get": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
     "PreferencesGetLayout": "PlavorMind\\PlavorMindTools\\HookHandlers::onPreferencesGetLayout",
@@ -102,7 +102,11 @@
   },
   "HookHandlers": {
     "controlusergroups": {
-      "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\HookHandlers"
+      "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\HookHandlers",
+      "services": ["MainConfig"]
+    },
+    "controlusergroups-mediawikiservices": {
+      "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\MediaWikiServicesHookHandler"
     },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers",
