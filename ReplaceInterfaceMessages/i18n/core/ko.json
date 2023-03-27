@@ -6,7 +6,10 @@
   "rim-block-log-flags-anononly": "비로그인 사용자만 차단",
   "rim-block-log-flags-noemail": "이메일 차단",
   "rim-blocked-notice-logextract": "이 사용자는 차단되었습니다.",
-  "rim-blockedtext": "'''차단된 상태입니다.''' $7님은 $8에 $1님에게 차단되었습니다. (#$5)\n<br/>이유: $2\n<br/>차단 만료: $6\n<br/>IP 주소: $3",
+  "rim-blockedtext": "'''차단된 상태입니다.''' $7님은 $8에 $1님에게 차단되었습니다. (#$5)\n<br/>{{int:blockedtext-reason-comment|$2}}\n<br/>{{int:blockedtext-expiration-time|$6}}\n<br/>{{int:blockedtext-block-ip|$3}}",
+  "rim-blockedtext-block-ip": "IP 주소: $1",
+  "rim-blockedtext-expiration-time": "차단 만료: $1",
+  "rim-blockedtext-reason-comment": "이유: $1",
   "rim-cascadeprotected": "이 문서는 보호되어 있습니다.<br/>이 문서는 연쇄 보호된 다음 문서에 끼워넣어져 있습니다:<br/>\n$2",
   "rim-cascadeprotectedwarning": "보호된 문서를 편집하고 있습니다.<br/>이 문서는 연쇄 보호된 다음 문서에 끼워넣어져 있습니다:",
   "rim-contribslink": "기여",
@@ -55,6 +58,7 @@
   "rim-right-editinterface": "[[Special:AllPages/MediaWiki:|{{ns:MediaWiki}}]] 이름공간 내의 문서 편집",
   "rim-semiprotectedpagemovewarning": "준보호된 문서를 이동하려고 합니다.",
   "rim-semiprotectedpagewarning": "준보호된 문서를 편집하고 있습니다.",
+  "rim-skin-action-viewsource": "편집 불가",
   "rim-sp-contributions-blocked-notice": "이 사용자는 차단되었습니다.",
   "rim-sp-contributions-blocked-notice-anon": "이 IP 주소는 차단되었습니다.",
   "rim-talk": "토론",
@@ -62,6 +66,5 @@
   "rim-titleprotectedwarning": "보호된 문서를 만드려고 합니다.",
   "rim-undo-summary": "[[User:$2|$2]]님의 [[Special:Diff/$1|$1]]판 편집 취소",
   "rim-unprotect": "보호 설정 변경",
-  "rim-unprotectedarticle-comment": "문서 보호 해제",
-  "rim-viewsource": "편집 불가"
+  "rim-unprotectedarticle-comment": "문서 보호 해제"
 }

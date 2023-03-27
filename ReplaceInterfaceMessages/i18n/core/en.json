@@ -6,7 +6,10 @@
   "rim-block-log-flags-anononly": "non-logged in users only",
   "rim-block-log-flags-noemail": "email blocked",
   "rim-blocked-notice-logextract": "This user is blocked.",
-  "rim-blockedtext": "'''You are blocked.''' $7 is blocked by $1 at $8. (#$5)\n<br/>Reason: $2\n<br/>Expiration: $6\n<br/>IP address: $3",
+  "rim-blockedtext": "'''You are blocked.''' $7 is blocked by $1 at $8. (#$5)\n<br/>{{int:blockedtext-reason-comment|$2}}\n<br/>{{int:blockedtext-expiration-time|$6}}\n<br/>{{int:blockedtext-block-ip|$3}}",
+  "rim-blockedtext-block-ip": "IP address: $1",
+  "rim-blockedtext-expiration-time": "Expiration of block: $1",
+  "rim-blockedtext-reason-comment": "Reason: $1",
   "rim-cascadeprotected": "This page is protected.<br/>This page is transcluded in following cascade-protected {{PLURAL:$1|page|pages}}:\n$2",
   "rim-cascadeprotectedwarning": "You are editing a protected page.<br/>This page is transcluded in following cascade-protected {{PLURAL:$1|page|pages}}:",
   "rim-contribslink": "contributions",
@@ -55,6 +58,7 @@
   "rim-right-editinterface": "Edit pages in [[Special:AllPages/MediaWiki:|{{ns:MediaWiki}}]] namespace",
   "rim-semiprotectedpagemovewarning": "You are about to move a semi-protected page.",
   "rim-semiprotectedpagewarning": "You are editing a semi-protected page.",
+  "rim-skin-action-viewsource": "Not editable",
   "rim-sp-contributions-blocked-notice": "This user is blocked.",
   "rim-sp-contributions-blocked-notice-anon": "This IP address is blocked.",
   "rim-talk": "Talk",
@@ -62,6 +66,5 @@
   "rim-titleprotectedwarning": "You are about to create a protected page.",
   "rim-undo-summary": "Undid revision [[Special:Diff/$1|$1]] by [[User:$2|$2]]",
   "rim-unprotect": "Change protection",
-  "rim-unprotectedarticle-comment": "Unprotected the page",
-  "rim-viewsource": "Not editable"
+  "rim-unprotectedarticle-comment": "Unprotected the page"
 }

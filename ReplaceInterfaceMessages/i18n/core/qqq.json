@@ -7,6 +7,9 @@
   "rim-block-log-flags-noemail": "Message to replace block-log-flags-noemail message",
   "rim-blocked-notice-logextract": "Message to replace blocked-notice-logextract message",
   "rim-blockedtext": "Message to replace blockedtext message",
+  "rim-blockedtext-block-ip": "Message to replace blockedtext-block-ip message",
+  "rim-blockedtext-expiration-time": "Message to replace blockedtext-expiration-time message",
+  "rim-blockedtext-reason-comment": "Message to replace blockedtext-reason-comment message",
   "rim-cascadeprotected": "Message to replace cascadeprotected message",
   "rim-cascadeprotectedwarning": "Message to replace cascadeprotectedwarning message",
   "rim-contribslink": "Message to replace contribslink message",
@@ -55,6 +58,7 @@
   "rim-right-editinterface": "Message to replace right-editinterface message",
   "rim-semiprotectedpagemovewarning": "Message to replace semiprotectedpagemovewarning message",
   "rim-semiprotectedpagewarning": "Message to replace semiprotectedpagewarning message",
+  "rim-skin-action-viewsource": "Message to replace skin-action-viewsource message",
   "rim-sp-contributions-blocked-notice": "Message to replace sp-contributions-blocked-notice message",
   "rim-sp-contributions-blocked-notice-anon": "Message to replace sp-contributions-blocked-notice-anon message",
   "rim-talk": "Message to replace talk message",
@@ -62,6 +66,5 @@
   "rim-titleprotectedwarning": "Message to replace titleprotectedwarning message",
   "rim-undo-summary": "Message to replace undo-summary message",
   "rim-unprotect": "Message to replace unprotect message",
-  "rim-unprotectedarticle-comment": "Message to replace unprotectedarticle-comment message",
-  "rim-viewsource": "Message to replace viewsource message"
+  "rim-unprotectedarticle-comment": "Message to replace unprotectedarticle-comment message"
 }
