@@ -1,7 +1,7 @@
 {
-  "rim-aboutpage": "",
+  "rim-aboutsite": "",
   "rim-autochange-username": "MediaWiki automatic change",
-  "rim-disclaimerpage": "",
+  "rim-disclaimers": "",
   "rim-double-redirect-fixer": "Redirect fixer",
   "rim-grouppage-autoconfirmed": "Special:ListGroupRights#autoconfirmed",
   "rim-grouppage-bot": "Special:ListGroupRights#bot",
@@ -9,7 +9,7 @@
   "rim-grouppage-suppress": "Special:ListGroupRights#suppress",
   "rim-grouppage-sysop": "Special:ListGroupRights#sysop",
   "rim-grouppage-user": "Special:ListGroupRights#user",
-  "rim-privacypage": "",
+  "rim-privacy": "",
   "rim-protect-summary-desc": "$1: $2 ($3)",
   "rim-spambot_username": "MediaWiki spam cleanup",
   "rim-translateinterface": "",
