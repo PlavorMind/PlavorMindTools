@@ -48,6 +48,8 @@
   "pmt-license-cc-by": "Name of Attribution clause of Creative Commons license",
   "pmt-license-cc-sa": "Name of ShareAlike clause of Creative Commons license",
   "pmt-license-cc0": "Translation of \"CC0 1.0 Universal\"",
+  "pmt-rc-flag-minor-edit": "Flag for recent changes, etc. which indicates the edit is minor edit",
+  "pmt-rc-flag-new-page": "Flag for recent changes, etc. which indicates the edit created new page",
   "pmt-template-cclicense-name": "Message for displaying name of the Creative Commons license on templates",
   "pmt-template-deletionrequest": "Text of the template for deletion requests",
   "pmt-template-fileinfo": "Message for header of file information table in templates",

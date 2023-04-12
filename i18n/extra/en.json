@@ -48,6 +48,8 @@
   "pmt-license-cc-by": "Attribution",
   "pmt-license-cc-sa": "ShareAlike",
   "pmt-license-cc0": "CC0 1.0 Universal",
+  "pmt-rc-flag-minor-edit": "m",
+  "pmt-rc-flag-new-page": "N",
   "pmt-template-cclicense-name": "Creative Commons $1 license",
   "pmt-template-deletionrequest": "This page is requested to be deleted.<br>Reason: $1",
   "pmt-template-fileinfo": "File information",

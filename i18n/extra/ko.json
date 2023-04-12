@@ -48,6 +48,8 @@
   "pmt-license-cc-by": "저작자표시",
   "pmt-license-cc-sa": "동일조건변경허락",
   "pmt-license-cc0": "CC0 1.0 보편적",
+  "pmt-rc-flag-minor-edit": "사소",
+  "pmt-rc-flag-new-page": "생성",
   "pmt-template-cclicense-name": "크리에이티브 커먼즈 $1 라이선스",
   "pmt-template-deletionrequest": "이 문서의 삭제가 요청되었습니다.<br>이유: $1",
   "pmt-template-fileinfo": "파일 정보",
