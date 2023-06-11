@@ -65,6 +65,8 @@
   "rim-templatesused": "Message to replace templatesused message",
   "rim-titleprotectedwarning": "Message to replace titleprotectedwarning message",
   "rim-undo-summary": "Message to replace undo-summary message",
+  "rim-undo-summary-anon": "Message to replace undo-summary-anon message",
+  "rim-undo-summary-username-hidden": "Message to replace undo-summary-username-hidden message",
   "rim-unprotect": "Message to replace unprotect message",
   "rim-unprotectedarticle-comment": "Message to replace unprotectedarticle-comment message"
 }

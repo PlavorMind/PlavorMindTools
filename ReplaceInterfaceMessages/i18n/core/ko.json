@@ -65,6 +65,8 @@
   "rim-templatesused": "이 문서에 끼워넣어진 문서:",
   "rim-titleprotectedwarning": "보호된 문서를 만드려고 합니다.",
   "rim-undo-summary": "[[User:$2|$2]]님의 [[Special:Diff/$1|$1]]판 편집 취소",
+  "rim-undo-summary-anon": "[[Special:Contributions/$2|$2]]님의 [[Special:Diff/$1|$1]]판 편집 취소",
+  "rim-undo-summary-username-hidden": "숨겨진 사용자의 [[Special:Diff/$1|$1]]판 편집 취소",
   "rim-unprotect": "보호 설정 변경",
   "rim-unprotectedarticle-comment": "문서 보호 해제"
 }
