@@ -66,6 +66,8 @@
   "rim-titleprotectedwarning": "You are about to create protected page.",
   "rim-undo-summary": "Undid revision [[Special:Diff/$1|$1]] by [[User:$2|$2]]",
   "rim-undo-summary-anon": "Undid revision [[Special:Diff/$1|$1]] by [[Special:Contributions/$2|$2]]",
+  "rim-undo-summary-import": "Undid imported revision [[Special:Diff/$1|$1]] by [[$2|$3]]",
+  "rim-undo-summary-import2": "Undid imported revision [[Special:Diff/$1|$1]] by $2",
   "rim-undo-summary-username-hidden": "Undid revision [[Special:Diff/$1|$1]] by hidden user",
   "rim-unprotect": "Change protection",
   "rim-unprotectedarticle-comment": "Unprotected the page"
