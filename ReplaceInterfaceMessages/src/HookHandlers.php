@@ -63,9 +63,9 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     }
   }
 
-  private $enabled;
-  private $newHookAvailable;
-  private $rimMsgKeys = [];
+  private readonly bool $enabled;
+  private readonly bool $newHookAvailable;
+  private array $rimMsgKeys = [];
   private $settings;
 
   public function __construct($settings) {

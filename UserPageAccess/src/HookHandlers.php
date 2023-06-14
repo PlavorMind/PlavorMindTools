@@ -5,7 +5,7 @@ use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 use MediaWiki\Permissions\Hook\UserGetAllRightsHook;
 
 class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermissionsHook, UserGetAllRightsHook {
-  private $enabled;
+  private readonly bool $enabled;
 
   public function __construct($settings) {
     $this->enabled = $settings->get('UPAEnable');

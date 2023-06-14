@@ -6,9 +6,9 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
 
 class UserGroupHierarchies {
-  private $centralAuthHierarchies;
-  private $centralAuthLoaded;
-  private $hierarchies;
+  private readonly array $centralAuthHierarchies;
+  private readonly bool $centralAuthLoaded;
+  private readonly array $hierarchies;
   private $userGroupManager;
 
   public function __construct(?array $hierarchies, ?array $centralAuthHierarchies) {
