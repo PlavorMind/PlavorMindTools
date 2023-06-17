@@ -55,6 +55,8 @@
   "rim-recentchanges": "Message to replace recentchanges message",
   "rim-recreate-moveddeleted-warn": "Message to replace recreate-moveddeleted-warn message",
   "rim-revertpage": "Message to replace revertpage message",
+  "rim-revertpage-anon": "Message to replace revertpage-anon message",
+  "rim-revertpage-nouser": "Message to replace revertpage-nouser message",
   "rim-right-editinterface": "Message to replace right-editinterface message",
   "rim-semiprotectedpagemovewarning": "Message to replace semiprotectedpagemovewarning message",
   "rim-semiprotectedpagewarning": "Message to replace semiprotectedpagewarning message",
