@@ -25,7 +25,7 @@
       "value": null
     },
     "PMTNewPreferencesLayout": {
-      "description": "Whether to always use new layout for Special:Preferences page (requires MediaWiki 1.40 or newer)",
+      "description": "Whether to always use new layout for Special:Preferences page",
       "public": true,
       "value": false
     },
@@ -62,14 +62,14 @@
   "license-name": "AGPL-3.0-or-later",
   "manifest_version": 2,
   "requires": {
-    "MediaWiki": ">= 1.39.0",
+    "MediaWiki": ">= 1.40.0",
     "platform": {
       "php": ">= 8.1"
     }
   },
   "type": "other",
   "url": "https://github.com/PlavorMind/PlavorMindTools",
-  "version": "4.3",
+  "version": "4.4",
 
   "AutoloadNamespaces": {
     "PlavorMind\\PlavorMindTools\\": "src/",
@@ -85,7 +85,7 @@
     "MessageCache::get": "replaceinterfacemessages",
     "MessageCacheFetchOverrides": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers::onMessageCacheFetchOverrides",
     "MovePageCheckPermissions": "userpageaccess",
-    "PreferencesGetLayout": "PlavorMind\\PlavorMindTools\\HookHandlers::onPreferencesGetLayout",
+    "PreferencesGetLayout": "main",
     "SpecialPageBeforeExecute": "uploadhttpheaders",
     "TitleQuickPermissions": [
       "replaceinterfacemessages",
@@ -100,6 +100,10 @@
     },
     "controlusergroups-mediawikiservices": {
       "class": "PlavorMind\\PlavorMindTools\\ControlUserGroups\\MediaWikiServicesHookHandler"
+    },
+    "main": {
+      "class": "PlavorMind\\PlavorMindTools\\HookHandlers",
+      "services": ["MainConfig"]
     },
     "replaceinterfacemessages": {
       "class": "PlavorMind\\PlavorMindTools\\ReplaceInterfaceMessages\\HookHandlers",

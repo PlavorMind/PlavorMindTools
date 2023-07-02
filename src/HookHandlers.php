@@ -1,14 +1,16 @@
 <?php
 namespace PlavorMind\PlavorMindTools;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Hook\PreferencesGetLayoutHook;
 
-class HookHandlers {
-  /*
-  1.40+
-  Declaring the type for &$useMobileLayout as bool-only causes type error.
-  */
-  public static function onPreferencesGetLayout(?bool &$useMobileLayout, string $skinName, array $skinProperties) {
-    if (MediaWikiServices::getInstance()->getMainConfig()->get('PMTNewPreferencesLayout')) {
+class HookHandlers implements PreferencesGetLayoutHook {
+  private $settings;
+
+  public function __construct($settings) {
+    $this->settings = $settings;
+  }
+
+  public function onPreferencesGetLayout(&$useMobileLayout, $skinName, $skinProperties = []) {
+    if ($this->settings->get('PMTNewPreferencesLayout')) {
       $useMobileLayout = true;
     }
   }
