@@ -25,7 +25,7 @@
       "value": null
     },
     "PMTNewPreferencesLayout": {
-      "description": "Whether to always use new layout for Special:Preferences page",
+      "description": "Whether to always use the new layout for Special:Preferences page",
       "public": true,
       "value": false
     },
