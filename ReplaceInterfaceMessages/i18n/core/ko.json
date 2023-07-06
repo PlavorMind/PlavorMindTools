@@ -71,6 +71,5 @@
   "rim-undo-summary-import": "[[$2|$3]]님의 가져온 [[Special:Diff/$1|$1]]판 편집 취소",
   "rim-undo-summary-import2": "$2님의 가져온 [[Special:Diff/$1|$1]]판 편집 취소",
   "rim-undo-summary-username-hidden": "숨겨진 사용자의 [[Special:Diff/$1|$1]]판 편집 취소",
-  "rim-unprotect": "보호 설정 변경",
   "rim-unprotectedarticle-comment": "문서 보호 해제"
 }

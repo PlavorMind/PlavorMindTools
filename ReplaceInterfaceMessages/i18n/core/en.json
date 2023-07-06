@@ -71,6 +71,5 @@
   "rim-undo-summary-import": "Undid imported revision [[Special:Diff/$1|$1]] by [[$2|$3]]",
   "rim-undo-summary-import2": "Undid imported revision [[Special:Diff/$1|$1]] by $2",
   "rim-undo-summary-username-hidden": "Undid revision [[Special:Diff/$1|$1]] by a hidden user",
-  "rim-unprotect": "Change protection",
   "rim-unprotectedarticle-comment": "Unprotected the page"
 }
