@@ -1,10 +1,10 @@
 {
-  "rim-logentry-globalauth-setstatus": "$1 changed the status of global account of $3: set $4; unset $5",
+  "rim-logentry-globalauth-setstatus": "$1 changed the status of the global account of $3: set $4; unset $5",
 
   "rim-centralauth-contribs-locked-log": "This user is globally locked.",
   "rim-globalblocking-blockedtext-all-wikis": "You are globally blocked.",
   "rim-globalblocking-blockedtext-ip": "'''{{int:globalblocking-blockedtext-all-wikis}}''' $3 is blocked by $1 at $8.\n<br/>{{int:blockedtext-reason-comment|$2}}\n<br/>{{int:blockedtext-expiration-time|$6}}",
   "rim-globalblocking-blockedtext-range": "'''{{int:globalblocking-blockedtext-all-wikis}}''' $7 is blocked by $1 at $8.\n<br/>{{int:blockedtext-reason-comment|$2}}\n<br/>{{int:blockedtext-expiration-time|$6}}\n<br/>{{int:blockedtext-block-ip|$3}}",
-  "rim-titleblacklist-forbidden-edit": "You cannot edit pages with restricted title.<br/>Title of this page matches following entry in restricted title list:<br/><code>$1</code>",
-  "rim-titleblacklist-warning": "You are editing a page with restricted title.<br/>Title of this page matches following entry in restricted title list:<br/><code>$1</code>"
+  "rim-titleblacklist-forbidden-edit": "You cannot edit pages with a restricted title.<br/>Title of this page matches the following entry in the restricted title list:<br/><code>$1</code>",
+  "rim-titleblacklist-warning": "You are editing a page with a restricted title.<br/>Title of this page matches the following entry in the restricted title list:<br/><code>$1</code>"
 }
