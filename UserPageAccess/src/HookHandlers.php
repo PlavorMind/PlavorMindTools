@@ -19,7 +19,7 @@ class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermission
     $newNamespace = $newTitle->getNamespace();
     $oldNamespace = $oldTitle->getNamespace();
 
-    if ($oldNamespace === $newNamespace || !($oldNamespace === NS_USER || $newNamespace === NS_USER) || $user->isAllowed('movetousernamespace')) {
+    if ($oldNamespace === $newNamespace || !($oldNamespace === NS_USER || $newNamespace === NS_USER) || $user->isAllowed('move-user-namespace')) {
       return;
     }
 
@@ -32,7 +32,7 @@ class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermission
       !($this->enabled && $action === 'edit' && $title->inNamespace(NS_USER))
       || $title->getRootText() === $user->getName()
       || $title->isUserConfigPage()
-      || $user->isAllowed('editotheruserpages')
+      || $user->isAllowed('edit-other-user-pages')
     ) {
       return;
     }
@@ -47,8 +47,8 @@ class HookHandlers implements MovePageCheckPermissionsHook, TitleQuickPermission
     }
 
     $rights = array_merge($rights, [
-      'editotheruserpages',
-      'movetousernamespace'
+      'edit-other-user-pages',
+      'move-user-namespace'
     ]);
   }
 }
