@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace PlavorMind\PlavorMindTools\ReplaceInterfaceMessages;
 use MediaWiki\Cache\Hook\MessageCache__getHook;
 use MediaWiki\MediaWikiServices;

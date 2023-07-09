@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace PlavorMind\PlavorMindTools\UserPageAccess;
 use MediaWiki\Hook\MovePageCheckPermissionsHook;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;

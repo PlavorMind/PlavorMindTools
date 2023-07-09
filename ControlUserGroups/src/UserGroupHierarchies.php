@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace PlavorMind\PlavorMindTools\ControlUserGroups;
 use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
