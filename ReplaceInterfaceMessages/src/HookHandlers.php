@@ -7,79 +7,21 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 
 class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
-  // 1.41+
-  public static function onMessageCacheFetchOverrides(array &$keys) {
-    $settings = MediaWikiServices::getInstance()->getMainConfig();
-
-    if (!$settings->get('RIMEnable')) {
-      return;
-    }
-
-    $directories = glob(__DIR__ . '/../i18n/*',  GLOB_ERR | GLOB_ONLYDIR);
-    $newKeys = [];
-
-    foreach ($directories as $directory) {
-      $msgFileContent = file_get_contents("$directory/en.json");
-      $msgArray = json_decode($msgFileContent, true);
-      $newKeys = array_merge($newKeys, array_keys($msgArray));
-    }
-
-    $forcedKeys = [];
-    $language = $settings->get('LanguageCode');
-    $oldKeysWithDuplicates = preg_replace('/^rim-(?:plavormind-)?/', '', $newKeys);
-    $oldKeys = array_values(array_unique($oldKeysWithDuplicates, SORT_REGULAR));
-    $systemUserKeys = [
-      // core-en-only
-      'autochange-username',
-      'double-redirect-fixer',
-      'spambot_username',
-      'usermessage-editor',
-
-      // extensions-en-only
-      'abusefilter-blocker',
-      'babel-autocreate-user'
-    ];
-    $useEnglishSystemUsers = $settings->get('RIMEnglishSystemUsers');
-    $usePlavorMindMsgs = $settings->has('RIMPlavorMindSpecificMessages') && $settings->get('RIMPlavorMindSpecificMessages');
-
-    foreach ($oldKeys as $oldKey) {
-      $newKey = $usePlavorMindMsgs && in_array("rim-plavormind-$oldKey", $newKeys) ? "rim-plavormind-$oldKey" : "rim-$oldKey";
-
-      if (in_array($oldKey, $forcedKeys)) {
-        $keys[$oldKey] = $newKey;
-        continue;
-      }
-      elseif (in_array($oldKey, $systemUserKeys)) {
-        if ($useEnglishSystemUsers) {
-          $keys[$oldKey] = $newKey;
-        }
-
-        continue;
-      }
-
-      $keys[$oldKey] = function (string $key, $cache) use ($language, $newKey, $oldKey): string {
-        $uppercaseFirstKey = ucfirst($oldKey);
-        // getMsgFromNamespace() can return a string.
-        return ($cache->getMsgFromNamespace($uppercaseFirstKey, $language) === false) ? $newKey : $oldKey;
-      };
-    }
-  }
-
   private readonly bool $enabled;
-  private readonly bool $newHookAvailable;
+  private readonly bool $newHookExists;
   private array $rimMsgKeys = [];
   private $settings;
 
   public function __construct($settings) {
     $this->enabled = $settings->get('RIMEnable');
-    $this->newHookAvailable = interface_exists('MediaWiki\\Cache\\Hook\\MessageCacheFetchOverridesHook');
+    $this->newHookExists = interface_exists('MediaWiki\\Cache\\Hook\\MessageCacheFetchOverridesHook');
     $this->settings = $settings;
 
-    if (!$this->enabled || $this->newHookAvailable) {
+    if (!$this->enabled || $this->newHookExists) {
       return;
     }
 
-    $directories = glob(__DIR__ . '/../i18n/*',  GLOB_ERR | GLOB_ONLYDIR);
+    $directories = $settings->get('MessagesDirs')['ReplaceInterfaceMessages'];
 
     foreach ($directories as $directory) {
       $msgFileContent = file_get_contents("$directory/en.json");
@@ -89,7 +31,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   }
 
   public function onMessageCache__get(&$lckey) {
-    if (!$this->enabled || $this->newHookAvailable) {
+    if (!$this->enabled || $this->newHookExists) {
       return;
     }
     // $wgRIMPlavorMindSpecificMessages is not defined in extension.json.
@@ -135,6 +77,63 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     // getMsgFromNamespace() can return a string.
     if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $this->settings->get('LanguageCode')) === false) {
       $lckey = $rimKey;
+    }
+  }
+
+  // 1.41+
+  public function onMessageCacheFetchOverrides(array &$keys): void {
+    if (!$this->enabled) {
+      return;
+    }
+
+    $directories = $this->settings->get('MessagesDirs')['ReplaceInterfaceMessages'];
+    $newKeys = [];
+
+    foreach ($directories as $directory) {
+      $msgFileContent = file_get_contents("$directory/en.json");
+      $msgArray = json_decode($msgFileContent, true);
+      $newKeys = array_merge($newKeys, array_keys($msgArray));
+    }
+
+    $forcedKeys = [];
+    $language = $this->settings->get('LanguageCode');
+    $oldKeysWithDuplicates = preg_replace('/^rim-(?:plavormind-)?/', '', $newKeys);
+    $oldKeys = array_values(array_unique($oldKeysWithDuplicates, SORT_REGULAR));
+    $systemUserKeys = [
+      // core-en-only
+      'autochange-username',
+      'double-redirect-fixer',
+      'spambot_username',
+      'usermessage-editor',
+
+      // extensions-en-only
+      'abusefilter-blocker',
+      'babel-autocreate-user'
+    ];
+    $useEnglishSystemUsers = $this->settings->get('RIMEnglishSystemUsers');
+    // $wgRIMPlavorMindSpecificMessages is not defined in extension.json.
+    $usePlavorMindMsgs = $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages');
+
+    foreach ($oldKeys as $oldKey) {
+      $newKey = $usePlavorMindMsgs && in_array("rim-plavormind-$oldKey", $newKeys) ? "rim-plavormind-$oldKey" : "rim-$oldKey";
+
+      if (in_array($oldKey, $forcedKeys)) {
+        $keys[$oldKey] = $newKey;
+        continue;
+      }
+      elseif (in_array($oldKey, $systemUserKeys)) {
+        if ($useEnglishSystemUsers) {
+          $keys[$oldKey] = $newKey;
+        }
+
+        continue;
+      }
+
+      $keys[$oldKey] = function (string $key, $cache) use ($language, $newKey): string {
+        $uppercaseFirstKey = ucfirst($key);
+        // getMsgFromNamespace() can return a string.
+        return ($cache->getMsgFromNamespace($uppercaseFirstKey, $language) === false) ? $newKey : $key;
+      };
     }
   }
 
