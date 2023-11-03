@@ -9,7 +9,7 @@ use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
   private readonly bool $enabled;
   private readonly bool $newHookExists;
-  private array $rimMsgKeys = [];
+  private array $newMsgKeys = [];
   private $settings;
 
   public function __construct($settings) {
@@ -26,7 +26,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     foreach ($directories as $directory) {
       $msgFileContent = file_get_contents("$directory/en.json");
       $msgArray = json_decode($msgFileContent, true);
-      $this->rimMsgKeys = array_merge($this->rimMsgKeys, array_keys($msgArray));
+      $this->newMsgKeys = array_merge($this->newMsgKeys, array_keys($msgArray));
     }
   }
 
@@ -34,10 +34,10 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     if (!$this->enabled || $this->newHookExists) {
       return;
     }
-    elseif (in_array("rim-plavormind-$lckey", $this->rimMsgKeys) && $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages')) {
+    elseif (in_array("rim-plavormind-$lckey", $this->newMsgKeys) && $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages')) {
       $newKey = "rim-plavormind-$lckey";
     }
-    elseif (in_array("rim-$lckey", $this->rimMsgKeys)) {
+    elseif (in_array("rim-$lckey", $this->newMsgKeys)) {
       $newKey = "rim-$lckey";
     }
     else {
