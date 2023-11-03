@@ -34,12 +34,11 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     if (!$this->enabled || $this->newHookExists) {
       return;
     }
-    // $wgRIMPlavorMindSpecificMessages is not defined in extension.json.
     elseif (in_array("rim-plavormind-$lckey", $this->rimMsgKeys) && $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages')) {
-      $rimKey = "rim-plavormind-$lckey";
+      $newKey = "rim-plavormind-$lckey";
     }
     elseif (in_array("rim-$lckey", $this->rimMsgKeys)) {
-      $rimKey = "rim-$lckey";
+      $newKey = "rim-$lckey";
     }
     else {
       return;
@@ -48,7 +47,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
     $forcedKeys = [];
 
     if (in_array($lckey, $forcedKeys)) {
-      $lckey = $rimKey;
+      $lckey = $newKey;
       return;
     }
 
@@ -66,7 +65,7 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
 
     if (in_array($lckey, $systemUserKeys)) {
       if ($this->settings->get('RIMEnglishSystemUsers')) {
-        $lckey = $rimKey;
+        $lckey = $newKey;
       }
 
       return;
@@ -74,9 +73,8 @@ class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
 
     $msgCache = MediaWikiServices::getInstance()->getMessageCache();
 
-    // getMsgFromNamespace() can return a string.
     if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $this->settings->get('LanguageCode')) === false) {
-      $lckey = $rimKey;
+      $lckey = $newKey;
     }
   }
 
