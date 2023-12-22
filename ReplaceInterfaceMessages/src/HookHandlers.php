@@ -2,83 +2,19 @@
 declare(strict_types = 1);
 
 namespace PlavorMind\PlavorMindTools\ReplaceInterfaceMessages;
-use MediaWiki\Cache\Hook\MessageCache__getHook;
+use MediaWiki\Cache\Hook\MessageCacheFetchOverridesHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\TitleQuickPermissionsHook;
 
-class HookHandlers implements MessageCache__getHook, TitleQuickPermissionsHook {
+class HookHandlers implements MessageCacheFetchOverridesHook, TitleQuickPermissionsHook {
   private readonly bool $enabled;
-  private readonly bool $newHookExists;
-  private array $newMsgKeys = [];
   private $settings;
 
   public function __construct($settings) {
     $this->enabled = $settings->get('RIMEnable');
-    $this->newHookExists = interface_exists('MediaWiki\\Cache\\Hook\\MessageCacheFetchOverridesHook');
     $this->settings = $settings;
-
-    if (!$this->enabled || $this->newHookExists) {
-      return;
-    }
-
-    $directories = $settings->get('MessagesDirs')['ReplaceInterfaceMessages'];
-
-    foreach ($directories as $directory) {
-      $msgFileContent = file_get_contents("$directory/en.json");
-      $msgArray = json_decode($msgFileContent, true);
-      $this->newMsgKeys = array_merge($this->newMsgKeys, array_keys($msgArray));
-    }
   }
 
-  public function onMessageCache__get(&$lckey) {
-    if (!$this->enabled || $this->newHookExists) {
-      return;
-    }
-    elseif (in_array("rim-plavormind-$lckey", $this->newMsgKeys) && $this->settings->has('RIMPlavorMindSpecificMessages') && $this->settings->get('RIMPlavorMindSpecificMessages')) {
-      $newKey = "rim-plavormind-$lckey";
-    }
-    elseif (in_array("rim-$lckey", $this->newMsgKeys)) {
-      $newKey = "rim-$lckey";
-    }
-    else {
-      return;
-    }
-
-    $forcedKeys = [];
-
-    if (in_array($lckey, $forcedKeys)) {
-      $lckey = $newKey;
-      return;
-    }
-
-    $systemUserKeys = [
-      // core-en-only
-      'autochange-username',
-      'double-redirect-fixer',
-      'spambot_username',
-      'usermessage-editor',
-
-      // extensions-en-only
-      'abusefilter-blocker',
-      'babel-autocreate-user'
-    ];
-
-    if (in_array($lckey, $systemUserKeys)) {
-      if ($this->settings->get('RIMEnglishSystemUsers')) {
-        $lckey = $newKey;
-      }
-
-      return;
-    }
-
-    $msgCache = MediaWikiServices::getInstance()->getMessageCache();
-
-    if ($msgCache->getMsgFromNamespace(ucfirst($lckey), $this->settings->get('LanguageCode')) === false) {
-      $lckey = $newKey;
-    }
-  }
-
-  // 1.41+
   public function onMessageCacheFetchOverrides(array &$keys): void {
     if (!$this->enabled) {
       return;
