@@ -1,13 +1,16 @@
 <?php
+declare(strict_types = 1);
+
 namespace PlavorMind\PlavorMindTools\UploadHTTPHeaders;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\ImgAuthModifyHeadersHook;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\Title\Title;
 
 class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecuteHook {
-  private $settings;
+  private Config $settings;
 
-  public function __construct($settings) {
+  public function __construct(Config $settings) {
     $this->settings = $settings;
   }
 
@@ -36,11 +39,23 @@ class HookHandlers implements ImgAuthModifyHeadersHook, SpecialPageBeforeExecute
 
     $request = $special->getRequest();
 
-    if ($request->getMethod() !== 'GET' || $request->getRawVal('file', '') === '' || $request->getRawVal('token', '') === '') {
+    if ($request->getMethod() !== 'GET') {
       return;
     }
 
-    $titleString = ($subPage === null) || ($subPage === '') ? $request->getRawVal('target', '') : $subPage;
+    $fileParameter = $request->getRawVal('file');
+
+    if ($fileParameter === null || $fileParameter === '') {
+      return;
+    }
+
+    $token = $request->getRawVal('token');
+
+    if ($token === null || $token === '') {
+      return;
+    }
+
+    $titleString = ($subPage === null) || ($subPage === '') ? $request->getText('target') : $subPage;
 
     if ($titleString === '') {
       return;
