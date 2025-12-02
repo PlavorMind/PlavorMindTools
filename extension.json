@@ -39,14 +39,6 @@
       "public": true,
       "value": false
     },
-    "UHHCSPs": {
-      "description": "Content Security Policy to apply when viewing uploaded files",
-      "public": true,
-      "value": {
-        "enforced": null,
-        "report-only": null
-      }
-    },
     "UHHEnable": {
       "description": "Whether to enable UploadHTTPHeaders tool",
       "public": true,
@@ -62,10 +54,7 @@
   "license-name": "AGPL-3.0-or-later",
   "manifest_version": 2,
   "requires": {
-    "MediaWiki": ">= 1.41.0",
-    "platform": {
-      "php": ">= 8.1"
-    }
+    "MediaWiki": ">= 1.45"
   },
   "type": "other",
   "url": "https://github.com/PlavorMind/PlavorMindTools",
@@ -80,7 +69,6 @@
   },
   "Hooks": {
     "BlockIp": "controlusergroups",
-    "ImgAuthModifyHeaders": "uploadhttpheaders",
     "MediaWikiServices": "controlusergroups-mediawikiservices",
     "MessageCacheFetchOverrides": "replaceinterfacemessages",
     "MovePageCheckPermissions": "userpageaccess",
@@ -109,8 +97,7 @@
       "services": ["MainConfig"]
     },
     "uploadhttpheaders": {
-      "class": "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\HookHandlers",
-      "services": ["MainConfig"]
+      "class": "PlavorMind\\PlavorMindTools\\UploadHTTPHeaders\\HookHandlers"
     },
     "userpageaccess": {
       "class": "PlavorMind\\PlavorMindTools\\UserPageAccess\\HookHandlers",
